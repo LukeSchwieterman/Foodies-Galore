@@ -136,6 +136,36 @@ namespace Capstone.DAO
             return returnRestaurants;
         }
 
+        public List<string> GetRestaurantTypes()
+        {
+            List<string> returnRestaurantTypes = new List<string>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand("SELECT restaurant_type FROM restaurants GROUP BY restaurant_type", conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            returnRestaurantTypes.Add(GetRestaurantTypeFromReader(reader));
+                        }
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+            return returnRestaurantTypes;
+        }
+
         private Restaurant GetRestaurantFromReader(SqlDataReader reader)
         {
             Restaurant r = new Restaurant()
@@ -147,6 +177,13 @@ namespace Capstone.DAO
             };
 
             return r;
+        }
+
+        private string GetRestaurantTypeFromReader(SqlDataReader reader)
+        {
+            string type = Convert.ToString(reader["restaurant_type"]);
+
+            return type;
         }
     }
 }

@@ -12,4 +12,12 @@ namespace Capstone.Security.Models
         public string Type { get; set; }
         public int ZipCode { get; set; }
     }
+
+    public class RestaurantDetails
+    {
+        public int RestaurantId { get; set; }
+        public string RestaurantDescription { get; set; }
+        public int RestaurantPhonenumber { get; set; }
+        public string CovidMessage { get; set; }
+    }
 }
