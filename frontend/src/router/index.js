@@ -6,6 +6,7 @@ import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
 import swipe from '../views/swipe.vue'
+import Questionnaire from '../components/ProfileQuestionnaire.vue'
 
 Vue.use(Router)
 
@@ -58,6 +59,14 @@ const router = new Router({
       path: '/swipe',
       name: 'swipe',
       component: swipe,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/questionnaire',
+      name: 'questionnaire',
+      component: Questionnaire,
       meta: {
         requiresAuth: true
       }
