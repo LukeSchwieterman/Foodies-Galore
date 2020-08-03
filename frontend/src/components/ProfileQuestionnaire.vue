@@ -4,7 +4,7 @@
 
         <div class="field">
             <label for="zip">Zip Code</label>
-            <input type="number" name="zip"  />
+            <input type="text" name="zip"  />
         </div>
         <div class="field">
             <label for="preferences">Choose your top three:</label>
