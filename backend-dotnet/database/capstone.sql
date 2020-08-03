@@ -173,3 +173,12 @@ VALUES (90, 'Fantastic selection of beer/wine, good food, and good service.', 3)
 
 INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
 VALUES (100, 'Great service, love the breadsticks and salad.', 3);
+
+
+CREATE TABLE user_favorites (
+	user_id int NOT NULL,
+	restaurant_id int NOT NULL
+)
+
+INSERT INTO user_favorites (user_id, restaurant_id)
+VALUES (1, 10);
