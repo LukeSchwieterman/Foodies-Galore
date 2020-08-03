@@ -10,5 +10,11 @@ namespace Capstone.DAO
     public interface IRestaurantDAO
     {
         Restaurant GetRestaurant(int restaurantId);
+
+        List<Restaurant> GetRestaurantByType(string restaurantType);
+
+        List<Restaurant> GetRestaurantByZip(int restaurantZip);
+
+        List<Restaurant> GetAllRestaurants();
     }
 }
