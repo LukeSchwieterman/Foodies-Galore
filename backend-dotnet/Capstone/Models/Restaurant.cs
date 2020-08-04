@@ -17,7 +17,7 @@ namespace Capstone.Security.Models
     {
         public int RestaurantId { get; set; }
         public string RestaurantDescription { get; set; }
-        public int RestaurantPhonenumber { get; set; }
+        public string RestaurantPhonenumber { get; set; }
         public string CovidMessage { get; set; }
     }
 }
