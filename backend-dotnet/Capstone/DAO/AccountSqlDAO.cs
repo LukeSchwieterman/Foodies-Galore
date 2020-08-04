@@ -79,11 +79,12 @@ namespace Capstone.DAO
                 {
                     sql.Open();
 
-                    SqlCommand sqlCommand = new SqlCommand("UPDATE user_account SET user_likes_first = @first, user_likes_second = @second, user_likes_third = @third WHERE user_id = @account_id", sql);
+                    SqlCommand sqlCommand = new SqlCommand("UPDATE user_account SET user_likes_first = @first, user_likes_second = @second, user_likes_third = @third, user_zip = @zip WHERE user_id = @account_id", sql);
                     sqlCommand.Parameters.AddWithValue("@first", accountToUpdate.LikedTypeOne);
                     sqlCommand.Parameters.AddWithValue("@second", accountToUpdate.LikedTypeTwo);
                     sqlCommand.Parameters.AddWithValue("@third", accountToUpdate.LikedTypeThree);
                     sqlCommand.Parameters.AddWithValue("@account_id", accountToUpdate.UserId);
+                    sqlCommand.Parameters.AddWithValue("@zip", accountToUpdate.ZipCode);
                     int numberOfRowsAffected = sqlCommand.ExecuteNonQuery();
 
                     if (numberOfRowsAffected > 0)
