@@ -1,56 +1,85 @@
 <template>
   <section class="container">
-    <div class="fixed fixed--center" style="z-index: 3">
+      <h1>Foodies Galore!</h1>
+      <div
+      v-if="current"
+      class="fixed fixed--center"
+      style="z-index: 3"
+      :class="{ 'transition': isVisible }">
+
       <Vue2InteractDraggable
         v-if="isVisible"
         :interact-out-of-sight-x-coordinate="1000"
         :interact-max-rotation="15"
         :interact-x-threshold="500"
         :interact-y-threshold="500"
-        @draggedRight="right"
-        
+        :interact-event-bus-events="interactEventBus"
+        interact-block-drag-down
+        @draggedRight="emitAndNext('match')"
+        @draggedLeft="emitAndNext('reject')"
         class="rounded-borders card card--one">
-        
-        <div class="flex flex--center" style="height: 100%">
-          <h1>{{current.text}}</h1>
+        <div style ="height: 100%">
+        <img :src="require(`../views/images/${current.src}`)" class="rounded-borders" />
+        <div class="text">
+        <h2>{{current.name}}, <span>{{current.fact}}</span></h2>
+        </div>
         </div>
       </Vue2InteractDraggable>
     </div>
-    <div
-      v-if="next"
-      class="rounded-borders card card--two fixed fixed--center"
-      style="z-index: 2">
+    <div v-if="next" class="rounded-borders card card--two fixed fixed--center" style="z-index: 2">
       <div class="flex flex--center" style="height: 100%">
+        <img :src="require(`../views/images/${next.src}`)" class="rounded-borders" />
         <h1>{{next.text}}</h1>
       </div>
     </div>
     <div
       v-if="index + 2 < cards.length"
       class="rounded-borders card card--three fixed fixed--center"
-      style="z-index: 1">
-      <div class="flex flex--center" style="height: 100%">
-        <h1>test</h1>
+      style="z-index: 1" >
+      <div style="height: 100%"></div>
+    </div>
+    <div class="footer fixed">
+      <div class="btn btn--decline" @click="reject">
+        <i class="material-icons">Reject</i>
+      </div>
+      <div class="btn btn--like" @click="match">
+        <i class="material-icons">Like</i>
       </div>
     </div>
   </section>
 </template>
 <script>
-
-import { Vue2InteractDraggable } from 'vue2-interact'
+import { Vue2InteractDraggable, InteractEventBus } from "vue2-interact";
+const EVENTS = {
+  MATCH: "match",
+  REJECT: "reject"
+}
 
 export default {
-  name: 'SwipeableCards',
+  name: "SwipeableCards",
   components: { Vue2InteractDraggable },
   data() {
     return {
       isVisible: true,
       index: 0,
+      interactEventBus: {
+        draggedRight: EVENTS.MATCH,
+        draggedLeft: EVENTS.REJECT
+      },
       cards: [
-        { text: 'one' },
-        { text: 'two' },
-        { text: 'three' },
-      ]
-    }
+        {
+          src: "betterchili.jpg",
+          name: "Skyline Chili",
+          fact: "Is better than Goldstar.",
+        },
+        { src: "worstchili.jpg",
+          name: "Goldstar Chili",
+          fact: "Is worse than Skyline.", },
+        { src: "chick_fil_a.jpg",
+          name: "Chick-Fil-a",
+          fact: "That's God's chicken.", },
+      ],
+    };
   },
   computed: {
     current() {
@@ -58,25 +87,106 @@ export default {
     },
     next() {
       return this.cards[this.index + 1]
-    }
+    },
   },
   methods: {
-    right() {
-      setTimeout(() => this.isVisible = false, 200)
+    match() {
+      InteractEventBus.$emit(EVENTS.MATCH)
+    },
+    reject() {
+      InteractEventBus.$emit(EVENTS.REJECT)
+    },
+    emitAndNext(event) {
+      this.$emit(event, this.index);
+      setTimeout(() => (this.isVisible = false), 200)
       setTimeout(() => {
         this.index++
         this.isVisible = true
-      }, 300)
+      }, 200)
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+h1{
+  color: chartreuse;
+}
 .container {
-  background: #eceff1;
+  background: black;
   width: 100%;
   height: 100vh;
+}
+.header {
+  width: 100%;
+  height: 60vh;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  color: white;
+  text-align: center;
+  font-style: italic;
+  font-family: "Engagement", cursive;
+  display: flex;
+  justify-content: space-between;
+  span {
+    display: block;
+    color: chartreuse;
+    font-size: 20px;
+    padding-top: 2rem;
+    // text-shadow: 1px 1px 1px red;
+  }
+}
+
+.footer {
+  width: 77vw;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  padding-bottom: 30px;
+  justify-content: space-around;
+  align-items: center;
+}
+.btn {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  padding: 0.2rem;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.02),
+    0 10px 14px 1px rgba(0, 0, 0, 0.02), 0 4px 18px 3px rgba(0, 0, 0, 0.02);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  &:active {
+    transform: translateY(4px);
+  }
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &::before {
+      content: "";
+    }
+  }
+  &--like {
+    background-color: green;
+    padding: 0.5rem;
+    color: black;
+    box-shadow: 0 10px 13px -6px rgba(0, 0, 0, 0.2),
+      0 20px 31px 3px rgba(0, 0, 0, 0.14), 0 8px 38px 7px rgba(0, 0, 0, 0.12);
+    i {
+      font-size: 16px;
+    }
+  }
+  &--decline {
+    background-color: red;
+    color: black;
+  }
 }
 
 .flex {
@@ -96,25 +206,58 @@ export default {
     transform: translate(-50%, -50%);
   }
 }
+
 .rounded-borders {
   border-radius: 12px;
 }
 .card {
-  width: 300px;
-  height: 400px;
-  color: white;
+  width: 20vw;
+  height: 60vh;
+  color: black;
+  img {
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
   &--one {
-    background-color: pink;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.14),
+      0 2px 1px -1px rgba(0, 0, 0, 0.12);
   }
   &--two {
-    background-color: red;
-    width: 280px;
-    top: 51%;
+    transform: translate(-48%, -48%);
+    box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2),
+      0 10px 14px 1px rgba(0, 0, 0, 0.14), 0 4px 18px 3px rgba(0, 0, 0, 0.12);
   }
   &--three {
-    background-color: orange;
-    width: 260px;
-    top: 51.8%;
+    background: rgba(black, 0.8);
+    transform: translate(-46%, -46%);
+    box-shadow: 0 10px 13px -6px rgba(0, 0, 0, 0.2),
+      0 20px 31px 3px rgba(0, 0, 0, 0.14), 0 8px 38px 7px rgba(0, 0, 0, 0.12);
+  }
+  .text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: white;
+    background: white;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    span {
+      font-weight: normal;
+    }
+  }
+}
+.transition {
+  animation: appear 200ms ease-in;
+}
+
+@keyframes appear {
+  from {
+    transform: translate(-48%, -48%);
+  }
+  to {
+    transform: translate(-50%, -50%);
   }
 }
 </style>
