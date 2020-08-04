@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>Welcome to Foodies Galore!</h1>
-    <p>Click <a href =""> here</a> to take your Foodies questionnaire!</p>
+    <p>Click <a href ="/questionnaire"> here</a> to take your Foodies questionnaire!</p>
   </div>
 </template>
 
