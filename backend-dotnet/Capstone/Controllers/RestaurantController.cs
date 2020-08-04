@@ -66,6 +66,21 @@ namespace Capstone.Controllers
             }
         }
 
+        [HttpGet("type")]
+        public ActionResult<List<string>> GetRestaurantTypes()
+        {
+            List<string> restaurants = restaurantDAO.GetRestaurantTypes();
+
+            if (restaurants != null)
+            {
+                return Ok(restaurants);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
         [HttpGet("zipcode/{zip}")]
         public ActionResult<List<Restaurant>> GetRestaurantByZip(int zip)
         {
