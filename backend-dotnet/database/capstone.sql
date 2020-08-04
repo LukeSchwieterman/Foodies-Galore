@@ -182,3 +182,17 @@ CREATE TABLE user_favorites (
 
 INSERT INTO user_favorites (user_id, restaurant_id)
 VALUES (1, 10);
+
+
+CREATE TABLE user_account (
+	user_id int NOT NULL,
+	user_zip varchar (9) NOT NULL,
+	user_likes_first varchar (30),
+	user_likes_second varchar (30),
+	user_likes_third varchar (30)
+)
+
+INSERT INTO user_account (user_id, user_zip, user_likes_first, user_likes_second, user_likes_third)
+VALUES (1, 45040, 'Mexican', 'American', 'Japanese');
+
+SELECT * FROM user_account
