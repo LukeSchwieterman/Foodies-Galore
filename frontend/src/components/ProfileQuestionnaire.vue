@@ -4,17 +4,21 @@
 
         <div class="field">
             <label for="zip">Zip Code</label>
-            <input type="text" name="zip"  />
+            <input type="text" name="zip" v-model="userProfile.zipCode" required/>
         </div>
         <div class="field">
-            <label for="preferences">Choose your top three:</label>
-            <select id="preferences" name="preferences" size="3" multiple>
-                <option value="Please">Select 3 Preferneces</option>
+            
+            <div v-for="option in availableOptions" v-bind:key="option" >
                 
-            </select>
+                <input id="box" class="single-checkbox" type="checkbox" v-bind:value="option" 
+                v-model="userProfile.preferences"  
+                :disabled="userProfile.preferences.length > 2 && userProfile.preferences.indexOf(option) === -1"/>
+                <label id="box-label" for="checkbox"> {{ option }}</label>
+            </div>
+            
         </div>
             <div class="actions">
-            <button type="submit" v-on:click="saveProfile()">Save Profile</button>
+            <button type="submit" v-on:click="saveProfile">Save Profile</button>
         </div>
 
     </form>
@@ -22,39 +26,48 @@
 
 <script>
 
+
+
 import selectionService from '@/services/SelectionService';
 
 export default {
     data() {
         return {
+            selectionLimit: 3,
             availableOptions: [],            
             userProfile: {
                 zipCode: '',
                 preferences: []
-            }
+            }            
         }
 
     },
-    created: {
-        getAvailableOptions(){
+    created() {
+            
             selectionService.getOptions()
             .then(response => {
-            this.$store.commit("SET_AVAILABLE_OPTIONS", response.data);
-            this.availableOptions = response.data;        
+                this.availableOptions = response.data;        
             })
             .catch(error => {
                 if (error.response) {
-                alert("Could not update profile.");
+                    alert("Could not retrieve types.");
                 }
             });
-        } 
-
-    },
-    computed: {
-
-    },
-    methods: {
         
-    }
+
+    },
+    
+    methods: {
+        saveProfile() {
+            this.$store.commit("SET_USER_PROFILE", this.userProfile) //this mutation is not setup yet in $store
+        },       
+        
+    },
+    
 }
 </script>
+
+<style scoped>
+
+
+</style>
