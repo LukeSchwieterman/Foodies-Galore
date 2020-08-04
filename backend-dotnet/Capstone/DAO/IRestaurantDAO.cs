@@ -18,5 +18,7 @@ namespace Capstone.DAO
         List<Restaurant> GetAllRestaurants();
 
         List<string> GetRestaurantTypes();
+
+        RestaurantDetails GetRestaurantDetails(int restaurantId);
     }
 }

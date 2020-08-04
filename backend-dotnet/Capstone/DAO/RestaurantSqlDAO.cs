@@ -6,7 +6,7 @@ using Capstone.Security;
 using Capstone.Security.Models;
 
 namespace Capstone.DAO
-{
+{ 
     public class RestaurantSqlDAO : IRestaurantDAO
     {
         private readonly string connectionString;
@@ -115,7 +115,8 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT restaurant_id, restaurant_name, restaurant_type, location_zip FROM restaurants WHERE location_zip = @restaurantZip", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT restaurant_id, restaurant_name, restaurant_type, location_zip" +
+                        "FROM restaurants WHERE location_zip = @restaurantZip", conn);
                     cmd.Parameters.AddWithValue("@restaurantZip", restaurantZip);
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -164,6 +165,47 @@ namespace Capstone.DAO
             }
 
             return returnRestaurantTypes;
+        }
+
+        public RestaurantDetails GetRestaurantDetails(int restaurantId)
+        {
+            RestaurantDetails returnRestaurantDetails = null;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand("SELECT restaurant_id, restaurant_description, restaurant_phonenumber, covid_message FROM restaurant_details WHERE restaurant_id = @restaurantId", conn);
+                    cmd.Parameters.AddWithValue("@restaurantId", restaurantId);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.HasRows && reader.Read())
+                    {
+                        returnRestaurantDetails = GetRestaurantDetailsFromReader(reader);
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+            return returnRestaurantDetails;
+        }
+
+        private RestaurantDetails GetRestaurantDetailsFromReader(SqlDataReader reader)
+        {
+            RestaurantDetails rd = new RestaurantDetails()
+            {
+                RestaurantId = Convert.ToInt32(reader["restaurant_id"]),
+                RestaurantDescription = Convert.ToString(reader["restaurant_description"]),
+                RestaurantPhonenumber = Convert.ToString(reader["restaurant_phonenumber"]),
+                CovidMessage = Convert.ToString(reader["covid_message"])
+            };
+
+            return rd;
         }
 
         private Restaurant GetRestaurantFromReader(SqlDataReader reader)

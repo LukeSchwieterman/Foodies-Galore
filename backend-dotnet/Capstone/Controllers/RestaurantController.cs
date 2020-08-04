@@ -66,7 +66,7 @@ namespace Capstone.Controllers
             }
         }
 
-        [HttpGet("type")]
+        [HttpGet("types")]
         public ActionResult<List<string>> GetRestaurantTypes()
         {
             List<string> restaurants = restaurantDAO.GetRestaurantTypes();
@@ -89,6 +89,21 @@ namespace Capstone.Controllers
             if (restaurants != null)
             {
                 return Ok(restaurants);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
+        [HttpGet("{id}/details")]
+        public ActionResult<RestaurantDetails> GetRestaurantDetails(int id)
+        {
+            RestaurantDetails restaurantDetails = restaurantDAO.GetRestaurantDetails(id);
+
+            if (restaurantDetails != null)
+            {
+                return Ok(restaurantDetails);
             }
             else
             {
