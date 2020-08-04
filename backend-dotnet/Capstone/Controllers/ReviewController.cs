@@ -21,10 +21,10 @@ namespace Capstone.Controllers
             reviewDAO = _reviewDAO;
         }
 
-        [HttpGet]
-        public ActionResult<List<Review>> GetAllReviews()
+        [HttpGet("{id}")]
+        public ActionResult<Review> GetReview(int id)
         {
-            List<Review> review = reviewDAO.GetAllReviews();
+            Review review = reviewDAO.GetReview(id);
 
             if (review != null)
             {
