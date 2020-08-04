@@ -115,7 +115,8 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT restaurant_id, restaurant_name, restaurant_type, location_zip FROM restaurants WHERE location_zip = @restaurantZip", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT restaurant_id, restaurant_name, restaurant_type, location_zip" +
+                        "FROM restaurants WHERE location_zip = @restaurantZip", conn);
                     cmd.Parameters.AddWithValue("@restaurantZip", restaurantZip);
                     SqlDataReader reader = cmd.ExecuteReader();
 
