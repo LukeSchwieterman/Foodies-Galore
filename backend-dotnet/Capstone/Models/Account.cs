@@ -10,7 +10,9 @@ namespace Capstone.Models
     {
         public int UserId { get; set; }
         public int ZipCode { get; set; }
-        public List<string> LikedTypes { get; set; }
+        public string LikedTypeOne { get; set; }
+        public string LikedTypeTwo { get; set; }
+        public string LikedTypeThree { get; set; }
     }
 
     public class UserFavorited
