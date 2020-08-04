@@ -15,35 +15,6 @@ namespace Capstone.DAO
         {
             connectionString = dbConnectionString;
         }
-        public List<Review> GetAllReviews()
-        {
-            List<Review> returnReviews = new List<Review>();
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-
-                    SqlCommand cmd = new SqlCommand("SELECT restaurant_id, restaurant_review, restaurant_star_rating FROM restaurant_reviews", conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-                            returnReviews.Add(GetReviewFromReader(reader));
-                        }
-                    }
-                }
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-
-            return returnReviews;
-        }
 
         private Review GetReviewFromReader(SqlDataReader reader)
         {

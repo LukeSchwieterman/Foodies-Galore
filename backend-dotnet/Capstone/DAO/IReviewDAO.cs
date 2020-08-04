@@ -11,6 +11,5 @@ namespace Capstone.DAO
     {
         Review GetReview(int reviewId);
 
-        List<Review> GetAllReviews();
     }
 }

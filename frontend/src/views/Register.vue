@@ -36,6 +36,8 @@
       <button class="btn btn-lg btn-primary btn-block" type="submit">
         Create Account
       </button>
+      <div><img class="registerphonespicture" src="../views/images/foodphones.jpg"/></div>
+      <div><img class="bobsburgerstacked" src="../views/images/bobsjumpingburger.jpg"/></div>
     </form>
   </div>
 </template>
@@ -90,4 +92,35 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+#register {
+
+    font-family: "Impact", Charcoal, sans-serif;
+    color: maroon;
+    background-color: gold;
+}
+button{
+  background-color: maroon;
+  color: white;
+}
+.registerphonespicture{
+  margin-top: 15px;
+  margin-right: 900px;
+  border-style: solid;
+  border-color: maroon;
+  border-top-width: 20px;
+  border-left-width: 20px;
+  border-right-width: 20px;
+  border-bottom-width: 20px;
+  display: grid;
+}
+.bobsburgerstacked{
+  border-style: solid;
+  border-color: maroon;
+  border-top-width: 20px;
+  border-left-width: 20px;
+  border-right-width: 20px;
+  border-bottom-width: 20px;
+  display: grid;
+}
+</style>

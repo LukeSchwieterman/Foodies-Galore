@@ -74,3 +74,12 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+#login {
+
+    font-family: "Impact", Charcoal, sans-serif;
+    color: maroon;
+    background-color: gold;
+}
+</style>
