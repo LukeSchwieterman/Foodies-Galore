@@ -50,7 +50,7 @@ namespace Capstone.DAO
             Review v = new Review()
             {
                 RestaurantId = Convert.ToInt32(reader["restaurant_id"]),
-                Rating = Convert.ToInt32(reader["restaurant_rating"]),
+                Rating = Convert.ToInt32(reader["restaurant_star_rating"]),
                 SubmittedReview = Convert.ToString(reader["restaurant_review"])
             };
 
@@ -67,7 +67,7 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT restaurant_id, restaurant_review, restaurant_star_rating" + 
+                    SqlCommand cmd = new SqlCommand("SELECT restaurant_id, restaurant_review, restaurant_star_rating " + 
                         "FROM restaurant_reviews WHERE restaurant_id = @restaurantId", conn);
                     cmd.Parameters.AddWithValue("@restaurantId", restaurantId);
                     SqlDataReader reader = cmd.ExecuteReader();
