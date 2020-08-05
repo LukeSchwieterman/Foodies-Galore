@@ -33,6 +33,7 @@
 import selectionService from '@/services/SelectionService';
 
 export default {
+    name: 'profile-questionnaire',
     data() {
         return {
             selectionLimit: 3,
