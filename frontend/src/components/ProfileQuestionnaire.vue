@@ -68,28 +68,28 @@ export default {
                     this.isNewUser = false;
                 }       
             })
-            .catch(error => {
-                if (error.response) {
-                    alert("Could not retrieve your profile.");
-                }
-            });
+            // .catch(error => {
+            //     if (error.response) {
+            //         alert("Could not retrieve your profile.");
+            //     }
+            // });
         
 
     },
     
     methods: {
         saveProfile() {
-            // would prefer to send preferences as an array and let the back end handle - this isn't very flexible.
+            
             this.userProfile.likedTypeOne = this.preferences[0];
             this.userProfile.likedTypeTwo = this.preferences[1];
             this.userProfile.likedTypeThree = this.preferences[2];
-            //this.$store.commit("SET_USER_PROFILE", this.userProfile); // is this needed ??
+            
 
             if(this.isNewUser){
                 selectionService.addProfile(this.userProfile)
                 .then(response => {
                     if (response.status === 200) {
-                        this.$router.push(`/`);
+                        this.$router.push(`/swipe`);
                     }
                 })
                 .catch(error => {
@@ -103,7 +103,7 @@ export default {
                 selectionService.updateProfile(this.userProfile)
                 .then(response => {
                     if (response.status === 200) {
-                        this.$router.push(`/`);
+                        this.$router.push(`/swipe`);
                     }
                 })
                 .catch(error => {
