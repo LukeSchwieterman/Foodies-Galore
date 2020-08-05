@@ -12,3 +12,10 @@
   </div>
 </template>
 
+<style scoped>
+*{
+  font-family: "Impact", Charcoal, sans-serif;
+    color: maroon;
+    background-color: gold;
+}
+</style>

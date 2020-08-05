@@ -8,7 +8,7 @@
 <script>
 
 import ProfileQuestionnaire from '@/components/ProfileQuestionnaire'
-import selectionService from '@/services/SelectionService';
+
 
 export default {
 
@@ -16,28 +16,7 @@ export default {
         ProfileQuestionnaire,
     },
 
-    methods: {
-        saveProfile() {
-            // would prefer to send preferences as an array and let the back end handle - this isn't very flexible.
-            this.userProfile.likedTypeOne = this.preferences[0];
-            this.userProfile.likedTypeTwo = this.preferences[1];
-            this.userProfile.likedTypeThree = this.preferences[2];
-            //this.$store.commit("SET_USER_PROFILE", this.userProfile); // is this needed ??
-
-            selectionService.addProfile(this.userProfile)
-                .then(response => {
-                    if (response.status === 201) {
-                        this.$router.push(`/`);
-                    }
-                })
-                .catch(error => {
-                    if (error.response) {
-                        alert("Could not update profile.");            
-                    }
-                });
-        },       
-        
-    },
+    
     
 }
 </script>
