@@ -6,10 +6,10 @@ const http = axios.create({
 export default {
 
     getRestaurant() {
-        return http.get('/restaurants');
+        return http.get('/restaurant');
     },
 
     getRestaurants() {
-        return http.get('/restaurants/${restaurantID}')
+        return http.get('/restaurant/${restaurantId}')
     }
 }
