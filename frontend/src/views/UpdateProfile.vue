@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>Add Profile View</h2>
+        <h2>Update Profile View</h2>
         <profile-questionnaire />
     </div>
 </template>
@@ -24,9 +24,9 @@ export default {
             this.userProfile.likedTypeThree = this.preferences[2];
             //this.$store.commit("SET_USER_PROFILE", this.userProfile); // is this needed ??
 
-            selectionService.addProfile(this.userProfile)
+            selectionService.updateProfile(this.userProfile)
                 .then(response => {
-                    if (response.status === 201) {
+                    if (response.status === 200) {
                         this.$router.push(`/`);
                     }
                 })

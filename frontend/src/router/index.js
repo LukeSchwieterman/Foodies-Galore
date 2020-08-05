@@ -8,6 +8,8 @@ import store from '../store/index'
 import swipe from '../views/swipe.vue'
 import Questionnaire from '../components/ProfileQuestionnaire.vue'
 import restaurants from '../views/restaurants.vue'
+import CreateProfile from '@/views/CreateProfile.vue'
+import UpdateProfile from '@/views/UpdateProfile.vue'
 
 Vue.use(Router)
 
@@ -76,6 +78,22 @@ const router = new Router({
       path: '/restaurants',
       name: 'restaurants',
       component: restaurants,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/add-profile',
+      name: 'AddProfile',
+      component: CreateProfile,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/update-profile',
+      name: 'UpdateProfile',
+      component: UpdateProfile,
       meta: {
         requiresAuth: true
       }

@@ -36,7 +36,7 @@ export default {
     name: 'profile-questionnaire',
     data() {
         return {
-            selectionLimit: 3,
+            isNewUser: true,
             availableOptions: [],            
             preferences: [],            
             userProfile: {
@@ -60,6 +60,19 @@ export default {
                     alert("Could not retrieve types.");
                 }
             });
+
+            selectionService.getProfile()
+            .then(response => {
+                this.userProfile = response.data; 
+                if(response.data){
+                    this.isNewUser = false;
+                }       
+            })
+            .catch(error => {
+                if (error.response) {
+                    alert("Could not retrieve your profile.");
+                }
+            });
         
 
     },
@@ -72,7 +85,22 @@ export default {
             this.userProfile.likedTypeThree = this.preferences[2];
             //this.$store.commit("SET_USER_PROFILE", this.userProfile); // is this needed ??
 
-            selectionService.addProfile(this.userProfile)
+            if(this.isNewUser){
+                selectionService.addProfile(this.userProfile)
+                .then(response => {
+                    if (response.status === 200) {
+                        this.$router.push(`/`);
+                    }
+                })
+                .catch(error => {
+                    if (error.response) {
+                        alert("Could not create profile.");            
+                    }
+                });
+            }
+            else
+            {
+                selectionService.updateProfile(this.userProfile)
                 .then(response => {
                     if (response.status === 200) {
                         this.$router.push(`/`);
@@ -83,7 +111,27 @@ export default {
                         alert("Could not update profile.");            
                     }
                 });
-        },       
+            }
+            
+            
+        },    
+        
+        temp(){
+            this.userProfile.likedTypeOne = this.preferences[0];
+            this.userProfile.likedTypeTwo = this.preferences[1];
+            this.userProfile.likedTypeThree = this.preferences[2];
+            selectionService.updateProfile(this.userProfile)
+                .then(response => {
+                    if (response.status === 200) {
+                        this.$router.push(`/`);
+                    }
+                })
+                .catch(error => {
+                    if (error.response) {
+                        alert("Could not update profile.");            
+                    }
+                });
+        }
         
     },
     
