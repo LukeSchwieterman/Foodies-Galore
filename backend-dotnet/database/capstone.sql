@@ -71,7 +71,7 @@ VALUES ('Olive Garden', 'Italian', '45069');
 SELECT * FROM restaurants;
 
 CREATE TABLE restaurant_details (
-	restaurant_id int NOT NULL,
+	restaurant_id int NOT NULL PRIMARY KEY,
 	restaurant_description varchar(400),
 	restaurant_phonenumber varchar(12),
 	covid_message varchar(400)
@@ -139,9 +139,11 @@ requiring face coverings, and will be temperature checking all staff, social dis
 
 CREATE TABLE restaurant_reviews (
 	restaurant_id int NOT NULL,
+	review_id int IDENTITY (5, 5) NOT NULL PRIMARY KEY,
 	restaurant_review varchar(250),
 	restaurant_star_rating int NOT NULL
 )
+
 
 
 INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
@@ -190,6 +192,7 @@ CREATE TABLE user_account (
 	user_likes_first varchar (30),
 	user_likes_second varchar (30),
 	user_likes_third varchar (30)
+	CONSTRAINT PK_user_account PRIMARY KEY (user_id)
 )
 
 INSERT INTO user_account (user_id, user_zip, user_likes_first, user_likes_second, user_likes_third)

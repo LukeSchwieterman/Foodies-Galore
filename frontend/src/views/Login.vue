@@ -33,6 +33,7 @@
       />
       <router-link :to="{ name: 'register' }">Need an account?</router-link>
       <button type="submit">Sign in</button>
+      <div><img class="burgerpizzapile" src="../views/images/burgerpizzapile.jpg"/></div>
     </form>
   </div>
 </template>
@@ -81,5 +82,14 @@ export default {
     font-family: "Impact", Charcoal, sans-serif;
     color: maroon;
     background-color: gold;
+}
+.burgerpizzapile{
+  margin-top: 50px;
+  border-style: solid;
+  border-color: maroon;
+  border-top-width: 10px;
+  border-left-width: 10px;
+  border-right-width: 10px;
+  border-bottom-width: 10px;
 }
 </style>
