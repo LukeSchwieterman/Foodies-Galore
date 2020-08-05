@@ -36,8 +36,10 @@
       <button class="btn btn-lg btn-primary btn-block" type="submit">
         Create Account
       </button>
+      <section class="container">
       <div><img class="registerphonespicture" src="../views/images/foodphones.jpg"/></div>
       <div><img class="bobsburgerstacked" src="../views/images/bobsjumpingburger.jpg"/></div>
+      </section>
     </form>
   </div>
 </template>
@@ -103,6 +105,11 @@ button{
   background-color: maroon;
   color: white;
 }
+.container{
+  background: gold;
+  margin: auto;
+  padding: 10px;
+}
 .registerphonespicture{
   margin-top: 15px;
   margin-right: 900px;
@@ -112,7 +119,6 @@ button{
   border-left-width: 20px;
   border-right-width: 20px;
   border-bottom-width: 20px;
-  display: grid;
 }
 .bobsburgerstacked{
   border-style: solid;
@@ -121,6 +127,6 @@ button{
   border-left-width: 20px;
   border-right-width: 20px;
   border-bottom-width: 20px;
-  display: grid;
+  nav-up: auto;
 }
 </style>
