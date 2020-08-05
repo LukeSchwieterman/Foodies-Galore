@@ -66,7 +66,68 @@ INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
 VALUES ('Fox and Hound', 'British', '45239');
 
 INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Olive Garden', 'Italian', '45069');
+VALUES ('Olive Garden', 'Italian', '45069')
+
+INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
+VALUES ('Cheesecake Factory', 'American', '45069')
+
+INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
+VALUES ('Qdoba', 'Mexican', '45040')
+
+INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
+VALUES ('Acapulcos', 'Mexican', '45239')
+
+INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
+VALUES ('Kyoto', 'Japanese', '45069')
+
+INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
+VALUES ('Roll On In', 'Japanese', '45040')
+
+INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
+VALUES ('Piada', 'Italian', '45040')
+
+INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
+VALUES ('Carrabas', 'Italian', '45239')
+
+INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
+VALUES ('Tasty Pot', 'Chinese', '45040')
+
+INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
+VALUES ('Thai Koon Kitchen', 'Thai', '45069')
+
+INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
+VALUES ('Bangkok Express', 'Thai', '45040')
+
+INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
+VALUES ('P.F. Changs', 'Chinese', '45069')
+
+INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
+VALUES ('Gyro Express', 'Greek', '45040')
+
+INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
+VALUES ('Santorini', 'Greek', '45239')
+
+INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
+VALUES ('Pub at Rookwood Mews', 'British', '45239')
+
+INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
+VALUES ('Cock and Bull Public House', 'British', '45069')
+
+INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
+VALUES ('Bamboo House', 'Japanese', '45040')
+
+INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
+VALUES ('Wingstop', 'American', '45239')
+
+INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
+VALUES ('La PiNata', 'Mexican', '45239')
+
+INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
+VALUES ('Hook Fish & Chicken', 'British', '45069')
+
+INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
+VALUES ('Biagios Bistro', 'Italian', '45040');
+
 
 SELECT * FROM restaurants;
 
@@ -135,6 +196,99 @@ VALUES (100, 'Italian generosity is always on the table. At Olive Garden, we kno
 priority. While our dining rooms were closed, we took great care to continue serving ToGo orders. But now that we will be reopening dine-in, we will be
 requiring face coverings, and will be temperature checking all staff, social distancing and sanitizing all areas multiple times a day.');
 
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (110, 'Our story begins in Detroit in the 1940s. Evelyn Overton found a recipe in the local paper that would inspire her "Original" Cheesecake.
+Everyone loved her recipe so much that she decided to open a small cheesecake shop, which would one day grow into The Cheesecake Factory', '513-755-2761',
+'The health and wellbeing of our staff members and guests is our top priority, and we are approaching the reopening of our dining rooms with that as our
+guiding principle.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (120, 'At Qdoba, our mission is to bring flavor to peoples lives through our communities, our people, our restaurants, and our food. We believe
+every individual makes a difference, and that even the smallest detail or act of kindness can make someones life a little more flavorful.', '513-770-0310',
+'As COVID-19 continues to impact all of us, our teams are continuing to work hard serving you freshly prepared, flavorful meals. We are working to safely
+welcome you back into our restaurants')
+
+INSERT INTO restaurant_details(restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (130, 'Authentic Mexican cuisine your whole family will love!', '513-874-5777', 'As we continue to monitor the developemtns around COVID-19 news, our locations
+have adjusted their services in order to continue serving our community as best we can.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (140, 'Kyoto Japanese Cuisine brings to the area the delicacy and quality of the cuisine from Japan.', '513-583-8897', 'We are currently open carry out only,
+full menu is available. Our staff will wear masks and gloves and we will make sure to clean all surfaces and doors thoroughly every 30 minutes.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (150, 'We offer a menu that explores the edge of multi-cultural boundaries, bringing sushi burritos, sushi tacos, sushi bowls and even sushi donuts
+to a whole new level. Our food is fast, fresh and affordable and takes sushi to a whole other level.', '513-480-1335', 'Our number one priority is you! And due to that,
+our entire staff will be wearing masks as well as gloves that will be changed frequently, and sanitizing surfaces often.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (160, 'Piada started as an idea scribbled on a napkin during a visit to Rimini, Italy. Our chefs found distinct charm
+in the family operated food carts and corner markets scattered throughout the streets of the city.', '513-492-9931', 'While our dining rooms
+are reopening as local restrictions ease, we continue to offer in-store carry out, online, Curbside or Drive Thru Pick up.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (170, 'We are two Sicilian boys from Texas who love to cook and eat. We love the Sicilian food our parents and grandparents cooked.',
+'513-339-0900', 'Our dining rooms are starting to safely open at limited capacity and hours to comply with regulations. We are happy to welcome you back and want
+to ensure the safety of your visit.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (180, 'At tasty pot, we firmly believe that in order to live well, you must eat well. It is our mission to provide healthy dining in a comfortable modern
+setting with excellent service.', '513-580-8888', 'Due to the COVID-19 pandemic, we are committed to the health and safety of our guests and staffs. Due to this,
+we will remain carry-out and delivery only, as well as masking up and sanitizing all areas.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (190, 'Unpretentious bistro featuring familiar Thai dishes such as red curry, pad thai and fried rice.', '513-860-0143', 'Due to the current public situation,
+we are strictly carry out as of now. We will be taking safety and cleanliness precautions to ensure the safety of our guests.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (200, 'Our Thai restaurant is known for its modern interpretation of classic dishes and its insistence on only using high quality fresh ingredients',
+'513-381-2100', 'We are open for takeout and delivery during this time. We will be following regulations as far as cleanliness and social distancing.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (210, 'P.F. Changs is an Asian restaurant concept founded on making food from scratch every day in every restaurant. Created in 1993, we are the first
+multi-unit restaurant concept in the US to honor and celebrate the 2,000 year old tradition of wok cooking as the center of every guest experience.', '513-531-4567',
+'Our team members are ready to serve you, your friends and your family! Reservations are now being accepted at select dining rooms and we could not be more excited.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (220, 'Come to Gyro Express for some traditional Mediterranean cuisine.', '513-832-1845', 'For the safety of our staff and guests, we are currently
+delivery and takeout only.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (230, 'A family restaurant serving Greek food as well as daily specials and soup. We serve breakfast, lunch and dinner all day long.',
+'513-662-8080', 'Starting May 26th we will be reopening our dining room, sanitizing all spaces, and wearing protective gear.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (240, 'If you were looking for a great place with British vibes, this is the place.', '513-841-2748', 'Beginning Friday, May 15th, our patios will be reopening,
+and the 21st our dining rooms. We will be wearing masks, gloves, and following proper sanitization as well as social distancing guidelines.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (250, 'Voted best fix & chips in the city four locations.', '513-771-4253', 'We are now open for limited inside and outside seating!
+We have been working overtime preparing for your return; cleaning, sanitizing and developing new protocols to safely once again serve our guests.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (260, 'Bamboo House is a hidden jewel just waiting to be discovered by your taste buds.', '513-574-8555', 'Staff will be wearing masks and gloves,
+sanitizing and social distancing in order to adhere to guidelines.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (270, 'What began as a small buffalo-style chicken wing restaurant in Garland, Texas, continues to soar to great heights. Today there are more than
+1,400 restaurants across the world.', '513-481-9464', 'During these uncertain times, we will be taking the time and effort to ensure the safety of our staff
+and guests through mask-wearing, glove usage and proper sanitization.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (280, 'Our mission over the years has been very simple. To showcase the best Mexico has to offer and to impact the hearts of Americans one
+delicious taco at a time.', '513-923-2733', 'Like many of you, we here at La Pinata are excited to open our dine in area back up and try to return back to normality.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (290, 'We provide the best food in the state! Come get a taste of Britain.', '513-771-1868', 'We are working diligently to ensure the safety of our
+guests and staff with masks, gloves, sanitation and social distancing.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (300, 'Charming neighborhood hangout serving up classic Italian cuisine, desserts, wine and cocktails.', '513-861-4777',
+'There have been service changes such as limiting the number of guests per table and in the restaurant as a total. We are doing everything we can
+to comply with regulations and also deliver an impeccable experience.');
+
+
+
 
 
 CREATE TABLE restaurant_reviews (
@@ -144,7 +298,7 @@ CREATE TABLE restaurant_reviews (
 	restaurant_star_rating int NOT NULL
 )
 
-
+SELECT * FROM restaurant_details;
 
 INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
 VALUES (10, 'Higher quality meat than a typical hole in the wall chinese place. Delicious!', 4);
