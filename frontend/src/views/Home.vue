@@ -2,7 +2,7 @@
   <div class="home">
     <h1>Welcome to Foodies Galore!</h1>
     <h2 class="description">This application helps foodies looking for a good bite to eat decide where to go!</h2>
-    <p>Click <a href =""> here</a> to take your Foodies questionnaire!</p>
+    <p>Click <a href ="questionnaire"> here</a> to take your Foodies questionnaire!</p>
   </div>
 </template>
 

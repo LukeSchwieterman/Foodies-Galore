@@ -54,7 +54,7 @@ namespace Capstone.DAO
                     conn.Open();
 
                     SqlCommand cmd = new SqlCommand("INSERT INTO user_account (user_id, user_zip, user_likes_first, user_likes_second, user_likes_third)" +
-                        " VALUES (@user_zip, @user_likes_first, @user_likes_second, @user_likes_third)", conn);
+                        " VALUES (@user_id, @user_zip, @user_likes_first, @user_likes_second, @user_likes_third)", conn);
                     cmd.Parameters.AddWithValue("@user_id", account.UserId);
                     cmd.Parameters.AddWithValue("@user_zip", account.ZipCode);
                     cmd.Parameters.AddWithValue("@user_likes_first", account.LikedTypeOne);

@@ -40,12 +40,12 @@ namespace Capstone.Controllers
         }
 
         [HttpPut]
-        public ActionResult<Account> UpdateAccount()
+        public ActionResult<Account> UpdateAccount(Account updatedAccount)
         {
             var userId = Convert.ToInt32(User.FindFirst("sub")?.Value);
             Account existingAccount = accountDAO.GetAccount(userId);
 
-            Account result = accountDAO.UpdateAccount(existingAccount);
+            Account result = accountDAO.UpdateAccount(updatedAccount);
             return Ok(result);
         }
 
