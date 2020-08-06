@@ -31,8 +31,10 @@
         v-model="user.password"
         required
       />
-      <router-link :to="{ name: 'register' }">Need an account?</router-link>
-      <button type="submit">Sign in</button>
+      
+      <button type="submit" id="sign-in" class="form-control">Sign in</button>
+      <router-link :to="{ name: 'register' }" >Need an account?</router-link>
+
       <div><img class="burgerpizzapile" src="../views/images/burgerpizzapile.jpg"/></div>
     </form>
   </div>
@@ -92,4 +94,29 @@ export default {
   border-right-width: 10px;
   border-bottom-width: 10px;
 }
+
+.form-signin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  
+}
+
+.form-control {
+  width: 15rem;
+  justify-content: center;
+  background-color: rgb(247, 219, 169);
+}
+
+#sign-in {
+  background-color: maroon;
+  color: gold;
+}
+
+#sign-in:hover {
+  background-color: gold;
+  color: maroon;
+}
+
 </style>
