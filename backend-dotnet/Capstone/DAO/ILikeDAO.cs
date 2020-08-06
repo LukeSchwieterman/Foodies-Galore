@@ -1,11 +1,14 @@
-﻿using System;
+﻿using Capstone.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Capstone.DAO
 {
-    public class ILikeDAO
+    public interface ILikeDAO
     {
+        List<Like> GetLikeByUser(int user_id);
+        List<Like> GetLikeAdded(int userId);
     }
 }

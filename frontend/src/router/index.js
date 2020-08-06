@@ -7,10 +7,9 @@ import Register from '../views/Register.vue'
 import store from '../store/index'
 import swipe from '../views/swipe.vue'
 import Questionnaire from '../components/ProfileQuestionnaire.vue'
-import restaurants from '../views/restaurants.vue'
 import CreateProfile from '@/views/CreateProfile.vue'
 import UpdateProfile from '@/views/UpdateProfile.vue'
-import RestaurantDetails from '@/views/Details.vue'
+import Details from '../views/Details.vue'
 
 Vue.use(Router)
 
@@ -76,14 +75,6 @@ const router = new Router({
       }
     },
     {
-      path: '/restaurants',
-      name: 'restaurants',
-      component: restaurants,
-      meta: {
-        requiresAuth: true
-      }
-    },
-    {
       path: '/add-profile',
       name: 'AddProfile',
       component: CreateProfile,
@@ -99,13 +90,12 @@ const router = new Router({
         requiresAuth: true
       }
     },
-
     {
       path: '/details',
-      name: 'details',
-      component: RestaurantDetails,
+      name: 'Details',
+      component: Details,
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
     },
   ]

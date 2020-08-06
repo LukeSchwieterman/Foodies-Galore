@@ -5,36 +5,37 @@
       <div
         class="alert alert-danger"
         role="alert"
-        v-if="invalidCredentials"
-      >Invalid username and password!</div>
+        v-if="invalidCredentials">
+      Invalid username and password!
+      </div>
       <div
         class="alert alert-success"
         role="alert"
         v-if="this.$route.query.registration"
       >Thank you for registering, please sign in.</div>
-      <label for="username" class="sr-only">Username</label>
-      <input
-        type="text"
-        id="username"
-        class="form-control"
-        placeholder="Username"
-        v-model="user.username"
-        required
-        autofocus
-      />
-      <label for="password" class="sr-only">Password</label>
-      <input
-        type="password"
-        id="password"
-        class="form-control"
-        placeholder="Password"
-        v-model="user.password"
-        required
-      />
-      
-      <button type="submit" id="sign-in" class="form-control">Sign in</button>
-      <router-link :to="{ name: 'register' }" >Need an account?</router-link>
-
+      <div>
+        <label for="username" class="sr-only">Username</label>
+        <input
+          type="text"
+          id="username"
+          class="form-control"
+          placeholder="Username"
+          v-model="user.username"
+          required
+          autofocus
+        />
+        <label for="password" class="sr-only">Password</label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          placeholder="Password"
+          v-model="user.password"
+          required
+        />      
+        <button type="submit" id="sign-in" class="btn-primary form-control">Sign in</button>
+      </div>
+      <router-link :to="{ name: 'register' }" id="register-link" >Need an account?</router-link>
       <div><img class="burgerpizzapile" src="../views/images/burgerpizzapile.jpg"/></div>
     </form>
   </div>
@@ -80,13 +81,13 @@ export default {
 
 <style scoped>
 #login {
-
-    font-family: "Impact", Charcoal, sans-serif;
-    color: maroon;
-    background-color: gold;
+  padding: 1rem 0;
+  font-family: "Impact", Charcoal, sans-serif;
+  color: maroon;
+  background-color: gold;
 }
 .burgerpizzapile{
-  margin-top: 50px;
+  margin-top: 2rem;
   border-style: solid;
   border-color: maroon;
   border-top-width: 10px;
@@ -117,6 +118,10 @@ export default {
 #sign-in:hover {
   background-color: gold;
   color: maroon;
+}
+
+#register-link {
+  margin: 0.5rem 0 0;   
 }
 
 </style>
