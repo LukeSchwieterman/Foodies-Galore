@@ -30,103 +30,134 @@ INSERT INTO users (username, password_hash, salt, user_role) VALUES ('admin','Yh
 
 GO
 
+CREATE TABLE restaurant_type (
+	type_id int IDENTITY (2, 2) NOT NULL PRIMARY KEY,
+	type varchar(30) NOT NULL
+)
+
+INSERT INTO restaurant_type (type)
+VALUES ('American')
+
+INSERT INTO restaurant_type (type)
+VALUES ('Mexican')
+
+INSERT INTO restaurant_type (type)
+VALUES ('Greek')
+
+INSERT INTO restaurant_type (type)
+VALUES ('Thai')
+
+INSERT INTO restaurant_type (type)
+VALUES ('Japanese')
+
+INSERT INTO restaurant_type (type)
+VALUES ('Chinese')
+
+INSERT INTO restaurant_type (type)
+VALUES ('Italian')
+
+INSERT INTO restaurant_type (type)
+VALUES ('British')
+
+INSERT INTO restaurant_type (type)
+VALUES ('Indian');
 
 CREATE TABLE restaurants (
 	restaurant_id int IDENTITY (10,10) NOT NULL PRIMARY KEY,
+	type_id int NOT NULL,
 	restaurant_name varchar(80) NOT NULL,
-	restaurant_type varchar(50) NOT NULL,
 	location_zip varchar(9)
 )
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Yummy Bowl', 'Chinese', '45069');
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Yummy Bowl', '45069', 12);
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Chick Fil A', 'American', '45239');
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Chick Fil A', '45239', 2);
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Bob Evans', 'American', '45040');
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Bob Evans', '45040', 2);
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Skyline', 'Greek', '45239');
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Skyline', '45239', 6);
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Miyako Sushi&Grill', 'Japanese', '45069');
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Miyako Sushi&Grill', '45069', 10);
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('El Rancho Grande', 'Mexican', '45040');
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('El Rancho Grande', '45040', 4);
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Banana Leaf', 'Thai', '45040');
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Banana Leaf', '45040', 8);
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Bawarchi', 'Indian', '45069');
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Bawarchi', '45069', 18);
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Fox and Hound', 'British', '45239');
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Fox and Hound', '45239', 16);
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Olive Garden', 'Italian', '45069')
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Olive Garden', '45069', 14)
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Cheesecake Factory', 'American', '45069')
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Cheesecake Factory', '45069', 2)
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Qdoba', 'Mexican', '45040')
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Qdoba', '45040', 4)
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Acapulcos', 'Mexican', '45239')
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Acapulcos', '45239', 4)
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Kyoto', 'Japanese', '45069')
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Kyoto', '45069', 10)
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Roll On In', 'Japanese', '45040')
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Roll On In', '45040', 10)
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Piada', 'Italian', '45040')
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Piada', '45040', 14)
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Carrabas', 'Italian', '45239')
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Carrabas', '45239', 14)
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Tasty Pot', 'Chinese', '45040')
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Tasty Pot', '45040', 12)
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Thai Koon Kitchen', 'Thai', '45069')
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Thai Koon Kitchen', '45069', 8)
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Bangkok Express', 'Thai', '45040')
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Bangkok Express', '45040', 8)
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('P.F. Changs', 'Chinese', '45069')
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('P.F. Changs', '45069', 12)
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Gyro Express', 'Greek', '45040')
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Gyro Express', '45040', 6)
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Santorini', 'Greek', '45239')
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Santorini', '45239', 6)
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Pub at Rookwood Mews', 'British', '45239')
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Pub at Rookwood Mews', '45239', 16)
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Cock and Bull Public House', 'British', '45069')
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Cock and Bull Public House', '45069', 16)
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Bamboo House', 'Japanese', '45040')
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Bamboo House', '45040', 12)
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Wingstop', 'American', '45239')
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Wingstop', '45239', 2)
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('La PiNata', 'Mexican', '45239')
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('La PiNata', '45239', 4)
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Hook Fish & Chicken', 'British', '45069')
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Hook Fish & Chicken', '45069', 16)
 
-INSERT INTO restaurants (restaurant_name, restaurant_type, location_zip)
-VALUES ('Biagios Bistro', 'Italian', '45040');
+INSERT INTO restaurants (restaurant_name, location_zip, type_id)
+VALUES ('Biagios Bistro', '45040', 14);
 
 
 SELECT * FROM restaurants;
@@ -292,8 +323,8 @@ to comply with regulations and also deliver an impeccable experience.');
 
 
 CREATE TABLE restaurant_reviews (
-	restaurant_id int NOT NULL,
 	review_id int IDENTITY (5, 5) NOT NULL PRIMARY KEY,
+	restaurant_id int NOT NULL,
 	restaurant_review varchar(250),
 	restaurant_star_rating int NOT NULL
 )
@@ -301,34 +332,95 @@ CREATE TABLE restaurant_reviews (
 SELECT * FROM restaurant_details;
 
 INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
-VALUES (10, 'Higher quality meat than a typical hole in the wall chinese place. Delicious!', 4);
+VALUES (10, 'Higher quality meat than a typical hole in the wall chinese place. Delicious!', 4)
 
 INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
-VALUES (20, 'Great place, great people, great service, great food!', 4);
+VALUES (20, 'Great place, great people, great service, great food!', 4)
 
 INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
-VALUES (30, 'Comfort food, reasonable prices and good service.', 3);
+VALUES (30, 'Comfort food, reasonable prices and good service.', 3)
 
 INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
-VALUES (40, 'Always great food and always super friendly staff/service.', 4);
+VALUES (40, 'Always great food and always super friendly staff/service.', 4)
 
 INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
-VALUES (50, 'Excellent food and service, great place for birthday party!', 4);
+VALUES (50, 'Excellent food and service, great place for birthday party!', 4)
 
 INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
-VALUES (60, 'Good food, friendly service, and tasty margaritas!', 3);
+VALUES (60, 'Good food, friendly service, and tasty margaritas!', 3)
 
 INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
-VALUES (70, 'The atmosphere was very cool, a bit edgy in a cool and intimate setting.', 4);
+VALUES (70, 'The atmosphere was very cool, a bit edgy in a cool and intimate setting.', 4)
 
 INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
-VALUES (80, 'Best indian food in town!', 4);
+VALUES (80, 'Best indian food in town!', 4)
 
 INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
-VALUES (90, 'Fantastic selection of beer/wine, good food, and good service.', 3);
+VALUES (90, 'Fantastic selection of beer/wine, good food, and good service.', 3)
 
 INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
-VALUES (100, 'Great service, love the breadsticks and salad.', 3);
+VALUES (100, 'Great service, love the breadsticks and salad.', 3)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (110, 'Great food, great service, and a wide variety of dishes to choose from.', 5)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (120, 'Better sauces and queso than the other burrito chains.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (130, 'The menu was plentiful, huge selection.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (140, 'Big variety of food experiences.', 3)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (150, 'Very fresh and tasty, high quality ingredients and excellent service.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (160, 'Omg I just had the best piada experience!', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (170, 'The atmosphere, the menu and staff make this a great choice!', 3)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (180, 'Great place for family dinner, friends, small groups, kids or casual date!', 5)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (190, 'Really good Thai food for good prices.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (200, 'I would choose this location over other Thai places in the area.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (210, 'Upscale Chinese that we really enjoy!', 5)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (220, 'Very good service, reasonable price and uality of food!', 3)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (230, 'I enjoyed the swift customer service and well cooked dishes.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (240, 'The staff and decor along with the beer selection make this an experience.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (250, 'A must visit place! Try the fish and chips, or the chicken nachos.', 5)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (260, 'This place is always great; the food and service!', 3)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (270, 'Very nice staff and clean environment, tasty combo meals.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (280, 'Personable staff, good food, cold drinks good service.', 3)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (290, 'Great catfish, fresh and fast! Friendly staff and excellent service.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (300, 'Both food and service were great!', 3);
+
 
 
 CREATE TABLE user_favorites (
@@ -343,13 +435,38 @@ VALUES (1, 10);
 CREATE TABLE user_account (
 	user_id int NOT NULL,
 	user_zip varchar (9) NOT NULL,
-	user_likes_first varchar (30),
-	user_likes_second varchar (30),
-	user_likes_third varchar (30)
 	CONSTRAINT PK_user_account PRIMARY KEY (user_id)
 )
 
-INSERT INTO user_account (user_id, user_zip, user_likes_first, user_likes_second, user_likes_third)
-VALUES (1, 45040, 'Mexican', 'American', 'Japanese');
+CREATE TABLE user_favorited_types (
+	type_id int NOT NULL,
+	user_id int NOT NULL
+)
 
-SELECT * FROM user_account
+INSERT INTO user_favorited_types (type_id, user_id)
+VALUES (4, 1)
+
+
+ALTER TABLE restaurants
+ADD FOREIGN KEY(type_id)
+REFERENCES restaurant_type(type_id);
+
+ALTER TABLE restaurant_reviews
+ADD FOREIGN KEY(restaurant_id)
+REFERENCES restaurants(restaurant_id);
+
+ALTER TABLE user_favorites
+ADD FOREIGN KEY(user_id)
+REFERENCES users(user_id);
+
+ALTER TABLE user_favorites
+ADD FOREIGN KEY(restaurant_id)
+REFERENCES restaurants(restaurant_id);
+
+ALTER TABLE user_favorited_types
+ADD FOREIGN KEY(type_id)
+REFERENCES restaurant_type(type_id);
+
+ALTER TABLE user_favorited_types
+ADD FOREIGN KEY(user_id)
+REFERENCES users(user_id);

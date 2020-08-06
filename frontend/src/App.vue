@@ -15,8 +15,17 @@
 
 <style scoped>
 *{
-  font-family: "Impact", Charcoal, sans-serif;
+    
+    font-family: "Impact", Charcoal, sans-serif;
     color: maroon;
     background-color: gold;
+}
+
+#nav{
+  display: flex;
+  justify-content: center;
+}
+#nav a {
+  padding: 0 .5rem;
 }
 </style>

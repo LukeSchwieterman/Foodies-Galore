@@ -3,7 +3,7 @@
     <form id="form-view" v-on:submit.prevent>
         <h2>Create your profile</h2>
 
-        <div class="field">
+        <div id="zip" class="field">
             <label for="zip">Zip Code</label>
             <input type="text" name="zip" v-model="userProfile.zipCode" required/>
         </div>
@@ -16,6 +16,7 @@
                  :disabled="preferences.length ==3  && preferences.indexOf(option) === -1"/>
                 <label id="box-label" for="checkbox"> {{ option }}</label>
             </div>
+            <!--
             <b-form-group  name="restaurant-preferences">                
                 <b-form-checkbox-group id="box" class="single-checkbox" 
                  v-model="preferences" 
@@ -24,7 +25,7 @@
                  switches stacked size="lg">                
                 </b-form-checkbox-group>
             </b-form-group>
-            
+            -->
         </div>
             <div class="actions">
             <button type="submit" v-on:click="saveProfile"
@@ -125,26 +126,56 @@ export default {
 
 <style scoped>
 
+
 #form-container {
-    display: block;
-    text-align: center;
-}
-form {
-    display: inline-block;
-    margin: 0 auto;
-    text-align: left;
-    background-image: url("../views/images/burgerpizzapile.jpg");
+  background-image: url("../views/images/burgerpizzapile.jpg");
+  background-color: #fd0404;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-#box{
-    margin-left: 3rem;
+form {
+    margin: 1rem 0;
+    padding: 1rem;
+    width: 25%;
+    background-color: rgb(109, 97, 97);
+    opacity: 0.65;
+    border: 2px solid maroon;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    text-align: left;
+   color: rgb(252, 248, 5);
+    
+}
+
+#zip {
+    display: flex;
+    column-gap: 13px;    
+}
+
+#box {
+    margin-left: 1rem;
     padding: 0 1rem;
     
 }
 
 #box-label{
-    margin-left: 1rem;
-    padding: 0 .5rem;
+    margin-left: 2rem;
+    padding: 0 .1rem;
+}
+
+.actions {
+    
+    justify-content: space-evenly;
 }
 
 </style>
