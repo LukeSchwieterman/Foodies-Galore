@@ -5,6 +5,7 @@
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
+      <div id="input">
       <label for="username" class="sr-only">Username</label>
       <input
         type="text"
@@ -32,10 +33,12 @@
         v-model="user.confirmPassword"
         required
       />
-      <router-link :to="{ name: 'login' }">Have an account?</router-link>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">
+      <button id="create" class="btn-primary  form-control" type="submit">
         Create Account
       </button>
+      </div>
+      <router-link :to="{ name: 'login' }" id="signin-link" >Already have an account?</router-link>
+      <div><img class="burgerpizzapile" src="../views/images/burgerpizzapile.jpg"/></div>
     </form>
   </div>
 </template>
@@ -92,13 +95,45 @@ export default {
 
 <style scoped>
 #register {
-
+  padding: 1rem 0;
   font-family: "Impact", Charcoal, sans-serif;
   color: maroon;
   background-color: gold;
 }
-button{
+
+.burgerpizzapile{
+  margin-top: 2rem;
+  border-style: solid;
+  border-color: maroon;
+  border-top-width: 10px;
+  border-left-width: 10px;
+  border-right-width: 10px;
+  border-bottom-width: 10px;
+}
+
+.form-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.form-control {
+  width: 15rem;
+  justify-content: center;
+  background-color: rgb(247, 219, 169);
+}
+
+#create {
   background-color: maroon;
-  color: white;
+  color: gold;
+}
+
+#create:hover {
+  background-color: gold;
+  color: maroon;
+}
+
+#signin-link {
+  margin: 0.5rem 0 0;   
 }
 </style>
