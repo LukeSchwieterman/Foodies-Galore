@@ -70,11 +70,11 @@ namespace Capstone.Controllers
         [HttpGet("types")]
         public ActionResult<List<string>> GetRestaurantTypes()
         {
-            List<string> restaurants = restaurantDAO.GetRestaurantTypes();
+            List<RestaurantTypes> types = restaurantDAO.GetRestaurantTypes();
 
-            if (restaurants != null)
+            if (types != null)
             {
-                return Ok(restaurants);
+                return Ok(types);
             }
             else
             {

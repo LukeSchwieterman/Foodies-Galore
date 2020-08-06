@@ -10,6 +10,7 @@ import Questionnaire from '../components/ProfileQuestionnaire.vue'
 import restaurants from '../views/restaurants.vue'
 import CreateProfile from '@/views/CreateProfile.vue'
 import UpdateProfile from '@/views/UpdateProfile.vue'
+import RestaurantDetails from '@/views/Details.vue'
 
 Vue.use(Router)
 
@@ -96,6 +97,15 @@ const router = new Router({
       component: UpdateProfile,
       meta: {
         requiresAuth: true
+      }
+    },
+
+    {
+      path: '/details',
+      name: 'details',
+      component: RestaurantDetails,
+      meta: {
+        requiresAuth: false
       }
     },
   ]
