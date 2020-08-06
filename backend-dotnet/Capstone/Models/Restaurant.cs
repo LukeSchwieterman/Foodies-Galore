@@ -9,7 +9,7 @@ namespace Capstone.Security.Models
     {
         public int RestaurantId { get; set; }
         public string Name { get; set; }
-        public string Type { get; set; }
+        public string[] Types { get; set; }
         public int ZipCode { get; set; }
     }
 
@@ -19,5 +19,11 @@ namespace Capstone.Security.Models
         public string RestaurantDescription { get; set; }
         public string RestaurantPhonenumber { get; set; }
         public string CovidMessage { get; set; }
+    }
+
+    public class RestaurantTypes
+    {
+        public int RestaurantTypeId { get; set; }
+        public string Type { get; set; }
     }
 }
