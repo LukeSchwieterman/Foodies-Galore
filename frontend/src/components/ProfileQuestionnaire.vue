@@ -5,10 +5,10 @@
 
         <div id="zip" class="field">
             <label for="zip">Zip Code</label>
-            <input type="text" name="zip" v-model="userProfile.zipCode" required/>
+            <input type="text" name="zip" v-model="userProfile.zipCode" required autofocus/>
         </div>
         <div class="field">
-            
+            <!--
             <div v-for="option in availableOptions" v-bind:key="option" >
                 
                 <input id="box" class="single-checkbox" type="checkbox" v-bind:value="option" 
@@ -16,7 +16,7 @@
                  :disabled="preferences.length ==3  && preferences.indexOf(option) === -1"/>
                 <label id="box-label" for="checkbox"> {{ option }}</label>
             </div>
-            <!--
+            -->
             <b-form-group  name="restaurant-preferences">                
                 <b-form-checkbox-group id="box" class="single-checkbox" 
                  v-model="preferences" 
@@ -25,7 +25,7 @@
                  switches stacked size="lg">                
                 </b-form-checkbox-group>
             </b-form-group>
-            -->
+            
         </div>
             <div class="actions">
             <button type="submit" v-on:click="saveProfile"
