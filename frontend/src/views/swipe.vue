@@ -1,4 +1,5 @@
 <template>
+
   <section class="container">
       <h1>Foodies Galore!</h1>
       <div
@@ -19,21 +20,21 @@
         @draggedLeft="emitAndNext('reject')"
         class="rounded-borders card card--one">
         <div style ="height: 100%">
-        <img :src="require(`../views/images/${current.src}`)" class="rounded-borders" />
+        <!-- <img :src="require(`../views/images/${current.src}`)" class="rounded-borders" /> -->
         <div class="text">
-        <h2>{{current.name}}, <span>{{current.fact}}</span></h2>
+        <h2>{{current.name}}, {{current.types[0]}}, {{current.zipCode}}</h2>
         </div>
         </div>
       </Vue2InteractDraggable>
     </div>
     <div v-if="next" class="rounded-borders card card--two fixed fixed--center" style="z-index: 2">
       <div class="flex flex--center" style="height: 100%">
-        <img :src="require(`../views/images/${next.src}`)" class="rounded-borders" />
+        <!-- <img :src="require(`../views/images/${next.src}`)" class="rounded-borders" /> -->
         <h1>{{next.text}}</h1>
       </div>
     </div>
     <div
-      v-if="index + 2 < cards.length"
+      v-if="index + 2 < restaurantArray.length"
       class="rounded-borders card card--three fixed fixed--center"
       style="z-index: 1" >
       <div style="height: 100%"></div>
@@ -54,12 +55,13 @@ const EVENTS = {
   MATCH: "match",
   REJECT: "reject"
 }
-
+import RestaurantService from '../services/RestaurantService'
 export default {
   name: "SwipeableCards",
   components: { Vue2InteractDraggable },
   data() {
     return {
+      restaurantArray: [],
       isVisible: true,
       index: 0,
       interactEventBus: {
@@ -81,12 +83,17 @@ export default {
       ],
     };
   },
+    created(){
+      RestaurantService.getRestaurants().then(r =>{
+      this.restaurantArray = r.data
+      })
+  },
   computed: {
     current() {
-      return this.cards[this.index]
+      return this.restaurantArray[this.index]
     },
     next() {
-      return this.cards[this.index + 1]
+      return this.restaurantArray[this.index + 1]
     },
   },
   methods: {
