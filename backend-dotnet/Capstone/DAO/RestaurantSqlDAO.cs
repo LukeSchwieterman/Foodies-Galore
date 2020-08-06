@@ -61,10 +61,10 @@ namespace Capstone.DAO
                     conn.Open();
 
                     SqlCommand cmd = new SqlCommand("SELECT restaurants.restaurant_id, restaurant_name, location_zip, " +
-                        "String_AGG(CONVERT(nvarchar(max),ISNULL(type, 'N/A')), ', ') AS types FROM restaurants " +
-                        "JOIN restaurant_connector_table ON restaurant_connector_table.restaurant_id = restaurants.restaurant_id " +
-                        "JOIN restaurant_type ON restaurant_type.type_id = restaurant_connector_table.type_id " +
-                        "WHERE restaurant_id = @restaurantId" +
+                        "String_AGG(CONVERT(nvarchar(max),ISNULL(restaurant_type.type, 'N/A')), ', ') AS types FROM restaurants " +
+                        "JOIN restaurants_and_their_types ON restaurants_and_their_types.restaurant_id = restaurants.restaurant_id " +
+                        "JOIN restaurant_type ON restaurant_type.type_id = restaurants_and_their_types.type_id " +
+                        "WHERE restaurants.restaurant_id = @restaurantId " +
                         "GROUP BY restaurants.restaurant_id, restaurant_name, location_zip", conn);
                     cmd.Parameters.AddWithValue("@restaurantId", restaurantId);
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -83,7 +83,7 @@ namespace Capstone.DAO
             return returnRestaurant;
         }
 
-        public List<Restaurant> GetRestaurantByType(string restaurantType)
+        public List<Restaurant> GetRestaurantByType(string[] restaurantType)
         {
             List<Restaurant> returnRestaurants = new List<Restaurant>();
 
@@ -94,10 +94,9 @@ namespace Capstone.DAO
                     conn.Open();
 
                     SqlCommand cmd = new SqlCommand("SELECT restaurants.restaurant_id, restaurant_name, location_zip, " +
-                        "String_AGG(CONVERT(nvarchar(max),ISNULL(restaurant_type.type, 'N/A')), ', ') AS types " +
-                        "FROM restaurants " +
+                        "String_AGG(CONVERT(nvarchar(max),ISNULL(restaurant_type.type, 'N/A')), ', ') AS types FROM restaurants " +
                         "JOIN restaurants_and_their_types ON restaurants_and_their_types.restaurant_id = restaurants.restaurant_id " +
-                        "JOIN restaurant_type ON restaurant_type.type_id = restaurants_and_their_types.type_id WHERE types IN " +
+                        "JOIN restaurant_type ON restaurant_type.type_id = restaurants_and_their_types.type_id WHERE types IN @restaurantType" +
                         "GROUP BY restaurants.restaurant_id, restaurant_name, location_zip", conn);
                     cmd.Parameters.AddWithValue("@restaurantType", restaurantType);
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -243,7 +242,7 @@ namespace Capstone.DAO
         {
             RestaurantTypes r = new RestaurantTypes()
             {
-                Type = Convert.ToString(reader["restaurant_type"])
+                Type = Convert.ToString(reader["type"])
             };
 
             return r;
