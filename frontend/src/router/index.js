@@ -83,6 +83,14 @@ const router = new Router({
       }
     },
     {
+      path: '/restaurants/:restaurant_id',
+      name: 'restaurant',
+      component: restaurants,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: '/add-profile',
       name: 'AddProfile',
       component: CreateProfile,
