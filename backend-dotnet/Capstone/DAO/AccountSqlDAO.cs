@@ -26,7 +26,8 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT user_id, user_zip, user_likes_first, user_likes_second, user_likes_third FROM user_account WHERE user_id = @user_id", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT user_id, user_zip, FROM user_account WHERE user_id = @user_id " +
+                        "String_AGG(CONVERT(nvarchar(max),ISNULL(restaurant_type.type, 'N/A')), ', ') AS types FROM restaurants ", conn);
                     cmd.Parameters.AddWithValue("@user_id", user_id);
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -57,9 +58,6 @@ namespace Capstone.DAO
                         " VALUES (@user_id, @user_zip, @user_likes_first, @user_likes_second, @user_likes_third)", conn);
                     cmd.Parameters.AddWithValue("@user_id", account.UserId);
                     cmd.Parameters.AddWithValue("@user_zip", account.ZipCode);
-                    cmd.Parameters.AddWithValue("@user_likes_first", account.LikedTypeOne);
-                    cmd.Parameters.AddWithValue("@user_likes_second", account.LikedTypeTwo);
-                    cmd.Parameters.AddWithValue("@user_likes_third", account.LikedTypeThree);
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -79,10 +77,7 @@ namespace Capstone.DAO
                 {
                     sql.Open();
 
-                    SqlCommand sqlCommand = new SqlCommand("UPDATE user_account SET user_likes_first = @first, user_likes_second = @second, user_likes_third = @third, user_zip = @zip WHERE user_id = @account_id", sql);
-                    sqlCommand.Parameters.AddWithValue("@first", accountToUpdate.LikedTypeOne);
-                    sqlCommand.Parameters.AddWithValue("@second", accountToUpdate.LikedTypeTwo);
-                    sqlCommand.Parameters.AddWithValue("@third", accountToUpdate.LikedTypeThree);
+                    SqlCommand sqlCommand = new SqlCommand("UPDATE user_account SET user_zip = @zip WHERE user_id = @account_id", sql);
                     sqlCommand.Parameters.AddWithValue("@account_id", accountToUpdate.UserId);
                     sqlCommand.Parameters.AddWithValue("@zip", accountToUpdate.ZipCode);
                     int numberOfRowsAffected = sqlCommand.ExecuteNonQuery();
@@ -105,9 +100,6 @@ namespace Capstone.DAO
             Account a = new Account()
             {
                 UserId = Convert.ToInt32(reader["user_id"]),
-                LikedTypeOne = Convert.ToString(reader["user_likes_first"]),
-                LikedTypeTwo = Convert.ToString(reader["user_likes_second"]),
-                LikedTypeThree = Convert.ToString(reader["user_likes_third"]),
                 ZipCode = Convert.ToInt32(reader["user_zip"]),
             };
 

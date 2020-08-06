@@ -25,7 +25,8 @@ namespace Capstone.Controllers
         [HttpGet]
         public ActionResult<List<Restaurant>> GetAllRestaurants()
         {
-            List<Restaurant> restaurants = restaurantDAO.GetAllRestaurants();
+            var userId = Convert.ToInt32(User.FindFirst("sub")?.Value);
+            List<Restaurant> restaurants = restaurantDAO.GetRestaurantByType(userId);
 
             if (restaurants != null)
             {
@@ -45,21 +46,6 @@ namespace Capstone.Controllers
             if (restaurant != null)
             {
                 return Ok(restaurant);
-            }
-            else
-            {
-                return NotFound();
-            }
-        }
-
-        [HttpGet("type/{type}")]
-        public ActionResult<List<Restaurant>> GetRestaurantByType(string[] types)
-        {
-            List<Restaurant> restaurants = restaurantDAO.GetRestaurantByType(types);
-
-            if (restaurants != null)
-            {
-                return Ok(restaurants);
             }
             else
             {

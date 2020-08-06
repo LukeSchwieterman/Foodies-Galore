@@ -16,39 +16,39 @@ namespace Capstone.DAO
             connectionString = dbConnectionString;
         }
 
-        public List<Restaurant> GetAllRestaurants()
-        {
-            List<Restaurant> returnRestaurants = new List<Restaurant>();
+        //public List<Restaurant> GetAllRestaurants()
+        //{
+        //    List<Restaurant> returnRestaurants = new List<Restaurant>();
 
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
+        //    try
+        //    {
+        //        using (SqlConnection conn = new SqlConnection(connectionString))
+        //        {
+        //            conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT restaurants.restaurant_id, restaurant_name, location_zip, " +
-                        "String_AGG(CONVERT(nvarchar(max),ISNULL(restaurant_type.type, 'N/A')), ', ') AS types FROM restaurants " +
-                        "JOIN restaurants_and_their_types ON restaurants_and_their_types.restaurant_id = restaurants.restaurant_id " +
-                        "JOIN restaurant_type ON restaurant_type.type_id = restaurants_and_their_types.type_id " + 
-                        "GROUP BY restaurants.restaurant_id, restaurant_name, location_zip", conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
+        //            SqlCommand cmd = new SqlCommand("SELECT restaurants.restaurant_id, restaurant_name, location_zip, " +
+        //                "String_AGG(CONVERT(nvarchar(max),ISNULL(restaurant_type.type, 'N/A')), ', ') AS types FROM restaurants " +
+        //                "JOIN restaurants_and_their_types ON restaurants_and_their_types.restaurant_id = restaurants.restaurant_id " +
+        //                "JOIN restaurant_type ON restaurant_type.type_id = restaurants_and_their_types.type_id " + 
+        //                "GROUP BY restaurants.restaurant_id, restaurant_name, location_zip", conn);
+        //            SqlDataReader reader = cmd.ExecuteReader();
 
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-                            returnRestaurants.Add(GetRestaurantFromReader(reader));
-                        }
-                    }
-                }
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
+        //            if (reader.HasRows)
+        //            {
+        //                while (reader.Read())
+        //                {
+        //                    returnRestaurants.Add(GetRestaurantFromReader(reader));
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch (SqlException)
+        //    {
+        //        throw;
+        //    }
 
-            return returnRestaurants;
-        }
+        //    return returnRestaurants;
+        //}
 
         public Restaurant GetRestaurant(int restaurantId)
         {
@@ -83,10 +83,21 @@ namespace Capstone.DAO
             return returnRestaurant;
         }
 
-        public List<Restaurant> GetRestaurantByType(string[] restaurantType)
+        public List<Restaurant> GetRestaurantByType(int userId)
         {
-            List<Restaurant> returnRestaurants = new List<Restaurant>();
+            //string[] restaurantTypeArray = restaurantType.Split(',');
+            //string returnString = null;
+            //if (restaurantTypeArray.Length > 1)
+            //{
+            //    for (int i = 0; i < restaurantTypeArray.Length - 1; i++)
+            //    {
+            //        restaurantTypeArray[i] += " OR types =";
 
+            //    }
+            //    returnString = string.Join("", restaurantTypeArray);
+            //}
+
+            List<Restaurant> returnRestaurants = new List<Restaurant>();
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
@@ -96,9 +107,10 @@ namespace Capstone.DAO
                     SqlCommand cmd = new SqlCommand("SELECT restaurants.restaurant_id, restaurant_name, location_zip, " +
                         "String_AGG(CONVERT(nvarchar(max),ISNULL(restaurant_type.type, 'N/A')), ', ') AS types FROM restaurants " +
                         "JOIN restaurants_and_their_types ON restaurants_and_their_types.restaurant_id = restaurants.restaurant_id " +
-                        "JOIN restaurant_type ON restaurant_type.type_id = restaurants_and_their_types.type_id WHERE types IN @restaurantType" +
-                        "GROUP BY restaurants.restaurant_id, restaurant_name, location_zip", conn);
-                    cmd.Parameters.AddWithValue("@restaurantType", restaurantType);
+                        "JOIN restaurant_type ON restaurant_type.type_id = restaurants_and_their_types.type_id" +
+                        " JOIN user_favorited_types ON user_favorited_types.type_id = restaurant_type.type_id WHERE user_id = @userId" +
+                        " GROUP BY restaurants.restaurant_id, restaurant_name, location_zip", conn);
+                    cmd.Parameters.AddWithValue("@userId", userId);
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     if (reader.HasRows)
