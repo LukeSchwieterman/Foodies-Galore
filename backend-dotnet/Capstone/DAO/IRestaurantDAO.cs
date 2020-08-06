@@ -11,7 +11,7 @@ namespace Capstone.DAO
     {
         Restaurant GetRestaurant(int restaurantId);
 
-        List<Restaurant> GetRestaurantByType(string restaurantType);
+        List<Restaurant> GetRestaurantByType(string[] restaurantType);
 
         List<Restaurant> GetRestaurantByZip(int restaurantZip);
 

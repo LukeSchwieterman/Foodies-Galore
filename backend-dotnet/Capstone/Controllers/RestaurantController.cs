@@ -53,9 +53,9 @@ namespace Capstone.Controllers
         }
 
         [HttpGet("type/{type}")]
-        public ActionResult<List<Restaurant>> GetRestaurantByType(string type)
+        public ActionResult<List<Restaurant>> GetRestaurantByType(string[] types)
         {
-            List<Restaurant> restaurants = restaurantDAO.GetRestaurantByType(type);
+            List<Restaurant> restaurants = restaurantDAO.GetRestaurantByType(types);
 
             if (restaurants != null)
             {
