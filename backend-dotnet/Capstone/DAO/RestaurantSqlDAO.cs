@@ -26,7 +26,11 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT restaurant_id, restaurant_name, restaurant_type, location_zip FROM restaurants", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT restaurants.restaurant_id, restaurant_name, location_zip, " +
+                        "String_AGG(CONVERT(nvarchar(max),ISNULL(restaurant_type.type, 'N/A')), ', ') AS types FROM restaurants " +
+                        "JOIN restaurants_and_their_types ON restaurants_and_their_types.restaurant_id = restaurants.restaurant_id " +
+                        "JOIN restaurant_type ON restaurant_type.type_id = restaurants_and_their_types.type_id " + 
+                        "GROUP BY restaurants.restaurant_id, restaurant_name, location_zip", conn);
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     if (reader.HasRows)
@@ -56,7 +60,12 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT restaurant_id, restaurant_name, restaurant_type, location_zip FROM restaurants WHERE restaurant_id = @restaurantId", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT restaurants.restaurant_id, restaurant_name, location_zip, " +
+                        "String_AGG(CONVERT(nvarchar(max),ISNULL(type, 'N/A')), ', ') AS types FROM restaurants " +
+                        "JOIN restaurant_connector_table ON restaurant_connector_table.restaurant_id = restaurants.restaurant_id " +
+                        "JOIN restaurant_type ON restaurant_type.type_id = restaurant_connector_table.type_id " +
+                        "WHERE restaurant_id = @restaurantId" +
+                        "GROUP BY restaurants.restaurant_id, restaurant_name, location_zip", conn);
                     cmd.Parameters.AddWithValue("@restaurantId", restaurantId);
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -84,7 +93,12 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT restaurant_id, restaurant_name, restaurant_type, location_zip FROM restaurants WHERE restaurant_type = @restaurantType", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT restaurants.restaurant_id, restaurant_name, location_zip, " +
+                        "String_AGG(CONVERT(nvarchar(max),ISNULL(restaurant_type.type, 'N/A')), ', ') AS types " +
+                        "FROM restaurants " +
+                        "JOIN restaurants_and_their_types ON restaurants_and_their_types.restaurant_id = restaurants.restaurant_id " +
+                        "JOIN restaurant_type ON restaurant_type.type_id = restaurants_and_their_types.type_id WHERE types IN " +
+                        "GROUP BY restaurants.restaurant_id, restaurant_name, location_zip", conn);
                     cmd.Parameters.AddWithValue("@restaurantType", restaurantType);
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -115,8 +129,11 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT restaurant_id, restaurant_name, restaurant_type, location_zip" +
-                        "FROM restaurants WHERE location_zip = @restaurantZip", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT restaurants.restaurant_id, restaurant_name, location_zip, " +
+                        "String_AGG(CONVERT(nvarchar(max),ISNULL(restaurant_type.type, 'N/A')), ', ') AS types FROM restaurants " +
+                        "JOIN restaurants_and_their_types ON restaurants_and_their_types.restaurant_id = restaurants.restaurant_id " +
+                        "JOIN restaurant_type ON restaurant_type.type_id = restaurants_and_their_types.type_id " +
+                        "WHERE location_zip = @restaurantZip GROUP BY restaurants.restaurant_id, restaurant_name, location_zip", conn);
                     cmd.Parameters.AddWithValue("@restaurantZip", restaurantZip);
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -137,9 +154,9 @@ namespace Capstone.DAO
             return returnRestaurants;
         }
 
-        public List<string> GetRestaurantTypes()
+        public List<RestaurantTypes> GetRestaurantTypes()
         {
-            List<string> returnRestaurantTypes = new List<string>();
+            List<RestaurantTypes> returnRestaurantTypes = new List<RestaurantTypes>();
 
             try
             {
@@ -147,7 +164,7 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT restaurant_type FROM restaurants GROUP BY restaurant_type", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT type FROM restaurant_type", conn);
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     if (reader.HasRows)
@@ -210,22 +227,26 @@ namespace Capstone.DAO
 
         private Restaurant GetRestaurantFromReader(SqlDataReader reader)
         {
+            string typesString = Convert.ToString(reader["types"]);
             Restaurant r = new Restaurant()
             {
                 RestaurantId = Convert.ToInt32(reader["restaurant_id"]),
                 Name = Convert.ToString(reader["restaurant_name"]),
-                Type = Convert.ToString(reader["restaurant_type"]),
+                Types = typesString.Split(','),
                 ZipCode = Convert.ToInt32(reader["location_zip"]),
             };
 
             return r;
         }
 
-        private string GetRestaurantTypeFromReader(SqlDataReader reader)
+        private RestaurantTypes GetRestaurantTypeFromReader(SqlDataReader reader)
         {
-            string type = Convert.ToString(reader["restaurant_type"]);
+            RestaurantTypes r = new RestaurantTypes()
+            {
+                Type = Convert.ToString(reader["restaurant_type"])
+            };
 
-            return type;
+            return r;
         }
     }
 }

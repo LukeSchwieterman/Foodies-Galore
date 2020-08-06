@@ -38,7 +38,7 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT restaurant_id, restaurant_review, restaurant_star_rating " + 
+                    SqlCommand cmd = new SqlCommand("SELECT review_id, restaurant_id, restaurant_review, restaurant_star_rating " + 
                         "FROM restaurant_reviews WHERE restaurant_id = @restaurantId", conn);
                     cmd.Parameters.AddWithValue("@restaurantId", restaurantId);
                     SqlDataReader reader = cmd.ExecuteReader();
