@@ -24,10 +24,10 @@ namespace Capstone.Controllers
         }
 
         [HttpGet]
-        public ActionResult<Account> GetAccount()
+        public ActionResult<AccountWithTypes> GetAccount()
         {
             var userId = Convert.ToInt32(User.FindFirst("sub")?.Value);
-            Account account = accountDAO.GetAccount(userId);
+            AccountWithTypes account = accountDAO.GetAccount(userId);
 
             if (account != null)
             {
@@ -39,11 +39,25 @@ namespace Capstone.Controllers
             }
         }
 
+        [HttpDelete("{typeId}")]
+        public ActionResult<AccountWithTypes> DeleteTypeFromAccount(int typeId)
+        {
+            var userId = Convert.ToInt32(User.FindFirst("sub")?.Value);
+            bool result = accountDAO.DeleteTypeFromAccount(userId, typeId);
+
+            if(result)
+            {
+                return NoContent();
+            }
+
+            return StatusCode(500);
+        }
+
         [HttpPut]
         public ActionResult<Account> UpdateAccount(Account updatedAccount)
         {
             var userId = Convert.ToInt32(User.FindFirst("sub")?.Value);
-            Account existingAccount = accountDAO.GetAccount(userId);
+            AccountWithTypes existingAccount = accountDAO.GetAccount(userId);
 
             Account result = accountDAO.UpdateAccount(updatedAccount);
             return Ok(result);
@@ -53,6 +67,21 @@ namespace Capstone.Controllers
         public ActionResult<Account> AddAccount(Account addedAccount)
         {
             Account account = accountDAO.AddAccount(addedAccount);
+
+            if (account != null)
+            {
+                return Ok(account);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
+        [HttpPost("type")]
+        public ActionResult<TypeAccount> AddAccountType(TypeAccount addedAccount)
+        {
+            TypeAccount account = accountDAO.AddAccountType(addedAccount);
 
             if (account != null)
             {

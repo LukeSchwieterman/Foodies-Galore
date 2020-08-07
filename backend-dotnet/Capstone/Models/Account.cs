@@ -6,11 +6,23 @@ using System.Threading.Tasks;
 
 namespace Capstone.Models
 {
-    public class Account
+    public class AccountWithTypes
     {
         public int UserId { get; set; }
         public int ZipCode { get; set; }
         public string[] LikedTypes { get; set; }
+    }
+
+    public class Account
+    {
+        public int UserId { get; set; }
+        public int ZipCode { get; set; }
+    }
+
+    public class TypeAccount
+    {
+        public int UserId { get; set; }
+        public int TypeId { get; set; }
     }
 
     public class UserFavorited
