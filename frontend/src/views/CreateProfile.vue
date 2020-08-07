@@ -1,22 +1,24 @@
 <template>
     <div>
-        <h2>Add Profile View</h2>
+        <h2>Create Your Profile</h2>
         <profile-questionnaire />
     </div>
 </template>
 
 <script>
 
-import ProfileQuestionnaire from '@/components/ProfileQuestionnaire'
+import ProfileQuestionnaire from '@/components/ProfileQuestionnaire';
 
 
 export default {
 
     components: {
-        ProfileQuestionnaire,
-    },
-
-    
+        ProfileQuestionnaire
+    }    
     
 }
 </script>
+
+<style scoped>
+
+</style>
