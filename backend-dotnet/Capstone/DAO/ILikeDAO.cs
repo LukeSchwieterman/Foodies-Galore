@@ -9,5 +9,7 @@ namespace Capstone.DAO
     public interface ILikeDAO
     {
         List<Like> GetAllLikesPerUser(int user_id);
+
+        Like AddLike(Like addedLike);
     }
 }
