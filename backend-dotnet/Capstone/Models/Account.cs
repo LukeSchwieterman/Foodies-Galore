@@ -11,6 +11,7 @@ namespace Capstone.Models
         public int UserId { get; set; }
         public int ZipCode { get; set; }
         public string[] LikedTypes { get; set; }
+        public string[] LikedTypesId { get; set; }
     }
 
     public class Account

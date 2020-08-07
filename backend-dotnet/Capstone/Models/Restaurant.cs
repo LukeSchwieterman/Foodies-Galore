@@ -11,6 +11,7 @@ namespace Capstone.Security.Models
         public string Name { get; set; }
         public string[] Types { get; set; }
         public int ZipCode { get; set; }
+        public string Image { get; set; }
     }
 
     public class RestaurantDetails

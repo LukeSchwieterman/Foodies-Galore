@@ -157,7 +157,132 @@ INSERT INTO restaurants (restaurant_name, location_zip, image_source)
 VALUES ('Hook Fish & Chicken', '45069', 'hookfishandchicken.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
-VALUES ('Biagios Bistro', '45040', 'biagiosbistro.jpg');
+VALUES ('Biagios Bistro', '45040', 'biagiosbistro.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('McDonalds', '45239', 'mcdonalds.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Taco Bell', '45040', 'tacobell.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('The Old Bag of Nails Pub', '45069', 'oldbagofnailspub.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Godavari', '45040', 'godavari.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Raja India', '45239', 'rajaindia.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Basil Thai Bistro', '45040', 'basilthaibistro.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Red Squirrel', '45239', 'redsquirrel.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Los Panchos', '45040', 'lospanchos.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Fusabowl', '45069', 'fusabowl.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Tags Cafe', '45239', 'tagscafe.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Sichuan Bistro', '45040', 'sichuanbistro.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Rusty Bucket', '45239', 'rustybucket.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('China Chef', '45040', 'chinachef.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Pitrellis', '45239', 'pitrellis.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Tazikis', '45040', 'tazikis.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Kabuto', '45239', 'kabuto.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Panda Express', '45040', 'pandaexpress.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Thai Taste of West Chester', '45069', 'thaitaste.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Dancing Roll', '45040', 'dancingroll.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Tikka Grill', '45069', 'tikkagrill.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Soho Japanese Bistro', '45040', 'sohobistro.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Indian Fusion', '45069', 'indianfusion.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Mi Burrito', '45040', 'miburrito.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Greek Isles', '45239', 'greekisles.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Bucks Tavern', '45239', 'buckstavern.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Chuys', '45040', 'chuys.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('New Krishna', '45239', 'newkrishna.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Maggianos Little Italy', '45040', 'maggianos.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Mazunte Taqueria', '45239', 'mazuntetaqueria.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('The Eagle', '45069', 'eagle.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Oriental Wok', '45040', 'orientalwok.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Nicholsons Tavern', '45239', 'nicholsons.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Sebastians', '45069', 'sebastians.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Buddha Barn', '45040', 'buddhabarn.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Arlins', '45239', 'arlins.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Montgomery Inn', '45069', 'montgomeryinn.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Buca Di Beppo', '45040', 'buca.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Swagat India House', '45069', 'swagat.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Thai Spicy', '45040', 'thaispicy.jpg')
+
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Bravo!', '45239', 'bravo.jpg')
+
+
+
+
+
 
 
 SELECT * FROM restaurants;

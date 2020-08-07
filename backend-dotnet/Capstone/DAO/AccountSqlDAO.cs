@@ -26,8 +26,9 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT user_account.user_id, user_zip," +
-                        "String_AGG(CONVERT(nvarchar(max), ISNULL(restaurant_type.type, 'N/A')), ', ') AS types FROM user_account " +
+                    SqlCommand cmd = new SqlCommand("SELECT user_account.user_id, user_zip, " +
+                        "String_AGG(CONVERT(nvarchar(max), ISNULL(restaurant_type.type, 'N/A')), ', ') AS types, " +
+                        "String_AGG(CONVERT(nvarchar(max), ISNULL(restaurant_type.type_id, 'N/A')), ', ') AS typeId FROM user_account " +
                         "JOIN user_favorites ON user_favorites.user_id = user_account.user_id " +
                         "JOIN user_favorited_types ON user_favorited_types.user_id = user_account.user_id " +
                         "JOIN restaurant_type ON restaurant_type.type_id = user_favorited_types.type_id WHERE user_account.user_id = @user_id " +
@@ -152,11 +153,13 @@ namespace Capstone.DAO
         private AccountWithTypes GetAccountFromReader(SqlDataReader reader)
         {
             string typesString = Convert.ToString(reader["types"]);
+            string typeIdString = Convert.ToString(reader["typeId"]);
             AccountWithTypes a = new AccountWithTypes()
             {
                 UserId = Convert.ToInt32(reader["user_id"]),
                 ZipCode = Convert.ToInt32(reader["user_zip"]),
-                LikedTypes = typesString.Split(',')
+                LikedTypes = typesString.Split(','),
+                LikedTypesId = typeIdString.Split(',')
             };
 
             return a;
