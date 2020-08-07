@@ -24,5 +24,6 @@ namespace Capstone.Security.Models
     public class RestaurantTypes
     {
         public string Type { get; set; }
+        public int TypeId { get; set; }
     }
 }

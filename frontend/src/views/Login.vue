@@ -80,12 +80,16 @@ export default {
 </script>
 
 <style scoped>
+
 #login {
   padding: 1rem 0;
+  margin-bottom: 10px;
   font-family: "Impact", Charcoal, sans-serif;
   color: maroon;
   background-color: gold;
+  
 }
+
 .burgerpizzapile{
   margin-top: 2rem;
   border-style: solid;

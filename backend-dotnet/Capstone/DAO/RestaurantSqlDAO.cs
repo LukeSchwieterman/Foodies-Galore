@@ -164,7 +164,7 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT type FROM restaurant_type", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT type, type_id FROM restaurant_type", conn);
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     if (reader.HasRows)
@@ -194,7 +194,8 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT restaurant_id, restaurant_description, restaurant_phonenumber, covid_message FROM restaurant_details WHERE restaurant_id = @restaurantId", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT restaurant_id, restaurant_description, restaurant_phonenumber, " + 
+                        "covid_message FROM restaurant_details WHERE restaurant_id = @restaurantId", conn);
                     cmd.Parameters.AddWithValue("@restaurantId", restaurantId);
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -243,7 +244,8 @@ namespace Capstone.DAO
         {
             RestaurantTypes r = new RestaurantTypes()
             {
-                Type = Convert.ToString(reader["type"])
+                Type = Convert.ToString(reader["type"]),
+                TypeId = Convert.ToInt32(reader["type_id"])
             };
 
             return r;

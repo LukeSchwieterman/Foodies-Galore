@@ -16,9 +16,9 @@ namespace Capstone.DAO
             connectionString = dbConnectionString;
         }
 
-        public Account GetAccount(int user_id)
+        public AccountWithTypes GetAccount(int user_id)
         {
-            Account returnAccount = null;
+            AccountWithTypes returnAccount = null;
 
             try
             {
@@ -26,8 +26,12 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT user_id, user_zip, FROM user_account WHERE user_id = @user_id " +
-                        "String_AGG(CONVERT(nvarchar(max),ISNULL(restaurant_type.type, 'N/A')), ', ') AS types FROM restaurants ", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT user_account.user_id, user_zip," +
+                        "String_AGG(CONVERT(nvarchar(max), ISNULL(restaurant_type.type, 'N/A')), ', ') AS types FROM user_account " +
+                        "JOIN user_favorites ON user_favorites.user_id = user_account.user_id " +
+                        "JOIN user_favorited_types ON user_favorited_types.user_id = user_account.user_id " +
+                        "JOIN restaurant_type ON restaurant_type.type_id = user_favorited_types.type_id WHERE user_account.user_id = @user_id " +
+                        "GROUP BY user_account.user_id, user_zip ", conn);
                     cmd.Parameters.AddWithValue("@user_id", user_id);
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -54,8 +58,8 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("INSERT INTO user_account (user_id, user_zip, user_likes_first, user_likes_second, user_likes_third)" +
-                        " VALUES (@user_id, @user_zip, @user_likes_first, @user_likes_second, @user_likes_third)", conn);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO user_account (user_id, user_zip)" +
+                        " VALUES (@user_id, @user_zip)", conn);
                     cmd.Parameters.AddWithValue("@user_id", account.UserId);
                     cmd.Parameters.AddWithValue("@user_zip", account.ZipCode);
                     cmd.ExecuteNonQuery();
@@ -95,12 +99,64 @@ namespace Capstone.DAO
             return null;
         }
 
-        private Account GetAccountFromReader(SqlDataReader reader)
+        public bool DeleteTypeFromAccount(int userId, int typeId)
         {
-            Account a = new Account()
+            try
+            {
+                using (SqlConnection sql = new SqlConnection(connectionString))
+                {
+                    sql.Open();
+
+                    SqlCommand sqlCommand = new SqlCommand("DELETE FROM user_favorited_types WHERE user_id = @userId AND type_id = @typeId", sql);
+                    sqlCommand.Parameters.AddWithValue("@userId", userId);
+                    sqlCommand.Parameters.AddWithValue("@typeId", typeId);
+                    int numberOfRowsAffected = sqlCommand.ExecuteNonQuery();
+
+                    if (numberOfRowsAffected > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            return false;
+        }
+
+        public TypeAccount AddAccountType(TypeAccount account)
+        {
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand("INSERT INTO user_favorited_types (user_id, type_id)" +
+                        " VALUES (@userId, @typeId)", conn);
+                    cmd.Parameters.AddWithValue("@userId", account.UserId);
+                    cmd.Parameters.AddWithValue("@typeId", account.TypeId);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+            return account;
+        }
+
+        private AccountWithTypes GetAccountFromReader(SqlDataReader reader)
+        {
+            string typesString = Convert.ToString(reader["types"]);
+            AccountWithTypes a = new AccountWithTypes()
             {
                 UserId = Convert.ToInt32(reader["user_id"]),
                 ZipCode = Convert.ToInt32(reader["user_zip"]),
+                LikedTypes = typesString.Split(',')
             };
 
             return a;

@@ -8,20 +8,11 @@
             <input type="text" name="zip" v-model="userProfile.zipCode" required autofocus/>
         </div>
         <div class="field">
-            <!--
-            <div v-for="option in availableOptions" v-bind:key="option" >
-                
-                <input id="box" class="single-checkbox" type="checkbox" v-bind:value="option" 
-                 v-model="preferences"  
-                 :disabled="preferences.length ==3  && preferences.indexOf(option) === -1"/>
-                <label id="box-label" for="checkbox"> {{ option }}</label>
-            </div>
-            -->
+            
             <b-form-group  name="restaurant-preferences">                
                 <b-form-checkbox-group id="box" class="single-checkbox" 
-                 v-model="preferences" 
+                 v-model="userProfile.preferences" 
                  :options="availableOptions" 
-                 :disabled="preferences.length == 3 && preferences.indexOf(availableOptions) === -1" 
                  switches stacked size="lg">                
                 </b-form-checkbox-group>
             </b-form-group>
@@ -29,7 +20,7 @@
         </div>
             <div class="actions">
             <button type="submit" v-on:click="saveProfile"
-            :disabled="preferences.length < 3"
+            :disabled="userProfile.preferences.length < 1"
             >Save Profile</button>
         </div>
 
@@ -48,14 +39,11 @@ export default {
     data() {
         return {
             isNewUser: true,
-            availableOptions: [],            
-            preferences: [],            
+            availableOptions: [],                                   
             userProfile: {
                 userId: this.$store.state.user.userId,
                 zipCode: '',
-                likedTypeOne: '',
-                likedTypeTwo: '',
-                likedTypeThree: ''                
+                preferences: []             
             }            
         }
 
@@ -63,8 +51,10 @@ export default {
     created() {
             
             selectionService.getOptions()
-            .then(response => {
-                this.availableOptions = response.data;        
+            .then(response => {                
+                response.data.forEach(element => {
+                    this.availableOptions.push(element.type);
+                });
             })
             .catch(error => {
                 if (error.response) {
@@ -72,23 +62,18 @@ export default {
                 }
             });
 
-            selectionService.getProfile()
-            .then(response => {
-                this.userProfile = response.data; 
-                if(response.data){
-                    this.isNewUser = false;
-                }       
-            })            
+            // selectionService.getProfile()
+            // .then(response => {
+            //     this.userProfile = response.data; 
+            //     if(response.data){
+            //         this.isNewUser = false;
+            //     }       
+            // })            
     },
     
     methods: {
         saveProfile() {
             
-            this.userProfile.likedTypeOne = this.preferences[0];
-            this.userProfile.likedTypeTwo = this.preferences[1];
-            this.userProfile.likedTypeThree = this.preferences[2];
-            
-
             if(this.isNewUser){
                 selectionService.addProfile(this.userProfile)
                 .then(response => {
