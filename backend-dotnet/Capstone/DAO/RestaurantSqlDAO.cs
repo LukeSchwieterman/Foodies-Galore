@@ -164,7 +164,7 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT type FROM restaurant_type", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT type, type_id FROM restaurant_type", conn);
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     if (reader.HasRows)
@@ -243,7 +243,8 @@ namespace Capstone.DAO
         {
             RestaurantTypes r = new RestaurantTypes()
             {
-                Type = Convert.ToString(reader["type"])
+                Type = Convert.ToString(reader["type"]),
+                TypeId = Convert.ToInt32(reader["type_id"])
             };
 
             return r;
