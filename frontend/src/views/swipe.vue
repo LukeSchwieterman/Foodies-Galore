@@ -39,6 +39,10 @@
       style="z-index: 1" >
       <div style="height: 100%"></div>
     </div>
+    <div class="favorites" v-if="arrayCounter == restaurantArray.length">
+      <input type="button" onclick="location.href='/favorites';"
+       value="Now that you've finished swiping, click here to view your favorite restauarants!"/> 
+    </div>
     <div class="footer fixed">
       <div class="btn btn--decline" @click="reject">
         <i class="material-icons">Reject</i>
@@ -56,6 +60,7 @@ const EVENTS = {
   REJECT: "reject"
 }
 import RestaurantService from '../services/RestaurantService'
+import FavoriteRestaurantService from '../services/FavoriteRestaurantsService'
 export default {
   name: "SwipeableCards",
   components: { Vue2InteractDraggable },
@@ -68,19 +73,6 @@ export default {
         draggedRight: EVENTS.MATCH,
         draggedLeft: EVENTS.REJECT
       },
-      cards: [
-        {
-          src: "betterchili.jpg",
-          name: "Skyline Chili",
-          fact: "Is better than Goldstar.",
-        },
-        { src: "worstchili.jpg",
-          name: "Goldstar Chili",
-          fact: "Is worse than Skyline.", },
-        { src: "chick_fil_a.jpg",
-          name: "Chick-Fil-a",
-          fact: "That's God's chicken.", },
-      ],
     };
   },
     created(){
@@ -97,8 +89,15 @@ export default {
     },
   },
   methods: {
+    counter(arrayCounter){
+      for (let i=0; i<this.restaurantArray.length; i++){
+        arrayCounter += 1;
+      }
+      return arrayCounter;
+    },
     match() {
-      InteractEventBus.$emit(EVENTS.MATCH)
+      InteractEventBus.$emit(EVENTS.MATCH),
+      FavoriteRestaurantService.addFavoriteRestaurant()
     },
     reject() {
       InteractEventBus.$emit(EVENTS.REJECT)
@@ -117,6 +116,18 @@ export default {
 
 <style lang="scss" scoped>
 
+.favorites{
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  text-align: center;
+  width: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  top: 50%;
+  left: 25%;
+  margin: -25px 0 0 -25px;
+}
 
 h1{
   color: chartreuse;
@@ -159,7 +170,7 @@ h1{
 }
 .btn {
   position: relative;
-  width: 50px;
+  width: 75px;
   height: 50px;
   padding: 0.2rem;
   border-radius: 50%;
@@ -219,7 +230,7 @@ h1{
 .rounded-borders {
   border-radius: 12px;
 }
-.card {
+.card{
   width: 20vw;
   height: 60vh;
   color: black;

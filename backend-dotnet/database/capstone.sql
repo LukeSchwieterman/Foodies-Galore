@@ -438,6 +438,9 @@ CREATE TABLE user_account (
 	CONSTRAINT PK_user_account PRIMARY KEY (user_id)
 )
 
+INSERT INTO user_account (user_id, user_zip)
+VALUES (1, 12345);
+
 CREATE TABLE user_favorited_types (
 	type_id int NOT NULL,
 	user_id int NOT NULL
