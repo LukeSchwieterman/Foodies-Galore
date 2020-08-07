@@ -26,7 +26,7 @@ namespace Capstone.Controllers
         [HttpGet("user/{user_id}")]
         public ActionResult<List<Like>> GetLikeByUser(int user_id)
         {
-            List<Like> likes = likeDAO.GetLikeByUser(user_id);
+            List<Like> likes = likeDAO.GetAllLikesPerUser(user_id);
 
             if (likes != null)
             {
@@ -38,15 +38,14 @@ namespace Capstone.Controllers
             }
         }
 
-        [Authorize]
-        [HttpPut]
-        public ActionResult<Like> GetLikeAdded(Like newLike)
-        {
-            var userId = Convert.ToInt32(User.FindFirst("sub")?.Value);
-            Like newLike = likeDAO.GetLikeAdded(userId);
+        //[HttpPut]
+        //public ActionResult<Like> GetLikeAdded(Like newLike)
+        //{
+        //    var userId = Convert.ToInt32(User.FindFirst("sub")?.Value);
+        //    Like newLike = likeDAO.GetLikeAdded(userId);
 
-            Account result = accountDAO.UpdateAccount(updatedAccount);
-            return Ok(result);
-        }
+        //    Account result = accountDAO.UpdateAccount(updatedAccount);
+        //    return Ok(result);
+        //}
     }
 }

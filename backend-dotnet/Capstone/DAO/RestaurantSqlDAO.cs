@@ -85,17 +85,6 @@ namespace Capstone.DAO
 
         public List<Restaurant> GetRestaurantByType(int userId)
         {
-            //string[] restaurantTypeArray = restaurantType.Split(',');
-            //string returnString = null;
-            //if (restaurantTypeArray.Length > 1)
-            //{
-            //    for (int i = 0; i < restaurantTypeArray.Length - 1; i++)
-            //    {
-            //        restaurantTypeArray[i] += " OR types =";
-
-            //    }
-            //    returnString = string.Join("", restaurantTypeArray);
-            //}
 
             List<Restaurant> returnRestaurants = new List<Restaurant>();
             try
