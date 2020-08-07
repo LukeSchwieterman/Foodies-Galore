@@ -60,12 +60,12 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT restaurants.restaurant_id, restaurant_name, location_zip, " +
+                    SqlCommand cmd = new SqlCommand("SELECT restaurants.restaurant_id, restaurant_name, location_zip, image_source, " +
                         "String_AGG(CONVERT(nvarchar(max),ISNULL(restaurant_type.type, 'N/A')), ', ') AS types FROM restaurants " +
                         "JOIN restaurants_and_their_types ON restaurants_and_their_types.restaurant_id = restaurants.restaurant_id " +
                         "JOIN restaurant_type ON restaurant_type.type_id = restaurants_and_their_types.type_id " +
                         "WHERE restaurants.restaurant_id = @restaurantId " +
-                        "GROUP BY restaurants.restaurant_id, restaurant_name, location_zip", conn);
+                        "GROUP BY restaurants.restaurant_id, restaurant_name, location_zip, image_source", conn);
                     cmd.Parameters.AddWithValue("@restaurantId", restaurantId);
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -93,12 +93,12 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT restaurants.restaurant_id, restaurant_name, location_zip, " +
+                    SqlCommand cmd = new SqlCommand("SELECT restaurants.restaurant_id, restaurant_name, location_zip, image_source, " +
                         "String_AGG(CONVERT(nvarchar(max),ISNULL(restaurant_type.type, 'N/A')), ', ') AS types FROM restaurants " +
                         "JOIN restaurants_and_their_types ON restaurants_and_their_types.restaurant_id = restaurants.restaurant_id " +
                         "JOIN restaurant_type ON restaurant_type.type_id = restaurants_and_their_types.type_id" +
                         " JOIN user_favorited_types ON user_favorited_types.type_id = restaurant_type.type_id WHERE user_id = @userId" +
-                        " GROUP BY restaurants.restaurant_id, restaurant_name, location_zip", conn);
+                        " GROUP BY restaurants.restaurant_id, restaurant_name, location_zip, image_source", conn);
                     cmd.Parameters.AddWithValue("@userId", userId);
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -129,11 +129,11 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT restaurants.restaurant_id, restaurant_name, location_zip, " +
+                    SqlCommand cmd = new SqlCommand("SELECT restaurants.restaurant_id, restaurant_name, location_zip, image_source, " +
                         "String_AGG(CONVERT(nvarchar(max),ISNULL(restaurant_type.type, 'N/A')), ', ') AS types FROM restaurants " +
                         "JOIN restaurants_and_their_types ON restaurants_and_their_types.restaurant_id = restaurants.restaurant_id " +
                         "JOIN restaurant_type ON restaurant_type.type_id = restaurants_and_their_types.type_id " +
-                        "WHERE location_zip = @restaurantZip GROUP BY restaurants.restaurant_id, restaurant_name, location_zip", conn);
+                        "WHERE location_zip = @restaurantZip GROUP BY restaurants.restaurant_id, restaurant_name, location_zip, image_source", conn);
                     cmd.Parameters.AddWithValue("@restaurantZip", restaurantZip);
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -235,6 +235,7 @@ namespace Capstone.DAO
                 Name = Convert.ToString(reader["restaurant_name"]),
                 Types = typesString.Split(','),
                 ZipCode = Convert.ToInt32(reader["location_zip"]),
+                Image = Convert.ToString(reader["image_source"])
             };
 
             return r;

@@ -2,6 +2,8 @@
     <div class = "details">
         <div>
           {{restaurantDetails.restaurantDescription}}
+          {{restaurantDetails.restaurantPhonenumber}}
+          {{restaurantDetails.covidMessage}}
         </div>
     </div>    
 </template>
