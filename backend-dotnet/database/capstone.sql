@@ -65,98 +65,99 @@ VALUES ('Indian');
 CREATE TABLE restaurants (
 	restaurant_id int IDENTITY (10,10) NOT NULL PRIMARY KEY,
 	restaurant_name varchar(80) NOT NULL,
-	location_zip varchar(9)
+	location_zip varchar(9),
+	image_source varchar(50)
 )
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Yummy Bowl', '45069');
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Yummy Bowl', '45069', 'yummybowl.jpg');
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Chick Fil A', '45239');
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Chick Fil A', '45239', 'chickfila.jpg');
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Bob Evans', '45040');
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Bob Evans', '45040', 'bobevans.jpg');
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Skyline', '45239');
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Skyline', '45239', 'betterchili.jpg');
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Miyako Sushi&Grill', '45069');
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Miyako Sushi&Grill', '45069', 'miyako.jpg');
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('El Rancho Grande', '45040');
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('El Rancho Grande', '45040', 'elranchogrande.jpg');
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Banana Leaf', '45040');
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Banana Leaf', '45040', 'bananaleaf.jpg');
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Bawarchi', '45069');
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Bawarchi', '45069', 'bawarchi.jpg');
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Fox and Hound', '45239');
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Fox and Hound', '45239', 'foxandhound.jpg');
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Olive Garden', '45069')
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Olive Garden', '45069', 'olivegarden.jpg')
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Cheesecake Factory', '45069')
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Cheesecake Factory', '45069', 'cheesecakefactory.jpg')
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Qdoba', '45040')
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Qdoba', '45040', 'qdoba.jpg')
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Acapulcos', '45239')
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Acapulcos', '45239', 'acapulcos.jpg')
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Kyoto', '45069')
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Kyoto', '45069', 'kyoto.jpg')
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Roll On In', '45040')
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Roll On In', '45040', 'rollonin.jpg')
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Piada', '45040')
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Piada', '45040', 'piada.jpg')
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Carrabas', '45239')
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Carrabas', '45239', 'carrabas.jpg')
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Tasty Pot', '45040')
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Tasty Pot', '45040', 'tastypot.jpg')
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Thai Koon Kitchen', '45069')
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Thai Koon Kitchen', '45069', 'thaikoon.jpg')
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Bangkok Express', '45040')
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Bangkok Express', '45040', 'bangkokexpress.jpg')
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('P.F. Changs', '45069')
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('P.F. Changs', '45069', 'pfchangs.jpg')
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Gyro Express', '45040')
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Gyro Express', '45040', 'gyroexpress.jpg')
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Santorini', '45239')
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Santorini', '45239', 'santorini.jpg')
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Pub at Rookwood Mews', '45239')
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Pub at Rookwood Mews', '45239', 'pubatrookwoodmews.jpg')
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Cock and Bull Public House', '45069')
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Cock and Bull Public House', '45069', 'cockandbull.jpg')
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Bamboo House', '45040')
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Bamboo House', '45040', 'bamboohouse.jpg')
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Wingstop', '45239')
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Wingstop', '45239', 'wingstop.jpg')
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('La PiNata', '45239')
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('La PiNata', '45239', 'lapinata.jpg')
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Hook Fish & Chicken', '45069')
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Hook Fish & Chicken', '45069', 'hookfishandchicken.jpg')
 
-INSERT INTO restaurants (restaurant_name, location_zip)
-VALUES ('Biagios Bistro', '45040');
+INSERT INTO restaurants (restaurant_name, location_zip, image_source)
+VALUES ('Biagios Bistro', '45040', 'biagiosbistro.jpg');
 
 
 SELECT * FROM restaurants;
