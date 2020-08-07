@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using Capstone.Models;
-using Capstone.Security;
-using Capstone.Security.Models;
 
 namespace Capstone.DAO
 {
-    public class LikeSQLDAO : ILikeDAO
+    public class LikeSqlDAO : ILikeDAO
     {
         private readonly string connectionString;
 
-        public LikeSQLDAO(string dbConnectionString)
+        public LikeSqlDAO(string dbConnectionString)
         {
             connectionString = dbConnectionString;
         }
@@ -68,6 +66,34 @@ namespace Capstone.DAO
             }
 
             return like;
+        }
+
+        public bool DeleteLike(int restaurantId, int userId)
+        {
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand("DELETE FROM user_favorites WHERE user_id = @userId AND restaurant_id = @restaurantId" , conn);
+                    cmd.Parameters.AddWithValue("@userId", userId);
+                    cmd.Parameters.AddWithValue("@restaurantId", restaurantId);
+                    int numberOfRowsAffected = cmd.ExecuteNonQuery();
+                    if (numberOfRowsAffected > 0)
+                    {
+                        return true;
+                    }
+                }
+               
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+            return false;
         }
 
         private Like GetLikesFromReader(SqlDataReader reader)

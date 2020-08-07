@@ -53,5 +53,20 @@ namespace Capstone.Controllers
                 return NotFound();
             }
         }
+
+        [Authorize]
+        [HttpDelete("{restaurantId}")]
+        public ActionResult<Like> DeleteLike(int restaurantId)
+        {
+            var userId = Convert.ToInt32(User.FindFirst("sub")?.Value);
+            bool result = likeDAO.DeleteLike(restaurantId, userId);
+
+            if (result)
+            {
+                return NoContent();
+            }
+
+            return StatusCode(500);
+        }
     }
 }
