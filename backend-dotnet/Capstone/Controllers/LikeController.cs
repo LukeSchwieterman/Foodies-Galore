@@ -38,14 +38,20 @@ namespace Capstone.Controllers
             }
         }
 
-        //[HttpPut]
-        //public ActionResult<Like> GetLikeAdded(Like newLike)
-        //{
-        //    var userId = Convert.ToInt32(User.FindFirst("sub")?.Value);
-        //    Like newLike = likeDAO.GetLikeAdded(userId);
+        [Authorize]
+        [HttpPost]
+        public ActionResult<Like> AddLike(Like addedLike)
+        {
+            Like like = likeDAO.AddLike(addedLike);
 
-        //    Account result = accountDAO.UpdateAccount(updatedAccount);
-        //    return Ok(result);
-        //}
+            if (like != null)
+            {
+                return Ok(like);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
     }
 }
