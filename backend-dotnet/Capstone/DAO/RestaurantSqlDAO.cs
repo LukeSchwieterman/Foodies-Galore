@@ -194,7 +194,8 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT restaurant_id, restaurant_description, restaurant_phonenumber, covid_message FROM restaurant_details WHERE restaurant_id = @restaurantId", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT restaurant_id, restaurant_description, restaurant_phonenumber, " + 
+                        "covid_message FROM restaurant_details WHERE restaurant_id = @restaurantId", conn);
                     cmd.Parameters.AddWithValue("@restaurantId", restaurantId);
                     SqlDataReader reader = cmd.ExecuteReader();
 
