@@ -20,7 +20,7 @@
         @draggedLeft="emitAndNext('reject')"
         class="rounded-borders card card--one">
         <div style ="height: 100%">
-        <!-- <img :src="require(`../views/images/${current.src}`)" class="rounded-borders" /> -->
+        <!-- <img :src="(`../views/images/${current.image_source}`)" class="rounded-borders" /> -->
         <div class="text">
         <h2>{{current.name}}, {{current.types[0]}}, {{current.zipCode}}</h2>
         </div>
@@ -29,7 +29,7 @@
     </div>
     <div v-if="next" class="rounded-borders card card--two fixed fixed--center" style="z-index: 2">
       <div class="flex flex--center" style="height: 100%">
-        <!-- <img :src="require(`../views/images/${next.src}`)" class="rounded-borders" /> -->
+        <!-- <img :src="(`../views/images/${next.image_source}`)" class="rounded-borders" /> -->
         <h1>{{next.text}}</h1>
       </div>
     </div>
@@ -39,14 +39,14 @@
       style="z-index: 1" >
       <div style="height: 100%"></div>
     </div>
-    <div class="favorites" v-if="arrayCounter == restaurantArray.length">
-      <input type="button" onclick="location.href='/favorites';"
-       value="Now that you've finished swiping, click here to view your favorite restauarants!"/> 
-    </div>
     <div class="footer fixed">
       <div class="btn btn--decline" @click="reject">
         <i class="material-icons">Reject</i>
       </div>
+    <div class="favorites">
+      <input type="button" onclick="location.href='/favorites';"
+       value="Click here to view your favorite restauarants!"/> 
+    </div>
       <div class="btn btn--like" @click="match">
         <i class="material-icons">Like</i>
       </div>
@@ -89,12 +89,6 @@ export default {
     },
   },
   methods: {
-    counter(arrayCounter){
-      for (let i=0; i<this.restaurantArray.length; i++){
-        arrayCounter += 1;
-      }
-      return arrayCounter;
-    },
     match() {
       InteractEventBus.$emit(EVENTS.MATCH),
       FavoriteRestaurantService.addFavoriteRestaurant()
@@ -116,18 +110,6 @@ export default {
 
 <style lang="scss" scoped>
 
-.favorites{
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  text-align: center;
-  width: 50px;
-  padding: 10px;
-  border-radius: 10px;
-  top: 50%;
-  left: 25%;
-  margin: -25px 0 0 -25px;
-}
 
 h1{
   color: chartreuse;
@@ -154,7 +136,7 @@ h1{
     color: chartreuse;
     font-size: 20px;
     padding-top: 2rem;
-    // text-shadow: 1px 1px 1px red;
+    text-shadow: 1px 1px 1px red;
   }
 }
 
