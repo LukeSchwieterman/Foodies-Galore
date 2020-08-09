@@ -441,7 +441,100 @@ guests and staff with masks, gloves, sanitation and social distancing.')
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
 VALUES (300, 'Charming neighborhood hangout serving up classic Italian cuisine, desserts, wine and cocktails.', '513-861-4777',
 'There have been service changes such as limiting the number of guests per table and in the restaurant as a total. We are doing everything we can
-to comply with regulations and also deliver an impeccable experience.');
+to comply with regulations and also deliver an impeccable experience.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (310, 'Back in 1954, a man named Ray Kroc discovered a small burger restaurant in California, and wrote the first page of our history.
+From humble beginnings as a small restaurant, we are proud to have become one of the leading food service brands in the world with more than 36,000
+restaurants in more than 100 countries.', '513-741-0266', 'At Mcdonalds, the safety of our customers and crew is a top priority. Today, more than ever,
+we remain committed to following state and local health guidelines and will continue implementing coronavirus safety measures to help protect restaurant
+crew and customers.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (320, 'We are open early with breakfast hours and if you find yourself out and about late at night, you can still order at our drive thru. We are serving
+all your favorite menu items, from classic burritos and tacos to some new favorites like Crunchwrap Supreme.','513-398-9755', 'Taco Bell is monitoring and following
+guidelines from health authorities worldwide regarding the novel Coronavirus (COVID-19) to keep its customers and employees safe and healthy.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (330, 'I called my pub "The Old Bag of Nails" because the first one was in an empty hardware store. And every day people stop by for great food, great
+spirits, and an occasional hammer.', '513-492-7941', 'Patio and dine-in seating is available as we adjust to our new normal, wearing masks and sanitizing. But we are not
+gonna let this stop us from enjoying the pub!')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (340, 'The best South Indian restaurant in Cincinnati, Ohio. We specialize in providing south Indian food buffet with authentic south Indian cuisine.', 
+'513-770-0444', 'Our dining room will remain open as long as it is safe for our staff and customers. Masks and gloves will be worn. We also offer delivery and carry out.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (350, 'At Raja India we offer distinctive cuisine in an informal, friendly setting.', '513-770-0500', 'We are experts in planning parties, buffets, intimate
+business luncheons or family reunions. Therefore, we are experts in keeping our staff and customers safe even in large groups. We will be properly social distancing,
+sanitizing and wearing masks.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (360, 'At Basil Thai Bistro, we pride ourselves on serving tradition Thai food!', '513-530-0899', 'We are now open for social-distanced dine-in, reservation only.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (370, 'Red Squirrel is a family-owned, diner-style restaurant. Our famous "original" sandwiches are considered the best in the city of Cincinnati.', '513-741-4800',
+'We are back to regular business hours and dine-in is now open! We are completing a re-model and extensive safety training for our entire staff. Come check us out!')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (380, 'Mexican restaurant with a full bar, best margaritas, happy hour every day, street tacos!', '513-923-3400', 'We will be remaining closed for the duration
+of thi pandemic in an effort to help prevent the spread of Covid-19.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (390, 'We are committed to have the best service with the best fresh ingredients. Now just at the tip of your fingers, you can customize your own hibachi/poke
+bowl and sushi roll.', '513-923-9888', 'Our team members ensure to give you the best food service while also keeping you safe, and following all federal regulations.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (400, 'Strip mall eatery serving breakfast, lunch, baked goods and espresso drinks in modest surroundings.', '513-741-1333', 'Thanks for all your support during this
+difficult time! We are open and serving our full menu with curbside pick up and patio dining.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (410, 'Serving authentic Sichuan Chinese food since 2006.', '513-770-3123', 'We are BACK and ready to serve you some delicious Chinese cuisine. Open as usual for
+carry-out, DoorDash and UberEats. Please support us through these tough times. Thank you!')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (420, 'Curb your cravings with some of your Rusty Bucket faves!', '513-330-0150', 'As an added measure of protection for our valued associates and guests, all
+Rusty Bucket Restaurant and Tavern locations, effective July 1, 2020, and until further notice, will be requiring guests to wear masks or appropriate face coverings
+when entering and exiting our locations and in all common areas of the restaurant. As a reminder, our associates are also wearing masks in compliance with state and
+local guidelines.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (430, 'Humble eatery dishing up generous portions of standard Chinese dishes in unpretentious surrounds.', '513-522-2212', 'During the pandemic we will be enforcing
+all regulations such as mask requirements and sanitization guide lines.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (440, 'At Pitrellis, we pride ourselves in serving only authentic Italian cuisine and we work hard to offer a great selection of wines.', '513-770-0122', 'For the duration
+of the pandemic we will remain carry-out only.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (450, 'Bucks Tavern prides itself on offering up the freshest of everything. Homemade chili, hand patted burgers and even hand breaded chicken tenders.',
+'513-677-3511', 'We are back to our regularly scheduled business hours. Thank you for your support during this time!')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (460, 'Kabuto Japanese Steakhouse & Sushi Bar serves a wide selection of traditional Japanese cuisine including sushi and sashimi, hibachi grilled
+entrees and a variety of salads and appetizers.', '513-741-7222', 'We are open for both dine-in and carry-out now. We will not be serving lunch during this pandemic.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (470, 'From our world famous Orange Chicken to our health-minded Wok Smart™ selections, Panda Express defines American Chinese cuisine with bold flavors and fresh
+ingredients. Freshly prepared. Every day.', '513-229-8379', 'As companies, communities and individuals across the globe stand together to navigate these uncertain times,
+we remain steadfast at Panda Express in our commitment to care for and humbly serve you — our valued guests — as guided by our mission and values as a family business.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (480, 'Simple Thai place offering curries & noodle dishes.', '513-759-9999', 'During this pandemic we will be operating with shorter hours, social distancing,
+limited seating and face-mask requirements.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (490, 'Here at Dancing Roll we provide you with the freshest ingredients in a hip atmosphere. The sushi is always half-priced dine-in or carry out.',
+'513-755-6800', 'We will be officially reopened July 8th.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (500, 'We created Tikka Grill to share our love of the Mediterranean’s delicious flavors, wholesome ingredients, and bright spices. We take pride in
+using our traditional cooking techniques and the highest quality ingredients to make a delicious food.', '513-777-3237', 'We have temporarily closed our dining area but are
+still here to serve you orders to-go. We apologize for any inconvenience.')
+
+
+
+
 
 
 
