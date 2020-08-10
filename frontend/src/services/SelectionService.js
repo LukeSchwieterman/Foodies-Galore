@@ -16,5 +16,14 @@ export default {
 
   getProfile() {
     return axios.get('/account');
+  },
+
+  postPreference(typeAcct) {
+    console.log(typeAcct);
+    return axios.post('/account/type', typeAcct);
+  },
+
+  deletePreference(typeId) {
+    return axios.delete(`/account/${typeId}`);
   }
 }

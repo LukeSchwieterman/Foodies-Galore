@@ -5,22 +5,28 @@
 
         <div id="zip" class="field">
             <label for="zip">Zip Code</label>
-            <input type="text" name="zip" v-model="userProfile.zipCode" required autofocus/>
+            <input type="text" name="zip" v-model="userProfile.zipCode" 
+            v-on:change="saveProfile"
+            required autofocus />
         </div>
-        <div class="field">
+        <div class="field" v-on:click="tester($event.target.value)" >
             
-            <b-form-group  name="restaurant-preferences">                
-                <b-form-checkbox-group id="box" class="single-checkbox" 
-                 v-model="userProfile.preferences" 
+            <b-form-group  name="restaurant-preferences"    >    
+
+                <b-form-checkbox-group id="box"  
+                 v-model="userProfile.likedTypesId"
                  :options="availableOptions" 
-                 switches stacked size="lg">                
+                 text-field="type"
+                 value-field="typeId"
+                 switches stacked size="lg">     
+                            
                 </b-form-checkbox-group>
             </b-form-group>
             
         </div>
             <div class="actions">
             <button type="submit" v-on:click="saveProfile"
-            :disabled="userProfile.preferences.length < 1"
+            :disabled="userProfile.likedTypes.length < 1"
             >Save Profile</button>
         </div>
 
@@ -39,11 +45,13 @@ export default {
     data() {
         return {
             isNewUser: true,
-            availableOptions: [],                                   
+            availableOptions: [], 
+            currentSelection: '',
+            temp: [],                                 
             userProfile: {
                 userId: this.$store.state.user.userId,
                 zipCode: '',
-                preferences: []             
+                likedTypes: []             
             }            
         }
 
@@ -51,10 +59,8 @@ export default {
     created() {
             
             selectionService.getOptions()
-            .then(response => {                
-                response.data.forEach(element => {
-                    this.availableOptions.push(element.type);
-                });
+            .then(response => { 
+                this.availableOptions = response.data;                               
             })
             .catch(error => {
                 if (error.response) {
@@ -62,23 +68,44 @@ export default {
                 }
             });
 
-            // selectionService.getProfile()
-            // .then(response => {
-            //     this.userProfile = response.data; 
-            //     if(response.data){
-            //         this.isNewUser = false;
-            //     }       
-            // })            
+            selectionService.getProfile()
+            .then(response => {
+                this.userProfile = response.data; 
+                
+                if(response.data){
+                    this.isNewUser = false;
+                }       
+            })            
     },
     
     methods: {
+        tester(x) {
+            if(x){
+                
+                    if(this.userProfile.likedTypesId.includes( parseInt(x) ))
+                    {
+                        selectionService.deletePreference( parseInt(x) );
+                    }
+                    else
+                    {
+                        const typeAccount = {userId: this.userProfile.userId, typeId:x }
+                        selectionService.postPreference(typeAccount);
+                    }
+                
+            }
+            
+           
+        },
+
         saveProfile() {
             
             if(this.isNewUser){
+                this.userProfile.userId = this.$store.state.user.userId;
                 selectionService.addProfile(this.userProfile)
                 .then(response => {
                     if (response.status === 200) {
-                        this.$router.push(`/swipe`);
+                        this.isNewUser = false;
+                        //this.$router.push(`/swipe`);
                     }
                 })
                 .catch(error => {
@@ -92,7 +119,7 @@ export default {
                 selectionService.updateProfile(this.userProfile)
                 .then(response => {
                     if (response.status === 200) {
-                        this.$router.push(`/swipe`);
+                        //this.$router.push(`/swipe`);
                     }
                 })
                 .catch(error => {
