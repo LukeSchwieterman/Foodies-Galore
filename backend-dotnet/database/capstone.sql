@@ -858,6 +858,8 @@ CREATE TABLE user_favorited_types (
 	user_id int NOT NULL
 )
 
+SELECT * FROM restaurants_and_their_types
+
 INSERT INTO user_favorited_types (type_id, user_id)
 VALUES (4, 1)
 
