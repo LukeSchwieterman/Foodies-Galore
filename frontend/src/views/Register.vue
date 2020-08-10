@@ -70,7 +70,7 @@ export default {
           .register(this.user)
           .then((response) => {
             if (response.status == 201) {
-              this.$store.commit('SET_NEW_USER')
+              this.$store.commit('SET_NEW_USER');
               this.$router.push({
                 path: '/login',
                 query: { registration: 'success' },

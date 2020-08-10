@@ -11,7 +11,7 @@
         </div>
         <div class="field" v-on:click="updatePreferences($event.target.value)" >
             
-            <b-form-group  name="restaurant-preferences"    >    
+            <b-form-group  name="restaurant-preferences">    
 
                 <b-form-checkbox-group id="box"  
                  v-model="userProfile.likedTypesId"
@@ -19,7 +19,7 @@
                  text-field="type"
                  value-field="typeId"
                  switches stacked size="lg"
-                 :disabled="isNewUser">     
+                 :disabled="$store.state.isNewUser">     
                             
                 </b-form-checkbox-group>
             </b-form-group>
@@ -45,13 +45,14 @@ export default {
     name: 'profile-questionnaire',
     data() {
         return {
-            //isNewUser: this.$store.state.isNewUser,
+            
             availableOptions: [], 
             currentSelection: '',
-                                            
+                                      
             userProfile: {
                 userId: this.$store.state.user.userId,
                 zipCode: '',
+                likedTypes: [],
                 likedTypesId: []             
             }            
         }
@@ -69,17 +70,12 @@ export default {
                 }
             });
 
-           // if(this.$store.state.isNewUser === false) {
+            if(this.$store.state.isNewUser === false) {
                 selectionService.getProfile()
                 .then(response => {
                 this.userProfile = response.data; 
-                
-                if(response.data){
-                    this.isNewUser = false;
-                }       
-            });     
-            //}
-                   
+                });     
+            }                   
     },
     
     methods: {
@@ -110,8 +106,8 @@ export default {
                 selectionService.addProfile(this.userProfile)
                 .then(response => {
                     if (response.status === 200) {
-                        this.isNewUser = false;
-                        //this.$router.push(`/swipe`);
+                        this.$store.commit('SET_RETURNING_USER');
+                        
                     }
                 })
                 .catch(error => {
@@ -119,14 +115,14 @@ export default {
                         alert("Could not create profile.");            
                     }
                 });
-                this.$store.commit('SET_RETURNING_USER');
+                
             }
             else
             {
                 selectionService.updateProfile(this.userProfile)
                 .then(response => {
                     if (response.status === 200) {
-                        //this.$router.push(`/swipe`);
+                        // 
                     }
                 })
                 .catch(error => {

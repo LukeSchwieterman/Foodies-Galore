@@ -64,15 +64,14 @@ export default {
           if (response.status == 200) {
             this.$store.commit('SET_AUTH_TOKEN', response.data.token);
             this.$store.commit('SET_USER', response.data.user);
-          if (this.$store.state.isNewUser) {
-            this.$router.push(`/questionnaire`);
+              if (this.$store.state.isNewUser) {
+                this.$router.push(`/questionnaire`);
+              }
+              else {
+                this.$router.push(`/favorites`)
+              }
           }
-          else {
-            this.$router.push(`/favorites`)
-          }
-          }
-        }
-        )
+        })
         .catch(error => {
           const response = error.response;
 
