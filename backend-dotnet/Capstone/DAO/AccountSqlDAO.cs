@@ -159,7 +159,7 @@ namespace Capstone.DAO
         {
             string typesString = Convert.ToString(reader["types"]);
             string typeIdString = Convert.ToString(reader["typeId"]);
-            string[] typeIdStringArray = typeIdString.Split();
+            string[] typeIdStringArray = typeIdString.Split(',');
             List<int> typeIdList = new List<int>();
             for (int i = 0; i < typeIdStringArray.Length; i++)
             {
