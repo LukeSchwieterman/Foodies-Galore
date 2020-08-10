@@ -1077,6 +1077,8 @@ VALUES (690, 8)
 INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
 VALUES (700, 14);
 
+
+
 ALTER TABLE restaurants_and_their_types
 ADD FOREIGN KEY (type_id)
 REFERENCES restaurant_type(type_id);
