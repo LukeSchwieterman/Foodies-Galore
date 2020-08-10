@@ -1,3 +1,12 @@
 <template>
-    <header> These are your favorite restaurants!</header>
+    <favorited-restaurants />
 </template>
+
+<script>
+import FavoritedRestaurants from '../components/FavoritedRestaurants';
+export default {
+    components: {
+        FavoritedRestaurants,
+    }
+};
+</script>

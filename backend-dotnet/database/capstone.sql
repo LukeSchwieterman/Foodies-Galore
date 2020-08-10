@@ -1,4 +1,4 @@
-USE master
+﻿USE master
 GO
 
 --drop database if it exists
@@ -493,10 +493,8 @@ VALUES (410, 'Serving authentic Sichuan Chinese food since 2006.', '513-770-3123
 carry-out, DoorDash and UberEats. Please support us through these tough times. Thank you!')
 
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
-VALUES (420, 'Curb your cravings with some of your Rusty Bucket faves!', '513-330-0150', 'As an added measure of protection for our valued associates and guests, all
-Rusty Bucket Restaurant and Tavern locations, effective July 1, 2020, and until further notice, will be requiring guests to wear masks or appropriate face coverings
-when entering and exiting our locations and in all common areas of the restaurant. As a reminder, our associates are also wearing masks in compliance with state and
-local guidelines.')
+VALUES (420, 'Curb your cravings with some of your Rusty Bucket faves!', '513-330-0150', 'All Rusty Bucket Restaurant and Tavern locations will be requiring guests to wear masks
+or appropriate face coverings when entering and exiting our locations and in all common areas of the restaurant.')
 
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
 VALUES (430, 'Humble eatery dishing up generous portions of standard Chinese dishes in unpretentious surrounds.', '513-522-2212', 'During the pandemic we will be enforcing
@@ -515,9 +513,9 @@ VALUES (460, 'Kabuto Japanese Steakhouse & Sushi Bar serves a wide selection of 
 entrees and a variety of salads and appetizers.', '513-741-7222', 'We are open for both dine-in and carry-out now. We will not be serving lunch during this pandemic.')
 
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
-VALUES (470, 'From our world famous Orange Chicken to our health-minded Wok Smart� selections, Panda Express defines American Chinese cuisine with bold flavors and fresh
+VALUES (470, 'From our world famous Orange Chicken to our health-minded Wok Smart™ selections, Panda Express defines American Chinese cuisine with bold flavors and fresh
 ingredients. Freshly prepared. Every day.', '513-229-8379', 'As companies, communities and individuals across the globe stand together to navigate these uncertain times,
-we remain steadfast at Panda Express in our commitment to care for and humbly serve you � our valued guests � as guided by our mission and values as a family business.')
+we remain steadfast at Panda Express in our commitment to care for and humbly serve you — our valued guests — as guided by our mission and values as a family business.')
 
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
 VALUES (480, 'Simple Thai place offering curries & noodle dishes.', '513-759-9999', 'During this pandemic we will be operating with shorter hours, social distancing,
@@ -528,14 +526,91 @@ VALUES (490, 'Here at Dancing Roll we provide you with the freshest ingredients 
 '513-755-6800', 'We will be officially reopened July 8th.')
 
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
-VALUES (500, 'We created Tikka Grill to share our love of the Mediterranean�s delicious flavors, wholesome ingredients, and bright spices. We take pride in
+VALUES (500, 'We created Tikka Grill to share our love of the Mediterranean’s delicious flavors, wholesome ingredients, and bright spices. We take pride in
 using our traditional cooking techniques and the highest quality ingredients to make a delicious food.', '513-777-3237', 'We have temporarily closed our dining area but are
 still here to serve you orders to-go. We apologize for any inconvenience.')
 
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (510, 'Welcome to the Soho Japanese Bistro. Elegant dining, distinctive food and impeccable service, in a casual to upscale atmosphere.', '513-759-6876',
+'Starting May 27th, Soho Japanese Bistro is officially OPEN for dining and available for carrying out and deliveries!')
 
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (520, 'Welcome to Indian Fusion where we serve Lentil Soup, Chapati, Chana Masala, and more!', '513-499-2023', 'Our dining room is open. We have a rigorous
+safety program in place, including comfortable spaces for safe dining, sanitized common touch points, and wellness checks + masks for team members.')
 
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (530, 'Our Mexican restaurant is known for its modern interpretation of classic dishes and its insistence on only using high quality fresh ingredients.',
+'513-805-7854', 'Due to the current situation we will remain open for carry out only.')
 
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (540, 'Authentic Greek Restaurant, Voted Best in Cincinnati', '513-755-0600', 'During the pandemic we have decided to remain carry out only for the safety of our family,
+staff and customers.')
 
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (550, 'Bucks Tavern prides itself on offering up the freshest of everything. Homemade chili, hand patted burgers and even hand breaded chicken tenders.',
+'513-677-3511', 'We are back to our regularly scheduled business hours. Thank you for your support during this time!')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (560, 'Our founders had a vision of a fun and funky Tex-Mex restaurant that served authentic and fresh food in an atmosphere that appealed to everyone. From these
+humble beginnings Chuys was born.', '513-779-2489', 'A big thank you to our amazing Chuys fans who have supported us during this challenging time. We are starting to open
+our dining rooms. The health and safety of our employees and customers remains our top priority. Whether you choose to eat at our restaurant or continue to order for pickup
+or delivery, we are here for you.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (570, 'Modern Indian eatery dishing up classic tandoori dishes, biryani & curry, coupled with beer & wine.', '513-769-6266', 'As of Monday July 13th we will be starting
+our buffet back up - due to safety guidelines we will be adhering to all regulations such as mask requirements and switching out buffet utensils after each use.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (580, 'Maggianos Little Italy is an American casual dining restaurant chain specializing in Italian-American cuisine.', '513-794-0670', 'In these hard times we would like
+to ask our customers to stay safe, healthy & full! Order online and pick up your Italian-American favorites today!')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (590, 'The story of Mazunte is a simple one. Initially conceived with a theme influenced by Mexican Street Food, the original conception has never wavered.', '513-785-0000',
+'As always, the safety of our staff and customers is our top priority. Due to the pandemic we will be strictly carry-out only, enforcing face mask requirements as well as social
+distancing and proper sanitization.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (600, 'We start with cage free, free roaming, all natural chicken. It’s brined, dredged, then dropped into custom-built fryers. Its got a little kick and is served with our
+house made hot honey.', '513-802-5007', 'Starting Friday, May 8 we will be serving up chicken and all the fixins for carryout and delivery at our Mass Ave location.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (610, 'Decorated with black lacquer & gold accents, this family-owned spot offers familiar Chinese cuisine.', '513-871-6888', 'We’re still smiling under our new uniform
+addition😷 Thank you for letting us feed your families❤️🥡carry out and curbside service available till 9pm.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (620, 'The idea for Nicholson’s was born from our founder’s passion for all things Great Britain.', '513-564-9111', 'Dear guests: Though we have not had any positive cases of
+Covid in our building, we will be temporarily closed until we can reopen to a more normal capacity.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (630, 'Classic Greek joint serving gyros, salads & other fast fare in no-frills digs since 1976.', '513-471-2100', 'We hope you are staying healthy and safe. We wanted to post a reminder
+that for the time being, Sebastians closes at 7:00 pm. Thank you for supporting our business during these times.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (640, 'Authentic thai food, BYOB and friendly service.', '513-442-2010', 'OPEN Tuesdays thru Sundays for Carry-Out, since April 21st. Please Stay SAFE ALL!')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (650, 'Neighborhood watering hole with American pub grub & beer on tap, plus a roomy brick-walled patio.', '513-751-6566', 'During COVID-19 we will be operating at our normal hours while enforcing
+social distancing, masks and proper sanitizing.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (660, 'Montgomery Inn is a barbecue restaurant chain based in the Cincinnati suburb of Montgomery, Ohio, United States. It is best known for its specialty, loin back ribs, and the barbecue sauce
+used in preparation and serving.', '513-791-3482', 'We very much appreciate your continued support during this COVID-19 crisis. We look forward to seeing you again at the restaurant and appreciate your
+support of our new safe in-restaurant practices.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (670, 'Our mission is to capture the fun and enthusiasm of an authentic Italian gathering along with delectable food. Every Buca di Beppo restaurant offers an eclectic setting designed to make every
+occasion a party', '513-396-7673', 'The full Buca menu is available To Go, and many locations offer Curb Service. At select locations you may place a To Go order online through our online ordering system.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (680, 'Whether you are seeking a selection of Indian food or would like to enjoy some savory Indian Sweets, our restaurant has great options for all of our customers.', '513-755-2876',
+'Swagat India House makes sure that you can enjoy the authentic flavors of our traditionally prepared Indian food in the comfort of your own home with our takeout service.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (690, 'Authentic Thai and sushi spot located conveniently in the Cincinnati area.', '513-271-8424', 'During these uncertain times, we will be remaining strictly carry out and delivery.')
+
+INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message)
+VALUES (700, 'Step into Bravo and experience the amazing homemade Italian inspired recipes. From pastas, to brick oven pizzas, to fresh salads, to perfectly charred grill items.', '513-234-7900', 'We are offering
+patio dining and carry out at select locations.')
 
 
 
@@ -639,6 +714,125 @@ VALUES (290, 'Great catfish, fresh and fast! Friendly staff and excellent servic
 INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
 VALUES (300, 'Both food and service were great!', 3);
 
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (310, 'They gave me ketchup without asking, extra napkins and hot food. Very happy!', 3)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (320, 'Great location, awesome people, affordable prices and excellent food!', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (330, 'Fantastic atmosphere and tasty dishes.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (340, 'They had variety of items in buffet, ambience is good and staff were welcoming.', 5)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (350, 'Very tasty lunch buffet with a wide variety of entrees and side dishes.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (360, 'The food is great, the staff is friendly, the prices are reasonable, and BYOB!', 3)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (370, 'Good service, decent food, prices comparable to other restaurants like it.', 3)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (380, 'Always great prices, great food, good service, and served quickly.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (390, 'Excellent meals, creative chef de cuisine, decent pay and excellent service.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (400, 'Great food great staff makes you feel refreshed in the morning after work.', 3)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (410, 'Clean interior, fresh ingredients, proper seasoning, friendly staff.', 3)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (420, 'The service is constantly quick, great ambience, very kind staff members.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (430, 'Great food, good prices, and fast and friendly service.', 3)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (440, 'Wonderful food, great service, intimate atmosphere, good wine selection', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (450, 'Very good food, served quickly, ample portions, friendly service.', 5)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (460, 'Excellent ambience, flavorful dishes, great service.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (470, 'Great food, friendly service, reasonably priced, good portions.', 3)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (480, 'Very generous portions and fair price. Fresh and the best I can find lately.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (490, 'Great food, atmosphere, staff, and prices.', 5)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (500, 'This was my first time here and the employees were awesome.  The food was outstanding.', 3)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (510, 'Great Service, Great Food, Clean Restaurant, Fast, Calm Environment.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (520, 'Lovely interior, fabulous service and great taste (good prices, too.)', 3)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (530, 'Finest food, kind staff members, always fantastic vibes.', 5)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (540, 'The experience at this place beats going to chain restaurants.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (550, 'Excellent food, prompt service, nice atmosphere, and appropriate prices.', 3)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (560, 'Food was delicious, Salsa is a bit spicy but still yummy.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (570, 'The drinks and food served quickly and the prices were fair.', 3)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (580, 'Best place to eat Italian food for your money.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (590, 'Delicious food, superb margaritas, great service, and an authentic Mexican vibe.', 5)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (600, 'Dog friendly, great location, fair price, great staff and amazing sandwiches!', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (610, 'The customer service is regularly fast, good ambience, super friendly staff.', 3)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (620, 'The service is always rapid, lovely vibes, very kind staff.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (630, 'Prices are right, service is friendly and the food cannot be beat.', 5)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (640, 'Its a small place but service was good and food was excellent.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (650, 'Good ambience, amazing patio nice beer menu and very tasty food.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (660, 'Service and food A+ friendliest staff', 5)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (670, 'The food is amazing to say the least and the staff is amazing, too.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (680, 'Anyone who enjoys a well executed Indian buffet should check this place out.', 4)
+
+INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (690, 'Good flavor and portion size, casual atmosphere.', 3)
+
+INSERT into restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
+VALUES (700, 'Good service, decent food and drinks, relaxed and rarely a wait.', 4);
 
 
 CREATE TABLE user_favorites (
@@ -657,7 +851,7 @@ CREATE TABLE user_account (
 )
 
 INSERT INTO user_account (user_id, user_zip)
-VALUES (1, 12345);
+VALUES (1, 45040);
 
 CREATE TABLE user_favorited_types (
 	type_id int NOT NULL,
@@ -761,9 +955,127 @@ INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
 VALUES (290, 16)
 
 INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
-VALUES (300, 14);
+VALUES (300, 14)
 
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (310, 2)
 
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (320, 4)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (330, 16)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (340, 14)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (350, 18)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (360, 8)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (370, 2)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (380, 4)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (390, 10)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (400, 2)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (410, 10)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (420, 16)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (430, 12)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (440, 14)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (450, 6)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (460, 10)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (470, 12)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (480, 8)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (490, 10)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (500, 6)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (510, 10)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (520, 18)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (530, 4)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (540, 6)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (550, 16)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (560, 4)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (570, 18)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (580, 14)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (590, 4)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (600, 2)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (610, 12)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (620, 16)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (630, 6)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (640, 8)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (650, 16)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (660, 2)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (670, 14)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (680, 18)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (690, 8)
+
+INSERT INTO restaurants_and_their_types (restaurant_id, type_id)
+VALUES (700, 14);
 
 ALTER TABLE restaurants_and_their_types
 ADD FOREIGN KEY (type_id)

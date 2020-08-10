@@ -20,7 +20,7 @@
         @draggedLeft="emitAndNext('reject')"
         class="rounded-borders card card--one">
         <div style ="height: 100%">
-        <!-- <img :src="(`../views/images/${current.image_source}`)" class="rounded-borders" /> -->
+        <img :src="require(`@/assets/${current.image}`)" class="rounded-borders" />
         <div class="text">
         <h2>{{current.name}}, {{current.types[0]}}, {{current.zipCode}}</h2>
         </div>
@@ -29,7 +29,7 @@
     </div>
     <div v-if="next" class="rounded-borders card card--two fixed fixed--center" style="z-index: 2">
       <div class="flex flex--center" style="height: 100%">
-        <!-- <img :src="(`../views/images/${next.image_source}`)" class="rounded-borders" /> -->
+        <img :src="require(`@/assets/${next.image}`)" class="rounded-borders" />
         <h1>{{next.text}}</h1>
       </div>
     </div>
