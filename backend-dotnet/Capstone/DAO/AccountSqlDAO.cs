@@ -30,16 +30,19 @@ namespace Capstone.DAO
                     SqlCommand cmd = new SqlCommand("SELECT user_account.user_id, user_zip, " +
                         "String_AGG(CONVERT(nvarchar(max), ISNULL(restaurant_type.type, 'N/A')), ', ') AS types, " +
                         "String_AGG(CONVERT(nvarchar(max), ISNULL(restaurant_type.type_id, 'N/A')), ', ') AS typeId FROM user_account " +
-                        "JOIN user_favorites ON user_favorites.user_id = user_account.user_id " +
                         "JOIN user_favorited_types ON user_favorited_types.user_id = user_account.user_id " +
-                        "JOIN restaurant_type ON restaurant_type.type_id = user_favorited_types.type_id WHERE user_account.user_id = @user_id " +
-                        "GROUP BY user_account.user_id, user_zip ", conn);
+                        "JOIN restaurant_type ON restaurant_type.type_id = user_favorited_types.type_id " +
+                        "WHERE user_account.user_id = @user_id " +
+                        "GROUP BY user_account.user_id, user_zip", conn);
                     cmd.Parameters.AddWithValue("@user_id", user_id);
                     SqlDataReader reader = cmd.ExecuteReader();
 
-                    if (reader.HasRows && reader.Read())
+                    if (reader.HasRows)
                     {
-                        returnAccount = GetAccountFromReader(reader);
+                        while (reader.Read())
+                        {
+                            returnAccount = GetAccountFromReader(reader);
+                        }
                     }
                 }
             }
