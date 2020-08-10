@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav" v-if="$store.state.token != ''">
+    <div id="nav" v-if="$store.state.token != '' && $store.state.isNewUser == false">
       <router-link v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''">Home</router-link>&nbsp;| &nbsp;
       <router-link v-bind:to="{ name: 'questionnaire' }" v-if="$store.state.token != ''">Questionnaire</router-link>&nbsp;| &nbsp;
       <router-link v-bind:to="{ name: 'favorites' }" v-if="$store.state.token != ''">Favorite Restaurants</router-link>&nbsp;| &nbsp;
