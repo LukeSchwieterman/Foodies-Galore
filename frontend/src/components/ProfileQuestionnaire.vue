@@ -9,7 +9,7 @@
             v-on:change="saveProfile"
             required autofocus />
         </div>
-        <div class="field" v-on:click="tester($event.target.value)" >
+        <div class="field" v-on:click="updatePreferences($event.target.value)" >
             
             <b-form-group  name="restaurant-preferences"    >    
 
@@ -18,16 +18,17 @@
                  :options="availableOptions" 
                  text-field="type"
                  value-field="typeId"
-                 switches stacked size="lg">     
+                 switches stacked size="lg"
+                 :disabled="isNewUser">     
                             
                 </b-form-checkbox-group>
             </b-form-group>
             
         </div>
             <div class="actions">
-            <button type="submit" v-on:click="saveProfile"
-            :disabled="userProfile.likedTypes.length < 1"
-            >Save Profile</button>
+            <button type="submit" v-on:click="viewSuggestions"
+            :disabled="userProfile.likedTypesId.length < 1"
+            >See Your Matches!</button>
         </div>
 
     </form>
@@ -44,14 +45,14 @@ export default {
     name: 'profile-questionnaire',
     data() {
         return {
-            isNewUser: true,
+            //isNewUser: this.$store.state.isNewUser,
             availableOptions: [], 
             currentSelection: '',
-            temp: [],                                 
+                                            
             userProfile: {
                 userId: this.$store.state.user.userId,
                 zipCode: '',
-                likedTypes: []             
+                likedTypesId: []             
             }            
         }
 
@@ -68,38 +69,43 @@ export default {
                 }
             });
 
-            selectionService.getProfile()
-            .then(response => {
+           // if(this.$store.state.isNewUser === false) {
+                selectionService.getProfile()
+                .then(response => {
                 this.userProfile = response.data; 
                 
                 if(response.data){
                     this.isNewUser = false;
                 }       
-            })            
+            });     
+            //}
+                   
     },
     
     methods: {
-        tester(x) {
-            if(x){
+        
+        viewSuggestions() {
+            this.$router.push(`/swipe`);
+        },
+        
+        updatePreferences(preference) {
+            if(preference){
                 
-                    if(this.userProfile.likedTypesId.includes( parseInt(x) ))
-                    {
-                        selectionService.deletePreference( parseInt(x) );
-                    }
-                    else
-                    {
-                        const typeAccount = {userId: this.userProfile.userId, typeId:x }
-                        selectionService.postPreference(typeAccount);
-                    }
-                
+                if(this.userProfile.likedTypesId.includes( parseInt(preference) ))
+                {
+                    selectionService.deletePreference( parseInt(preference) );
+                }
+                else
+                {
+                    const typeAccount = {userId: this.userProfile.userId, typeId: preference }
+                    selectionService.postPreference(typeAccount);
+                }
             }
-            
-           
         },
 
         saveProfile() {
             
-            if(this.isNewUser){
+            if(this.$store.state.isNewUser){
                 this.userProfile.userId = this.$store.state.user.userId;
                 selectionService.addProfile(this.userProfile)
                 .then(response => {
@@ -113,6 +119,7 @@ export default {
                         alert("Could not create profile.");            
                     }
                 });
+                this.$store.commit('SET_RETURNING_USER');
             }
             else
             {

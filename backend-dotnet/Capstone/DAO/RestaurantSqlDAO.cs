@@ -17,7 +17,7 @@ namespace Capstone.DAO
         }
 
 
-        //Gets the restaurants based on the user's type preference. Decided to cut out the get all Restaurants Method because this one was a more practicle and more effiecent way of doing it.
+        //Gets the Restaurant based on the desired type. Might Delete later because it has zero implementations at the current state of our program.
         public Restaurant GetRestaurant(int restaurantId)
         {
             Restaurant returnRestaurant = null;
@@ -51,7 +51,7 @@ namespace Capstone.DAO
             return returnRestaurant;
         }
 
-        //Gets the Restaurant based on the desired type. Might Delete later because it has zero implementations at the current state of our program.
+        //Gets the restaurants based on the user's type preference. Decided to cut out the get all Restaurants Method because this one was a more practicle and more effiecent way of doing it.
         public List<Restaurant> GetRestaurantByType(int userId)
         {
 
