@@ -2,7 +2,9 @@
     <div class = "restaurants">
         <div>
             <h1>Favorite Restaurants!</h1>
+            <div>
           {{favoriteRestaurants.restaurantId}}
+          </div>
         </div>
     </div>    
 </template>
@@ -17,7 +19,8 @@ export default {
     data() {
         return {
           favoriteRestaurants: {
-              restaurantId: '',
+            userId: this.$store.state.user.userId,
+            restaurantId: '',
           }
             }            
         },
@@ -30,3 +33,4 @@ export default {
             }
     }
         </script>
+ 
