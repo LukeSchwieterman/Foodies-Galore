@@ -16,6 +16,7 @@ namespace Capstone.DAO
             connectionString = dbConnectionString;
         }
 
+        //Gets the account based on the user_id. This will show information from the user_favorited_types as well which has all the information about the user's selected types from the questionaire.
         public AccountWithTypes GetAccount(int user_id)
         {
             AccountWithTypes returnAccount = null;
@@ -50,6 +51,7 @@ namespace Capstone.DAO
             return returnAccount;
         }
 
+        //Adds an account to the user_account table. This table only deals with the user's zipcode and the user's id
         public Account AddAccount(Account account)
         {
 
@@ -74,6 +76,7 @@ namespace Capstone.DAO
             return account;
         }
 
+        //Updates the account table. This just deals with the user's zipcode and user_id
         public Account UpdateAccount(Account accountToUpdate)
         {
             try
@@ -100,6 +103,7 @@ namespace Capstone.DAO
             return null;
         }
 
+        //Delete's a type from the user_favorited_types table. Once this method is called it delete's one of the user's liked types. This method is called when switching the checkbox off in the questionaire
         public bool DeleteTypeFromAccount(int userId, int typeId)
         {
             try
@@ -126,6 +130,7 @@ namespace Capstone.DAO
             return false;
         }
 
+        //Adds a type to the user_favorited_types table. This method is called when you switch a checkbox on in the questionaire.
         public TypeAccount AddAccountType(TypeAccount account)
         {
 
@@ -154,12 +159,20 @@ namespace Capstone.DAO
         {
             string typesString = Convert.ToString(reader["types"]);
             string typeIdString = Convert.ToString(reader["typeId"]);
+            string[] typeIdStringArray = typeIdString.Split();
+            List<int> typeIdList = new List<int>();
+            for (int i = 0; i < typeIdStringArray.Length; i++)
+            {
+                typeIdList.Add(int.Parse(typeIdStringArray[i]));
+            }
+            int[] typeIdArray = typeIdList.ToArray();
+
             AccountWithTypes a = new AccountWithTypes()
             {
                 UserId = Convert.ToInt32(reader["user_id"]),
                 ZipCode = Convert.ToInt32(reader["user_zip"]),
                 LikedTypes = typesString.Split(','),
-                LikedTypesId = typeIdString.Split(',')
+                LikedTypesId = typeIdArray
             };
 
             return a;

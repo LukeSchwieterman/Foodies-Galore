@@ -16,40 +16,8 @@ namespace Capstone.DAO
             connectionString = dbConnectionString;
         }
 
-        //public List<Restaurant> GetAllRestaurants()
-        //{
-        //    List<Restaurant> returnRestaurants = new List<Restaurant>();
 
-        //    try
-        //    {
-        //        using (SqlConnection conn = new SqlConnection(connectionString))
-        //        {
-        //            conn.Open();
-
-        //            SqlCommand cmd = new SqlCommand("SELECT restaurants.restaurant_id, restaurant_name, location_zip, " +
-        //                "String_AGG(CONVERT(nvarchar(max),ISNULL(restaurant_type.type, 'N/A')), ', ') AS types FROM restaurants " +
-        //                "JOIN restaurants_and_their_types ON restaurants_and_their_types.restaurant_id = restaurants.restaurant_id " +
-        //                "JOIN restaurant_type ON restaurant_type.type_id = restaurants_and_their_types.type_id " + 
-        //                "GROUP BY restaurants.restaurant_id, restaurant_name, location_zip", conn);
-        //            SqlDataReader reader = cmd.ExecuteReader();
-
-        //            if (reader.HasRows)
-        //            {
-        //                while (reader.Read())
-        //                {
-        //                    returnRestaurants.Add(GetRestaurantFromReader(reader));
-        //                }
-        //            }
-        //        }
-        //    }
-        //    catch (SqlException)
-        //    {
-        //        throw;
-        //    }
-
-        //    return returnRestaurants;
-        //}
-
+        //Gets the restaurants based on the user's type preference. Decided to cut out the get all Restaurants Method because this one was a more practicle and more effiecent way of doing it.
         public Restaurant GetRestaurant(int restaurantId)
         {
             Restaurant returnRestaurant = null;
@@ -83,6 +51,7 @@ namespace Capstone.DAO
             return returnRestaurant;
         }
 
+        //Gets the Restaurant based on the desired type. Might Delete later because it has zero implementations at the current state of our program.
         public List<Restaurant> GetRestaurantByType(int userId)
         {
 
@@ -119,6 +88,7 @@ namespace Capstone.DAO
             return returnRestaurants;
         }
 
+        //Will get all the Restaurants based on the zipcode of the user. This also doesn't have any uses yet.
         public List<Restaurant> GetRestaurantByZip(int restaurantZip)
         {
             List<Restaurant> returnRestaurants = new List<Restaurant>();
@@ -154,6 +124,7 @@ namespace Capstone.DAO
             return returnRestaurants;
         }
 
+        //Gets all of the restaurant types in our database
         public List<RestaurantTypes> GetRestaurantTypes()
         {
             List<RestaurantTypes> returnRestaurantTypes = new List<RestaurantTypes>();
@@ -184,6 +155,7 @@ namespace Capstone.DAO
             return returnRestaurantTypes;
         }
 
+        //Gets all the extra information that we have in our database about the restaurants
         public RestaurantDetails GetRestaurantDetails(int restaurantId)
         {
             RestaurantDetails returnRestaurantDetails = null;
