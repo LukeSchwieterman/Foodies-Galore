@@ -1,8 +1,7 @@
 <template>
     <div id="form-container" >
     <form id="form-view" v-on:submit.prevent>
-        <h2>Create your profile</h2>
-
+        
         <div id="zip" class="field">
             <label for="zip">Zip Code</label>
             <input type="text" name="zip" v-model="userProfile.zipCode" 
@@ -19,7 +18,7 @@
                  text-field="type"
                  value-field="typeId"
                  switches stacked size="lg"
-                 :disabled="isNewUser">     
+                 :disabled="this.$store.state.isNewUser">     
                             
                 </b-form-checkbox-group>
             </b-form-group>
@@ -49,7 +48,7 @@ export default {
             isUpdating: false,
             availableOptions: [], 
             currentSelection: '',
-            isNewUser: this.$store.state.isNewUser,                       
+                                   
             userProfile: {
                 userId: this.$store.state.user.userId,
                 zipCode: '',
@@ -77,6 +76,12 @@ export default {
                 this.userProfile = response.data; 
                 });     
             }                   
+    },
+
+    computed: {
+        isNewUser() {
+          return this.$store.state.isNewUser;  
+        } 
     },
         
     methods: {

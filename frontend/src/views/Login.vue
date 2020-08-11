@@ -62,23 +62,26 @@ export default {
         .login(this.user)
         .then(response => {
           if (response.status == 200) {
+            
             this.$store.commit('SET_AUTH_TOKEN', response.data.token);
             this.$store.commit('SET_USER', response.data.user);
+            this.$store.commit('SET_NAME');
               if (this.$store.state.isNewUser) {
-                this.$router.push(`/questionnaire`);
+                this.$router.push(`/add-profile`);
               }
               else {
                 this.$router.push(`/favorites`)
               }
           }
         })
-        .catch(error => {
-          const response = error.response;
+        // .catch(error => {
+        //   // const response = error.response;
 
-          if (response.status === 401) {
-            this.invalidCredentials = true;
-          }
-        });
+        //   // if (response.status === 401) {
+        //   //   this.invalidCredentials = true;
+        //   // }
+          
+        // });
     }
   }
 };
