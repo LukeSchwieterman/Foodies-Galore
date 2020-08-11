@@ -43,7 +43,8 @@ namespace Capstone.Controllers
         [HttpPost]
         public ActionResult<Like> AddLike(Like addedLike)
         {
-            Like like = likeDAO.AddLike(addedLike);
+            var userId = Convert.ToInt32(User.FindFirst("sub")?.Value);
+            Like like = likeDAO.AddLike(userId, addedLike);
 
             if (like != null)
             {
