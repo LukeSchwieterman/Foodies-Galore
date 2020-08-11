@@ -45,7 +45,7 @@ namespace Capstone.DAO
             return returnLikes;
         }
 
-        public Like AddLike(Like like)
+        public Like AddLike(int userId, Like like)
         {
 
             try
@@ -56,7 +56,7 @@ namespace Capstone.DAO
 
                     SqlCommand cmd = new SqlCommand("INSERT INTO user_favorites (user_id, restaurant_id)" +
                         " VALUES (@user_id, @restaurant_id)", conn);
-                    cmd.Parameters.AddWithValue("@user_id", like.UserId);
+                    cmd.Parameters.AddWithValue("@user_id", userId);
                     cmd.Parameters.AddWithValue("@restaurant_id", like.RestaurantId);
                     cmd.ExecuteNonQuery();
                 }
@@ -65,6 +65,7 @@ namespace Capstone.DAO
             {
                 throw;
             }
+            like.UserId = userId;
 
             return like;
         }
