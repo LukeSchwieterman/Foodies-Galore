@@ -9,7 +9,6 @@ import swipe from '../views/swipe.vue'
 import Questionnaire from '../components/ProfileQuestionnaire.vue'
 import CreateProfile from '@/views/CreateProfile.vue'
 import UpdateProfile from '@/views/UpdateProfile.vue'
-import Details from '../views/Details.vue'
 import FavoriteRestaurants from '../views/FavoriteRestaurants.vue'
 
 Vue.use(Router)
@@ -87,14 +86,6 @@ const router = new Router({
       path: '/update-profile',
       name: 'UpdateProfile',
       component: UpdateProfile,
-      meta: {
-        requiresAuth: true
-      }
-    },
-    {
-      path: '/details',
-      name: 'Details',
-      component: Details,
       meta: {
         requiresAuth: true
       }
