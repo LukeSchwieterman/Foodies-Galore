@@ -6,8 +6,8 @@
         <div id="zip" class="field">
             <label for="zip">Zip Code</label>
             <input type="text" name="zip" v-model="userProfile.zipCode" 
-            v-on:change="saveProfile"
-            required autofocus />
+            v-on:change="feedbackBeforeSave"
+            required autofocus /><b-spinner v-if="isUpdating" label="Spinning"></b-spinner>
         </div>
         <div class="field" v-on:click="updatePreferences($event.target.value)" >
             
@@ -19,15 +19,15 @@
                  text-field="type"
                  value-field="typeId"
                  switches stacked size="lg"
-                 :disabled="$store.state.isNewUser">     
+                 :disabled="isNewUser">     
                             
                 </b-form-checkbox-group>
             </b-form-group>
             
         </div>
-            <div class="actions">
+            <div class="actions">            
             <button type="submit" v-on:click="viewSuggestions"
-            :disabled="userProfile.likedTypesId.length < 1"
+            :disabled="userProfile.likedTypesId.length === 0"
             >See Your Matches!</button>
         </div>
 
@@ -46,9 +46,10 @@ export default {
     data() {
         return {
             
+            isUpdating: false,
             availableOptions: [], 
             currentSelection: '',
-                                      
+            isNewUser: this.$store.state.isNewUser,                       
             userProfile: {
                 userId: this.$store.state.user.userId,
                 zipCode: '',
@@ -77,7 +78,7 @@ export default {
                 });     
             }                   
     },
-    
+        
     methods: {
         
         viewSuggestions() {
@@ -96,10 +97,16 @@ export default {
                     const typeAccount = {userId: this.userProfile.userId, typeId: preference }
                     selectionService.postPreference(typeAccount);
                 }
+                this.isIncomplete = false;
             }
+        },
+        feedbackBeforeSave(){
+            this.isUpdating = true;
+            setTimeout(()=>this.saveProfile(), 1000);
         },
 
         saveProfile() {
+            
             
             if(this.$store.state.isNewUser){
                 this.userProfile.userId = this.$store.state.user.userId;
@@ -107,22 +114,21 @@ export default {
                 .then(response => {
                     if (response.status === 200) {
                         this.$store.commit('SET_RETURNING_USER');
-                        
+                        this.isUpdating = false;
                     }
                 })
                 .catch(error => {
                     if (error.response) {
                         alert("Could not create profile.");            
                     }
-                });
-                
+                });                
             }
             else
             {
                 selectionService.updateProfile(this.userProfile)
                 .then(response => {
                     if (response.status === 200) {
-                        // 
+                       this.isUpdating = false;  
                     }
                 })
                 .catch(error => {
@@ -133,7 +139,10 @@ export default {
             }
             
             
-        },  
+        }, 
+        
+      
+
     },
     
 }
