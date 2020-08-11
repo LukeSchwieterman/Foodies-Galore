@@ -94,9 +94,12 @@ export default {
   methods: {
     match() {
       InteractEventBus.$emit(EVENTS.MATCH);
-      this.favoriteRestaurants.restaurantId = this.restaurantArray[this.index]
+      this.favoriteRestaurants = this.restaurantArray[this.index];
+      let restaurantObject = {
+        "RestaurantId": this.favoriteRestaurants.restaurantId
+      }
       FavoriteRestaurantService
-      .addFavoriteRestaurant(this.favoriteRestaurants)
+      .addFavoriteRestaurant(restaurantObject)
       .then(response => {
         if (response.status === 201) {
           // 
