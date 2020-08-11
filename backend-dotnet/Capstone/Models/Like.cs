@@ -10,5 +10,6 @@ namespace Capstone.Models
     {
         public int UserId { get; set; }
         public int RestaurantId { get; set; }
+        public string RestaurantName { get; set; }
     }
 }
