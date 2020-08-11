@@ -13,7 +13,7 @@
 
 <style scoped>
 *{
-    
+    /* height: 100vh; */
     font-family: "Impact", Charcoal, sans-serif;
     color: maroon;
     background-color: gold;

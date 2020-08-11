@@ -73,6 +73,9 @@ export default {
         draggedRight: EVENTS.MATCH,
         draggedLeft: EVENTS.REJECT
       },
+      favoriteRestaurants: {
+        restaurantId: '', 
+      }
     };
   },
     created(){
@@ -90,8 +93,18 @@ export default {
   },
   methods: {
     match() {
-      InteractEventBus.$emit(EVENTS.MATCH),
-      FavoriteRestaurantService.addFavoriteRestaurant()
+      InteractEventBus.$emit(EVENTS.MATCH);
+      this.favoriteRestaurants = this.restaurantArray[this.index];
+      let restaurantObject = {
+        "RestaurantId": this.favoriteRestaurants.restaurantId
+      }
+      FavoriteRestaurantService
+      .addFavoriteRestaurant(restaurantObject)
+      .then(response => {
+        if (response.status === 201) {
+          // 
+        }
+      })
     },
     reject() {
       InteractEventBus.$emit(EVENTS.REJECT)

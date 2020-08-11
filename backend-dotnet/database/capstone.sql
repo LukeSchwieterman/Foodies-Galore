@@ -837,11 +837,16 @@ VALUES (700, 'Good service, decent food and drinks, relaxed and rarely a wait.',
 
 CREATE TABLE user_favorites (
 	user_id int NOT NULL,
-	restaurant_id int NOT NULL
+	restaurant_id int NOT NULL,
+	number_of_times_visited int
 )
 
 INSERT INTO user_favorites (user_id, restaurant_id)
 VALUES (1, 10);
+INSERT INTO user_favorites (user_id, restaurant_id)
+VALUES (1, 50);
+INSERT INTO user_favorites (user_id, restaurant_id)
+VALUES (1, 100);
 
 
 CREATE TABLE user_account (
