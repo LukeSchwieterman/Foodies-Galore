@@ -74,14 +74,14 @@ export default {
               }
           }
         })
-        // .catch(error => {
-        //   // const response = error.response;
+        .catch(error => {
+          const response = error.response;
 
-        //   // if (response.status === 401) {
-        //   //   this.invalidCredentials = true;
-        //   // }
+          if (response.status === 401) {
+            this.invalidCredentials = true;
+          }
           
-        // });
+        });
     }
   }
 };

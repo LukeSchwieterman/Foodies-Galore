@@ -14,7 +14,7 @@
 </template>
 
 <style scoped>
-body{
+*{
     /* height: 100vh; */
     font-family: "Impact", Charcoal, sans-serif;
     color: maroon;
