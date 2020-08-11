@@ -23,10 +23,11 @@ namespace Capstone.Controllers
             likeDAO = _likeDAO;
         }
 
-        [HttpGet("{user_id}")]
-        public ActionResult<List<Like>> GetLikeByUser(int user_id)
+        [HttpGet]
+        public ActionResult<List<Like>> GetLikeByUser()
         {
-            List<Like> likes = likeDAO.GetAllLikesPerUser(user_id);
+            var userId = Convert.ToInt32(User.FindFirst("sub")?.Value);
+            List<Like> likes = likeDAO.GetAllLikesPerUser(userId);
 
             if (likes != null)
             {
