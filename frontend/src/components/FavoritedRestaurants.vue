@@ -18,11 +18,8 @@ export default {
     name: 'favorited-restaurants',
     data() {
         return {
-          favoriteRestaurants: {
-            userId: this.$store.state.user.userId,
-            restaurantId: '',
-          }
-            }            
+          favoriteRestaurants: []
+        }          
         },
     created() {
         

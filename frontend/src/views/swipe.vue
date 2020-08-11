@@ -7,6 +7,7 @@
       class="fixed fixed--center"
       style="z-index: 3"
       :class="{ 'transition': isVisible }">
+
       <Vue2InteractDraggable
         v-if="isVisible"
         :interact-out-of-sight-x-coordinate="1000"
@@ -19,7 +20,6 @@
         @draggedLeft="emitAndNext('reject')"
         class="rounded-borders card card--one">
         <div style ="height: 100%">
-        <div class="text_wrapper">CLICK TO VIEW DETAILS</div>
         <img :src="require(`@/assets/${current.image}`)" class="rounded-borders" />
         <div class="text">
         <h2>{{current.name}}, {{current.types[0]}}, {{current.zipCode}}</h2>
@@ -73,6 +73,9 @@ export default {
         draggedRight: EVENTS.MATCH,
         draggedLeft: EVENTS.REJECT
       },
+      favoriteRestaurants: {
+        restaurantId: '', 
+      }
     };
   },
     created(){
@@ -90,8 +93,18 @@ export default {
   },
   methods: {
     match() {
-      InteractEventBus.$emit(EVENTS.MATCH),
-      FavoriteRestaurantService.addFavoriteRestaurant()
+      InteractEventBus.$emit(EVENTS.MATCH);
+      this.favoriteRestaurants = this.restaurantArray[this.index];
+      let restaurantObject = {
+        "RestaurantId": this.favoriteRestaurants.restaurantId
+      }
+      FavoriteRestaurantService
+      .addFavoriteRestaurant(restaurantObject)
+      .then(response => {
+        if (response.status === 201) {
+          // 
+        }
+      })
     },
     reject() {
       InteractEventBus.$emit(EVENTS.REJECT)
@@ -242,6 +255,7 @@ h1{
     bottom: 0;
     width: 100%;
     background: white;
+    background: white;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
     span {
@@ -251,20 +265,6 @@ h1{
 }
 .transition {
   animation: appear 200ms ease-in;
-}
-
-.text_wrapper {
-  visibility:visible;
-  background: transparent;
-  opacity: 0;
-  top: 0;
-  position: absolute;
-  background-color:rgba(0, 0, 0, 0.2)
-}
-
-.rounded-borders:hover .text_wrapper{
-  visibility: visible;
-  opacity: 1
 }
 
 @keyframes appear {
