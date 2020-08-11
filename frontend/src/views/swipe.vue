@@ -91,7 +91,13 @@ export default {
   methods: {
     match() {
       InteractEventBus.$emit(EVENTS.MATCH),
-      FavoriteRestaurantService.addFavoriteRestaurant()
+      FavoriteRestaurantService
+      .addFavoriteRestaurant(this.restaurantArray[this.index])
+      .then(response => {
+        if (response.status === 201) {
+          // 
+        }
+      })
     },
     reject() {
       InteractEventBus.$emit(EVENTS.REJECT)
