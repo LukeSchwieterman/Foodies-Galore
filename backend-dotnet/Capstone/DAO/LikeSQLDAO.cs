@@ -23,7 +23,8 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT user_id, restaurant_id FROM user_favorites WHERE user_id = @user_id", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT user_id, user_favorites.restaurant_id, restaurant_name FROM user_favorites " +
+                        "JOIN restaurants ON restaurants.restaurant_id = user_favorites.restaurant_id WHERE user_id = @user_id", conn);
                     cmd.Parameters.AddWithValue("@user_id", user_id);
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -101,7 +102,8 @@ namespace Capstone.DAO
             Like k = new Like()
             {
                 UserId = Convert.ToInt32(reader["user_id"]),
-                RestaurantId = Convert.ToInt32(reader["restaurant_id"])
+                RestaurantId = Convert.ToInt32(reader["restaurant_id"]),
+                RestaurantName = Convert.ToString(reader["restaurant_name"])
             };
 
             return k;
