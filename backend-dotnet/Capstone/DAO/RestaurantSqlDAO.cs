@@ -167,7 +167,7 @@ namespace Capstone.DAO
                     conn.Open();
 
                     SqlCommand cmd = new SqlCommand("SELECT restaurant_id, restaurant_description, restaurant_phonenumber, " + 
-                        "covid_message FROM restaurant_details WHERE restaurant_id = @restaurantId", conn);
+                        "covid_message, map_url FROM restaurant_details WHERE restaurant_id = @restaurantId", conn);
                     cmd.Parameters.AddWithValue("@restaurantId", restaurantId);
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -192,7 +192,8 @@ namespace Capstone.DAO
                 RestaurantId = Convert.ToInt32(reader["restaurant_id"]),
                 RestaurantDescription = Convert.ToString(reader["restaurant_description"]),
                 RestaurantPhonenumber = Convert.ToString(reader["restaurant_phonenumber"]),
-                CovidMessage = Convert.ToString(reader["covid_message"])
+                CovidMessage = Convert.ToString(reader["covid_message"]),
+                MapUrl = Convert.ToString(reader["map-url"])
             };
 
             return rd;
