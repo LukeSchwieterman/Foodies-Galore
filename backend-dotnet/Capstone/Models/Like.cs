@@ -11,5 +11,8 @@ namespace Capstone.Models
         public int UserId { get; set; }
         public int RestaurantId { get; set; }
         public string RestaurantName { get; set; }
+        public string RestaurantDescription { get; set; }
+        public string RestaurantPhonenumber { get; set; }
+        public string CovidMessage { get; set; }
     }
 }

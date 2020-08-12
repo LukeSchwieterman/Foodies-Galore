@@ -1,15 +1,21 @@
 <template>
   <div class="home">
-    <h1>Welcome to Foodies Galore!</h1>
+    <h1>Foodies Galore Welcomes {{username}}!</h1>
     <h2 class="description">This application helps foodies looking for a good bite to eat decide where to go!</h2>
-    <p>Click <a href ="questionnaire"> here</a> to take your Foodies questionnaire!</p>
+    <p>Click <a href ="update-profile"> here</a> to take your Foodies questionnaire!</p>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'home'
+  name: 'home',
+  
+  computed: {
+        username() {
+            return this.$store.state.user.username[0].toUpperCase() + this.$store.state.user.username.slice(1);
+        }
+    }   
 };
 </script>
 

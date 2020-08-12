@@ -22,6 +22,7 @@ export default new Vuex.Store({
     user: currentUser || {},
     availableOptions: [],
     isNewUser: false,
+    
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -31,21 +32,21 @@ export default new Vuex.Store({
     },
     SET_USER(state, user) {
       state.user = user;
-      localStorage.setItem('user',JSON.stringify(user));
+      localStorage.setItem('user',JSON.stringify(user));      
     },
     LOGOUT(state) {
       localStorage.removeItem('token');
       localStorage.removeItem('user');
       state.token = '';
       state.user = {};
-      axios.defaults.headers.common = {};
+      axios.defaults.headers.common = {};      
     },
     SET_NEW_USER(state) {
       state.isNewUser = true;
     },
     SET_RETURNING_USER(state) {
       state.isNewUser = false;
-    }
+    },
     
   }
 })
