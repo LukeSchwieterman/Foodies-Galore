@@ -16,14 +16,14 @@
 
 <style scoped>
 *{
+
     /* height: 100vh; */
     font-family: "Impact", Charcoal, sans-serif;
-    color: maroon;
-    background-color: #fbda47;
+    color: white;
 }
 
 .body{
-  background-image:url('./assets/food_background.jpg');
+  background-image:url('./assets/backgroundpicture.jpg');
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -32,8 +32,10 @@
 #nav{
   display: flex;
   justify-content: center;
+  position: absolute;
 }
 #nav a {
   padding: 0 .5rem;
+  justify-content: center;
 }
 </style>

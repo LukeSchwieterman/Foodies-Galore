@@ -283,10 +283,6 @@ VALUES ('Bravo!', '45239', 'bravo.jpg')
 
 
 
-
-
-SELECT * FROM restaurants;
-
 CREATE TABLE restaurant_details (
 	restaurant_id int NOT NULL PRIMARY KEY,
 	restaurant_description varchar(400),
@@ -622,7 +618,6 @@ CREATE TABLE restaurant_reviews (
 	restaurant_star_rating int NOT NULL
 )
 
-SELECT * FROM restaurant_details;
 
 INSERT INTO restaurant_reviews (restaurant_id, restaurant_review, restaurant_star_rating)
 VALUES (10, 'Higher quality meat than a typical hole in the wall chinese place. Delicious!', 4)
@@ -848,6 +843,10 @@ VALUES (1, 50);
 INSERT INTO user_favorites (user_id, restaurant_id)
 VALUES (1, 100);
 
+CREATE TABLE previously_visited_restaurants (
+	user_id int NOT NULL,
+	restaurant_id int NOT NULL
+)
 
 CREATE TABLE user_account (
 	user_id int NOT NULL,

@@ -157,8 +157,7 @@ export default {
 
 
 #form-container {
-  background-image: url("../views/images/burgerpizzapile.jpg");
-  background-color: #fd0404;
+  background-color: transparent;
   height: 500px;
   background-position: center;
   background-repeat: no-repeat;
@@ -167,6 +166,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  margin-top: 120px;
 }
 
 form {
