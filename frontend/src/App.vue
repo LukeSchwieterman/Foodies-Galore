@@ -26,7 +26,6 @@
 
 .body{
   height: 100vh;
-
 }
 
 #nav{
