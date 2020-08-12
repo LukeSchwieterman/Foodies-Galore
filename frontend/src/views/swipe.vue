@@ -1,7 +1,6 @@
 <template>
 
   <section class="container">
-      <h1>Foodies Galore!</h1>
       <div
       v-if="current"
       class="fixed fixed--center"
@@ -47,7 +46,7 @@
       <input type="button" onclick="location.href='/favorites';"
        value="Click here to view your favorite restauarants!"/> 
     </div>
-      <div class="btn btn--like" @click="match">
+      <div class="btn btn--like" @click="match" >
         <i class="material-icons">Like</i>
       </div>
     </div>
@@ -94,6 +93,12 @@ export default {
   methods: {
     match() {
       InteractEventBus.$emit(EVENTS.MATCH);
+    },
+    reject() {
+      InteractEventBus.$emit(EVENTS.REJECT)
+    },
+    emitAndNext(event) { 
+      if(event === 'match'){
       this.favoriteRestaurants = this.restaurantArray[this.index];
       FavoriteRestaurantService
       .addFavoriteRestaurant({"RestaurantId": this.favoriteRestaurants.restaurantId
@@ -103,29 +108,14 @@ export default {
           // 
         }
       })
-    },
-    reject() {
-      InteractEventBus.$emit(EVENTS.REJECT)
-    },
-    emitAndNext(event) {
+      }
       this.$emit(event, this.index);
       setTimeout(() => (this.isVisible = false), 200)
       setTimeout(() => {
         this.index++
         this.isVisible = true
-      }, 200),
-      this.favoriteRestaurants = this.restaurantArray[this.index];
-      FavoriteRestaurantService
-      .addFavoriteRestaurant({"RestaurantId": this.favoriteRestaurants.restaurantId
-      })
-      .then(response => {
-        if (response.status === 201) {
-          // 
-        }
-      })
-    }
-  }
-}
+      }, 200)
+    }}}
 </script>
 
 <style lang="scss" scoped>
@@ -172,8 +162,8 @@ h1{
 }
 .btn {
   position: relative;
-  width: 75px;
-  height: 50px;
+  width: 125px;
+  height: 75px;
   padding: 0.2rem;
   border-radius: 50%;
   background-color: white;
@@ -196,18 +186,19 @@ h1{
     }
   }
   &--like {
-    background-color: green;
+    background-color: chartreuse;
     padding: 0.5rem;
     color: black;
     box-shadow: 0 10px 13px -6px rgba(0, 0, 0, 0.2),
       0 20px 31px 3px rgba(0, 0, 0, 0.14), 0 8px 38px 7px rgba(0, 0, 0, 0.12);
     i {
-      font-size: 16px;
+      font-size: 32px;
     }
   }
   &--decline {
     background-color: red;
     color: black;
+     font-size: 32px;
   }
 }
 
