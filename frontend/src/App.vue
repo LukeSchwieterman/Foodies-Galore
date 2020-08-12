@@ -19,8 +19,7 @@
 
     /* height: 100vh; */
     font-family: "Impact", Charcoal, sans-serif;
-    color: maroon;
-    background-color: #fbda47;
+    color: white;
 }
 
 .body{
@@ -37,5 +36,6 @@
 }
 #nav a {
   padding: 0 .5rem;
+  justify-content: center;
 }
 </style>
