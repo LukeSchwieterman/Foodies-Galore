@@ -113,7 +113,16 @@ export default {
       setTimeout(() => {
         this.index++
         this.isVisible = true
-      }, 200)
+      }, 200),
+      this.favoriteRestaurants = this.restaurantArray[this.index];
+      FavoriteRestaurantService
+      .addFavoriteRestaurant({"RestaurantId": this.favoriteRestaurants.restaurantId
+      })
+      .then(response => {
+        if (response.status === 201) {
+          // 
+        }
+      })
     }
   }
 }
