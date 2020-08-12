@@ -6,6 +6,9 @@ import App from './App.vue'
 import router from './router/index'
 import store from './store/index'
 import axios from 'axios'
+import VueA11yDialog from 'vue-a11y-dialog'
+
+Vue.use(VueA11yDialog)
 
 Vue.config.productionTip = false
 
