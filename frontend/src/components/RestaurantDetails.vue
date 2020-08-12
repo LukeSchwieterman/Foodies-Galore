@@ -4,7 +4,7 @@
           {{restaurantDetails.restaurantDescription}}
           {{restaurantDetails.restaurantPhonenumber}}
           {{restaurantDetails.covidMessage}}
-        </div>
+        </div>        
     </div>    
 </template>
 
