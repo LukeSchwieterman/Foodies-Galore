@@ -23,7 +23,7 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT user_id, user_favorites.restaurant_id, restaurant_name, restaurant_description, restaurant_phonenumber, covid_message FROM user_favorites " +
+                    SqlCommand cmd = new SqlCommand("SELECT user_id, user_favorites.restaurant_id, restaurant_name, restaurant_description, restaurant_phonenumber, covid_message, map_url FROM user_favorites " +
                         "JOIN restaurants ON restaurants.restaurant_id = user_favorites.restaurant_id " +
                         "JOIN restaurant_details ON restaurants.restaurant_id = restaurant_details.restaurant_id WHERE user_id = @user_id", conn);
                     cmd.Parameters.AddWithValue("@user_id", user_id);
@@ -109,6 +109,7 @@ namespace Capstone.DAO
                 RestaurantDescription = Convert.ToString(reader["restaurant_description"]),
                 RestaurantPhonenumber = Convert.ToString(reader["restaurant_phonenumber"]),
                 CovidMessage = Convert.ToString(reader["covid_message"]),
+                MapUrl = Convert.ToString(reader["map_url"])
             };
 
             return k;

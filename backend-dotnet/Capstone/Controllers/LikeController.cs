@@ -39,7 +39,7 @@ namespace Capstone.Controllers
             }
         }
 
-        [Authorize]
+    
         [HttpPost]
         public ActionResult<Like> AddLike(Like addedLike)
         {
@@ -56,7 +56,7 @@ namespace Capstone.Controllers
             }
         }
 
-        [Authorize]
+        
         [HttpDelete("{restaurantId}")]
         public ActionResult<Like> DeleteLike(int restaurantId)
         {

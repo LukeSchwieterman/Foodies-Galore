@@ -14,5 +14,6 @@ namespace Capstone.Models
         public string RestaurantDescription { get; set; }
         public string RestaurantPhonenumber { get; set; }
         public string CovidMessage { get; set; }
+        public string MapUrl { get; set; }
     }
 }
