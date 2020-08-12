@@ -175,7 +175,7 @@ form {
     width: 25%;
     background-color: rgb(59, 51, 51);
     opacity: 0.65;
-    border: 2px solid maroon;
+    border: 4px solid maroon;
     border-radius: 25px;
     display: flex;
     flex-direction: column;

@@ -6,7 +6,6 @@ import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
 import swipe from '../views/swipe.vue'
-
 import CreateProfile from '@/views/CreateProfile.vue'
 import UpdateProfile from '@/views/UpdateProfile.vue'
 import FavoriteRestaurants from '../views/FavoriteRestaurants.vue'
@@ -92,7 +91,7 @@ const router = new Router({
       }
     },
     { // temp for development only
-      path: 'details',
+      path: '/details',
       name: 'details',
       component: RestaurantDetails,
       meta: {
