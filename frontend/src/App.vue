@@ -13,15 +13,19 @@
 
 <style scoped>
 *{
-    
     font-family: "Impact", Charcoal, sans-serif;
     color: maroon;
-    background-color: gold;
+    background-color: #aa8b003d;
+    background-image:url('./assets/backgroundpicture.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    
 }
 
 #nav{
   display: flex;
   justify-content: center;
+  position: absolute;
 }
 #nav a {
   padding: 0 .5rem;
