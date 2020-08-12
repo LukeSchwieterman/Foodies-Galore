@@ -193,7 +193,7 @@ namespace Capstone.DAO
                 RestaurantDescription = Convert.ToString(reader["restaurant_description"]),
                 RestaurantPhonenumber = Convert.ToString(reader["restaurant_phonenumber"]),
                 CovidMessage = Convert.ToString(reader["covid_message"]),
-                MapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3086.3823991360287!2d-84.4316842485506!3d39.32492087940628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884050251a956b9f%3A0xfb73f91d4aff6fea!2sYummy%20Bowl!5e0!3m2!1sen!2sus!4v1597247399512!5m2!1sen!2sus"
+                MapUrl = Convert.ToString(reader["map_url"])
             };
 
             return rd;
