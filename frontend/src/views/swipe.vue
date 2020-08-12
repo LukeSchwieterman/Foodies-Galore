@@ -73,6 +73,9 @@ export default {
         draggedRight: EVENTS.MATCH,
         draggedLeft: EVENTS.REJECT
       },
+      favoriteRestaurants: {
+        restaurantId: '', 
+      }
     };
   },
     created(){
@@ -90,8 +93,16 @@ export default {
   },
   methods: {
     match() {
-      InteractEventBus.$emit(EVENTS.MATCH),
-      FavoriteRestaurantService.addFavoriteRestaurant()
+      InteractEventBus.$emit(EVENTS.MATCH);
+      this.favoriteRestaurants = this.restaurantArray[this.index];
+      FavoriteRestaurantService
+      .addFavoriteRestaurant({"RestaurantId": this.favoriteRestaurants.restaurantId
+      })
+      .then(response => {
+        if (response.status === 201) {
+          // 
+        }
+      })
     },
     reject() {
       InteractEventBus.$emit(EVENTS.REJECT)
@@ -102,7 +113,16 @@ export default {
       setTimeout(() => {
         this.index++
         this.isVisible = true
-      }, 200)
+      }, 200),
+      this.favoriteRestaurants = this.restaurantArray[this.index];
+      FavoriteRestaurantService
+      .addFavoriteRestaurant({"RestaurantId": this.favoriteRestaurants.restaurantId
+      })
+      .then(response => {
+        if (response.status === 201) {
+          // 
+        }
+      })
     }
   }
 }

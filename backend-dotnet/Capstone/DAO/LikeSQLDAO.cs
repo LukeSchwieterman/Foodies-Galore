@@ -23,8 +23,9 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT user_id, user_favorites.restaurant_id, restaurant_name FROM user_favorites " +
-                        "JOIN restaurants ON restaurants.restaurant_id = user_favorites.restaurant_id WHERE user_id = @user_id", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT user_id, user_favorites.restaurant_id, restaurant_name, restaurant_description, restaurant_phonenumber, covid_message FROM user_favorites " +
+                        "JOIN restaurants ON restaurants.restaurant_id = user_favorites.restaurant_id " +
+                        "JOIN restaurant_details ON restaurants.restaurant_id = restaurant_details.restaurant_id WHERE user_id = @user_id", conn);
                     cmd.Parameters.AddWithValue("@user_id", user_id);
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -45,7 +46,7 @@ namespace Capstone.DAO
             return returnLikes;
         }
 
-        public Like AddLike(Like like)
+        public Like AddLike(int userId, Like like)
         {
 
             try
@@ -56,7 +57,7 @@ namespace Capstone.DAO
 
                     SqlCommand cmd = new SqlCommand("INSERT INTO user_favorites (user_id, restaurant_id)" +
                         " VALUES (@user_id, @restaurant_id)", conn);
-                    cmd.Parameters.AddWithValue("@user_id", like.UserId);
+                    cmd.Parameters.AddWithValue("@user_id", userId);
                     cmd.Parameters.AddWithValue("@restaurant_id", like.RestaurantId);
                     cmd.ExecuteNonQuery();
                 }
@@ -65,6 +66,7 @@ namespace Capstone.DAO
             {
                 throw;
             }
+            like.UserId = userId;
 
             return like;
         }
@@ -103,7 +105,10 @@ namespace Capstone.DAO
             {
                 UserId = Convert.ToInt32(reader["user_id"]),
                 RestaurantId = Convert.ToInt32(reader["restaurant_id"]),
-                RestaurantName = Convert.ToString(reader["restaurant_name"])
+                RestaurantName = Convert.ToString(reader["restaurant_name"]),
+                RestaurantDescription = Convert.ToString(reader["restaurant_description"]),
+                RestaurantPhonenumber = Convert.ToString(reader["restaurant_phonenumber"]),
+                CovidMessage = Convert.ToString(reader["covid_message"]),
             };
 
             return k;

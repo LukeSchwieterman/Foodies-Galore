@@ -76,7 +76,7 @@ const router = new Router({
     },
     {
       path: '/add-profile',
-      name: 'AddProfile',
+      name: 'CreateProfile',
       component: CreateProfile,
       meta: {
         requiresAuth: true

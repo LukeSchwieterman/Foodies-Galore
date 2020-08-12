@@ -10,7 +10,7 @@ namespace Capstone.DAO
     {
         List<Like> GetAllLikesPerUser(int user_id);
 
-        Like AddLike(Like addedLike);
+        Like AddLike(int userId, Like like);
 
         bool DeleteLike(int userId, int restaurantId);
     }
