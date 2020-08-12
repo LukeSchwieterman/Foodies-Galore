@@ -15,15 +15,7 @@
 
 <style scoped>
 *{
-<<<<<<< HEAD
-    font-family: "Impact", Charcoal, sans-serif;
-    color: maroon;
-    background-color: #aa8b003d;
-    background-image:url('./assets/backgroundpicture.jpg');
-    height: 100vh;
-    background-repeat: no-repeat;
-    
-=======
+
     /* height: 100vh; */
     font-family: "Impact", Charcoal, sans-serif;
     color: maroon;
@@ -31,11 +23,10 @@
 }
 
 .body{
-  background-image:url('./assets/food_background.jpg');
+  background-image:url('./assets/backgroundpicture.jpg');
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
->>>>>>> 9643772e2deef98e3ff51c681e48cd1b4c31709b
 }
 
 #nav{
