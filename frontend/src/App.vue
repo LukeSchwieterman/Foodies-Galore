@@ -16,26 +16,20 @@
 
 <style scoped>
 *{
-
-    /* height: 100vh; */
     font-family: "Impact", Charcoal, sans-serif;
     color: white;
+    text-align: center;
+    background-image:url('./assets/backgroundpicture.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .body{
-  background-image:url('./assets/backgroundpicture.jpg');
   height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 #nav{
   display: flex;
-  justify-content: center;
-  position: absolute;
-}
-#nav a {
-  padding: 0 .5rem;
   justify-content: center;
 }
 </style>

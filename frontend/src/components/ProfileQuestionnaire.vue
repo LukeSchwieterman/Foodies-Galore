@@ -173,7 +173,7 @@ form {
     margin: 1rem 0;
     padding: 1rem;
     width: 25%;
-    background-color: rgb(109, 97, 97);
+    background-color: rgb(59, 51, 51);
     opacity: 0.65;
     border: 4px solid maroon;
     border-radius: 25px;
