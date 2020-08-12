@@ -95,11 +95,9 @@ export default {
     match() {
       InteractEventBus.$emit(EVENTS.MATCH);
       this.favoriteRestaurants = this.restaurantArray[this.index];
-      let restaurantObject = {
-        "RestaurantId": this.favoriteRestaurants.restaurantId
-      }
       FavoriteRestaurantService
-      .addFavoriteRestaurant(restaurantObject)
+      .addFavoriteRestaurant({"RestaurantId": this.favoriteRestaurants.restaurantId
+      })
       .then(response => {
         if (response.status === 201) {
           // 
@@ -115,7 +113,16 @@ export default {
       setTimeout(() => {
         this.index++
         this.isVisible = true
-      }, 200)
+      }, 200),
+      this.favoriteRestaurants = this.restaurantArray[this.index];
+      FavoriteRestaurantService
+      .addFavoriteRestaurant({"RestaurantId": this.favoriteRestaurants.restaurantId
+      })
+      .then(response => {
+        if (response.status === 201) {
+          // 
+        }
+      })
     }
   }
 }
