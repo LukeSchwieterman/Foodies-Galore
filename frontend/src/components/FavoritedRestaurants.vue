@@ -3,7 +3,10 @@
     <h1 class = "header">Favorite Restaurants!</h1>
     <div class="d-flex">
     <div v-for="restaurant in favoriteRestaurants" v-bind:key="restaurant.restaurantid">
-      <b-button class="show-btn" v-bind:id="restaurant.restaurantId" @click="showModal($event)">{{restaurant.restaurantName}}</b-button>
+      <div class="container">
+      <b-button class="btn" v-bind:id="restaurant.restaurantId" @click="showModal($event)">{{restaurant.restaurantName}}</b-button>
+      <img class="plate-img" src="@/assets/plate-for-background.png">
+      </div>
       <b-modal v-bind:id="restaurant.restaurantId.toString()" hide-footer>
         <template v-slot:modal-title>
           <h3>{{restaurant.restaurantName}}</h3>
@@ -72,22 +75,56 @@ export default {
  <style>
  
 .header {
-    height: 10vh;
+    height: 14vh;
+    margin-top: 11vh;
+    size: 10vh;
+    color: rgb(255, 255, 255);
 }
 
-.show-btn {
+.btn {
     margin-top: 5vh;
-    margin-left: 10vh;
+    width: 16vh;
 }
 
 .d-flex {
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
+  margin-left: 10vh;
+  margin-right: 40vh;
 }
 
 .d-flex>div {
   width: 20%;
+}
+
+.plate-img {
+  width: 28vh;
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+/* Make the image responsive */
+
+
+/* Style the button and place it in the middle of the container/image */
+.container .btn {
+  position: absolute;
+  top: 25%;
+  left: 105%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 2vh;
+  border: none;
+}
+
+.container .btn:hover {
+  background-color: black;
 }
 
  </style>
