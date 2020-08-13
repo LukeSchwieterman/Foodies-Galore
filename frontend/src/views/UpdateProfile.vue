@@ -30,10 +30,8 @@ export default {
 <style scoped>
     #greeting {
     text-align: center;
-    /* position: absolute;
-    margin: -25px 0 0 -25px;
-    top: 30%;
-    left: 33%; */
+    margin-top: 17vh;
+    color:blanchedalmond;
     }
 
 

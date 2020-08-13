@@ -27,6 +27,9 @@ export default {
 
 <style scoped>
     #greeting {
-        text-align: center;
+    text-align: center;
+    margin-top: 17vh;
+    color:blanchedalmond;
     }
+
 </style>
