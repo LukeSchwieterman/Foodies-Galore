@@ -75,7 +75,10 @@ export default {
  <style>
  
 .header {
-    height: 10vh;
+    height: 14vh;
+    margin-top: 11vh;
+    size: 10vh;
+    color: rgb(255, 255, 255);
 }
 
 .btn {
@@ -89,7 +92,6 @@ export default {
   flex-wrap: wrap;
   margin-left: 10vh;
   margin-right: 40vh;
-  margin-top: 10vh;
 }
 
 .d-flex>div {
