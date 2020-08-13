@@ -1,6 +1,6 @@
 <template>
   <div id="login" class="text-center">
-    <router-link id="nav" v-bind:to="{ name: 'about' }" >About</router-link>&nbsp;| &nbsp;
+    <router-link id="nav" v-bind:to="{ name: 'about' }" >About</router-link>
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
       <div
