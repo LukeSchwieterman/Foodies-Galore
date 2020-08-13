@@ -9,7 +9,7 @@ import swipe from '../views/swipe.vue'
 import CreateProfile from '@/views/CreateProfile.vue'
 import UpdateProfile from '@/views/UpdateProfile.vue'
 import FavoriteRestaurants from '../views/FavoriteRestaurants.vue'
-import RestaurantDetails from '@/components/RestaurantDetails.vue' // remove before final commit
+
 
 Vue.use(Router)
 
@@ -89,15 +89,8 @@ const router = new Router({
       meta: {
         requiresAuth: true
       }
-    },
-    { // temp for development only
-      path: '/details',
-      name: 'details',
-      component: RestaurantDetails,
-      meta: {
-        requiresAuth: true
-      }
     }
+    
   ]
 })
 
