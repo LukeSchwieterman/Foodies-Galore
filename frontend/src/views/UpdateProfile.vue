@@ -1,5 +1,6 @@
 <template>
     <div>
+        <navigation-bar />
         <h2 id="greeting"> {{username}}'s Current Profile</h2>
         <profile-questionnaire />
     </div>
@@ -8,11 +9,13 @@
 <script>
 
 import ProfileQuestionnaire from '@/components/ProfileQuestionnaire';
+import NavigationBar from '@/components/NavigationBar.vue';
 
 export default {
 
     components: {
-        ProfileQuestionnaire
+        ProfileQuestionnaire,
+        NavigationBar
     },
     
     computed: {

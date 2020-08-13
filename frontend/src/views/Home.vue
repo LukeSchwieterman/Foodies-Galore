@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <navigation-bar />
     <h1>Foodies Galore Welcomes {{username}}!</h1>
     <h2 class="description">This application helps foodies looking for a good bite to eat decide where to go!</h2>
     <p>Click <a href ="update-profile"> here</a> to take your Foodies questionnaire!</p>
@@ -7,10 +8,13 @@
 </template>
 
 <script>
+import NavigationBar from '@/components/NavigationBar.vue';
 
 export default {
   name: 'home',
-  
+  components: {
+    NavigationBar
+  },  
   computed: {
         username() {
             return this.$store.state.user.username[0].toUpperCase() + this.$store.state.user.username.slice(1);

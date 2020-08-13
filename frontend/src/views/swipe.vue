@@ -1,5 +1,6 @@
 <template>
   <section>
+    <navigation-bar />
       <div
       v-if="current"
       class="fixed fixed--center"
@@ -53,6 +54,8 @@
 </template>
 <script>
 import { Vue2InteractDraggable, InteractEventBus } from "vue2-interact";
+import NavigationBar from '@/components/NavigationBar.vue';
+
 const EVENTS = {
   MATCH: "match",
   REJECT: "reject"
@@ -61,7 +64,7 @@ import RestaurantService from '../services/RestaurantService'
 import FavoriteRestaurantService from '../services/FavoriteRestaurantsService'
 export default {
   name: "SwipeableCards",
-  components: { Vue2InteractDraggable },
+  components: { Vue2InteractDraggable, NavigationBar },
   data() {
     return {
       restaurantArray: [],
