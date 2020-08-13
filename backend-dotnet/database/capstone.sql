@@ -106,7 +106,7 @@ INSERT INTO restaurants (restaurant_name, location_zip, image_source)
 VALUES ('Qdoba', '45040', 'qdoba.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
-VALUES ('Acapulcos', '45239', 'acapulcos.jpg')
+VALUES ('Acapulco', '45239', 'acapulcos.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
 VALUES ('Kyoto', '45069', 'kyoto.jpg')
@@ -118,7 +118,7 @@ INSERT INTO restaurants (restaurant_name, location_zip, image_source)
 VALUES ('Piada', '45040', 'piada.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
-VALUES ('Carrabas', '45239', 'carrabas.jpg')
+VALUES ('Carraba''s', '45239', 'carrabas.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
 VALUES ('Tasty Pot', '45040', 'tastypot.jpg')
@@ -130,7 +130,7 @@ INSERT INTO restaurants (restaurant_name, location_zip, image_source)
 VALUES ('Bangkok Express', '45040', 'bangkokexpress.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
-VALUES ('P.F. Changs', '45069', 'pfchangs.jpg')
+VALUES ('P.F. Chang''s', '45069', 'pfchangs.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
 VALUES ('Gyro Express', '45040', 'gyroexpress.jpg')
@@ -139,7 +139,7 @@ INSERT INTO restaurants (restaurant_name, location_zip, image_source)
 VALUES ('Santorini', '45239', 'santorini.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
-VALUES ('Pub at Rookwood Mews', '45239', 'pubatrookwoodmews.jpg')
+VALUES ('The Pub Rookwood', '45239', 'pubatrookwoodmews.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
 VALUES ('Cock and Bull Public House', '45069', 'cockandbull.jpg')
@@ -157,10 +157,10 @@ INSERT INTO restaurants (restaurant_name, location_zip, image_source)
 VALUES ('Hook Fish & Chicken', '45069', 'hookfishandchicken.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
-VALUES ('Biagios Bistro', '45040', 'biagiosbistro.jpg')
+VALUES ('Biagio''s Bistro', '45040', 'biagiosbistro.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
-VALUES ('McDonalds', '45239', 'mcdonalds.jpg')
+VALUES ('McDonald''s', '45239', 'mcdonalds.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
 VALUES ('Taco Bell', '45040', 'tacobell.jpg')
@@ -187,7 +187,7 @@ INSERT INTO restaurants (restaurant_name, location_zip, image_source)
 VALUES ('Fusabowl', '45069', 'fusabowl.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
-VALUES ('Tags Cafe', '45239', 'tagscafe.jpg')
+VALUES ('Tag''s Cafe', '45239', 'tagscafe.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
 VALUES ('Sichuan Bistro', '45040', 'sichuanbistro.jpg')
@@ -199,10 +199,10 @@ INSERT INTO restaurants (restaurant_name, location_zip, image_source)
 VALUES ('China Chef', '45040', 'chinachef.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
-VALUES ('Pitrellis', '45239', 'pitrellis.jpg')
+VALUES ('Pitrelli''s', '45239', 'pitrellis.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
-VALUES ('Tazikis', '45040', 'tazikis.jpg')
+VALUES ('Taziki''s Mediterranean Cafe', '45040', 'tazikis.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
 VALUES ('Kabuto', '45239', 'kabuto.jpg')
@@ -235,13 +235,13 @@ INSERT INTO restaurants (restaurant_name, location_zip, image_source)
 VALUES ('Bucks Tavern', '45239', 'buckstavern.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
-VALUES ('Chuys', '45040', 'chuys.jpg')
+VALUES ('Chuy''s', '45040', 'chuys.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
 VALUES ('New Krishna', '45239', 'newkrishna.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
-VALUES ('Maggianos Little Italy', '45040', 'maggianos.jpg')
+VALUES ('Maggiano''s Little Italy', '45040', 'maggianos.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
 VALUES ('Mazunte Taqueria', '45239', 'mazuntetaqueria.jpg')
@@ -253,16 +253,16 @@ INSERT INTO restaurants (restaurant_name, location_zip, image_source)
 VALUES ('Oriental Wok', '45040', 'orientalwok.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
-VALUES ('Nicholsons Tavern', '45239', 'nicholsons.jpg')
+VALUES ('Nicholson''s Tavern', '45239', 'nicholsons.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
-VALUES ('Sebastians', '45069', 'sebastians.jpg')
+VALUES ('Sebastian''s', '45069', 'sebastians.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
 VALUES ('Buddha Barn', '45040', 'buddhabarn.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
-VALUES ('Arlins', '45239', 'arlins.jpg')
+VALUES ('Arlin''s', '45239', 'arlins.jpg')
 
 INSERT INTO restaurants (restaurant_name, location_zip, image_source)
 VALUES ('Montgomery Inn', '45069', 'montgomeryinn.jpg')
@@ -376,7 +376,7 @@ welcome you back into our restaurants',
 INSERT INTO restaurant_details(restaurant_id, restaurant_description, restaurant_phonenumber, covid_message, map_url)
 VALUES (130, 'Authentic Mexican cuisine your whole family will love!', '513-874-5777', 'As we continue to monitor the developemtns around COVID-19 news, our locations
 have adjusted their services in order to continue serving our community as best we can.',
-'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49380.50731436327!2d-84.45653455472268!3d39.32720257784251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884057aaf96b3673%3A0x36e1f14e868a5b9e!2sAcapulco!5e0!3m2!1sen!2sus!4v1597256480427!5m2!1sen!2sus')
+'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d197988.56573403772!2d-84.73671620180505!3d39.16173033874699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88404f1faa66b6d3%3A0xee0e5194f97068b8!2sAcapulco!5e0!3m2!1sen!2sus!4v1597330720121!5m2!1sen!2sus')
 
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message, map_url)
 VALUES (140, 'Kyoto Japanese Cuisine brings to the area the delicacy and quality of the cuisine from Japan.', '513-583-8897', 'We are currently open carry out only,
@@ -399,7 +399,7 @@ INSERT INTO restaurant_details (restaurant_id, restaurant_description, restauran
 VALUES (170, 'We are two Sicilian boys from Texas who love to cook and eat. We love the Sicilian food our parents and grandparents cooked.',
 '513-339-0900', 'Our dining rooms are starting to safely open at limited capacity and hours to comply with regulations. We are happy to welcome you back and want
 to ensure the safety of your visit.',
-'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3087.5024616283945!2d-84.31803974855114!3d39.299532579410226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884056f9b3f70451%3A0xb29ffae3fe32a950!2sCarrabba&#39;s%20Italian%20Grill!5e0!3m2!1sen!2sus!4v1597256743523!5m2!1sen!2sus')
+'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3087.5024616283945!2d-84.31803974855114!3d39.299532579410226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884056f9b3f70451%3A0xb29ffae3fe32a950!2sCarrabbas%20Italian%20Grill!5e0!3m2!1sen!2sus!4v1597256743523!5m2!1sen!2sus')
 
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message, map_url)
 VALUES (180, 'At tasty pot, we firmly believe that in order to live well, you must eat well. It is our mission to provide healthy dining in a comfortable modern
@@ -421,7 +421,7 @@ INSERT INTO restaurant_details (restaurant_id, restaurant_description, restauran
 VALUES (210, 'P.F. Changs is an Asian restaurant concept founded on making food from scratch every day in every restaurant. Created in 1993, we are the first
 multi-unit restaurant concept in the US to honor and celebrate the 2,000 year old tradition of wok cooking as the center of every guest experience.', '513-531-4567',
 'Our team members are ready to serve you, your friends and your family! Reservations are now being accepted at select dining rooms and we could not be more excited.',
-'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3086.648212003301!2d-84.42506304855075!3d39.31889697940737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884050374b51a1d7%3A0x5856297e1b85a10e!2sP.F.%20Chang&#39;s!5e0!3m2!1sen!2sus!4v1597257031363!5m2!1sen!2sus')
+'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3086.648212003301!2d-84.42506304855075!3d39.31889697940737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884050374b51a1d7%3A0x5856297e1b85a10e!2sP.F.%20Changs!5e0!3m2!1sen!2sus!4v1597257031363!5m2!1sen!2sus')
 
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message, map_url)
 VALUES (220, 'Come to Gyro Express for some traditional Mediterranean cuisine.', '513-832-1845', 'For the safety of our staff and guests, we are currently
@@ -468,7 +468,7 @@ INSERT INTO restaurant_details (restaurant_id, restaurant_description, restauran
 VALUES (300, 'Charming neighborhood hangout serving up classic Italian cuisine, desserts, wine and cocktails.', '513-861-4777',
 'There have been service changes such as limiting the number of guests per table and in the restaurant as a total. We are doing everything we can
 to comply with regulations and also deliver an impeccable experience.',
-'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3094.36370864942!2d-84.52190034855464!3d39.143708479433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841b3871dea3e53%3A0xd9b766bbeb9553d1!2sBiagio&#39;s%20Bistro!5e0!3m2!1sen!2sus!4v1597257494952!5m2!1sen!2sus')
+'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3094.36370864942!2d-84.52190034855464!3d39.143708479433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841b3871dea3e53%3A0xd9b766bbeb9553d1!2sBiagios%20Bistro!5e0!3m2!1sen!2sus!4v1597257494952!5m2!1sen!2sus')
 
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message, map_url)
 VALUES (310, 'Back in 1954, a man named Ray Kroc discovered a small burger restaurant in California, and wrote the first page of our history.
@@ -476,7 +476,7 @@ From humble beginnings as a small restaurant, we are proud to have become one of
 restaurants in more than 100 countries.', '513-741-0266', 'At Mcdonalds, the safety of our customers and crew is a top priority. Today, more than ever,
 we remain committed to following state and local health guidelines and will continue implementing coronavirus safety measures to help protect restaurant
 crew and customers.',
-'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99019.66833223964!2d-84.58992814720402!3d39.143687397484584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841b556cca06f8b%3A0xa27ff91047a3f25a!2sMcDonald&#39;s!5e0!3m2!1sen!2sus!4v1597257570354!5m2!1sen!2sus')
+'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99019.66833223964!2d-84.58992814720402!3d39.143687397484584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841b556cca06f8b%3A0xa27ff91047a3f25a!2sMcDonalds!5e0!3m2!1sen!2sus!4v1597257570354!5m2!1sen!2sus')
 
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message, map_url)
 VALUES (320, 'We are open early with breakfast hours and if you find yourself out and about late at night, you can still order at our drive thru. We are serving
@@ -543,12 +543,12 @@ all regulations such as mask requirements and sanitization guide lines.',
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message, map_url)
 VALUES (440, 'At Pitrellis, we pride ourselves in serving only authentic Italian cuisine and we work hard to offer a great selection of wines.', '513-770-0122', 'For the duration
 of the pandemic we will remain carry-out only.',
-'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3084.872846932896!2d-84.31648814854982!3d39.35911597940156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884059d283c213af%3A0xaa4ab2a0c5fc8dce!2sPitrelli&#39;s!5e0!3m2!1sen!2sus!4v1597258117511!5m2!1sen!2sus')
+'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3084.872846932896!2d-84.31648814854982!3d39.35911597940156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884059d283c213af%3A0xaa4ab2a0c5fc8dce!2sPitrellis!5e0!3m2!1sen!2sus!4v1597258117511!5m2!1sen!2sus')
 
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message, map_url)
-VALUES (450, 'Bucks Tavern prides itself on offering up the freshest of everything. Homemade chili, hand patted burgers and even hand breaded chicken tenders.',
-'513-677-3511', 'We are back to our regularly scheduled business hours. Thank you for your support during this time!',
-'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3087.567498329543!2d-84.31671404855123!3d39.29805797941025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884056f851e6a71b%3A0xe14667a5f65eee87!2sTaziki&#39;s%20Mediterranean%20Cafe%20-%20Deerfield!5e0!3m2!1sen!2sus!4v1597258156372!5m2!1sen!2sus')
+VALUES (450, 'Taziki''s Mediterranean Café is a fast casual chain of franchised restaurants that purveys Greek and Mediterranean cuisine such as gyros, sandwiches, soups, and salads.',
+'513-234-9099', 'Serving our guests safely is our top priority at Taziki''s. 💚 We are doubling down on our current health and safety protocols to ensure our customers can still enjoy their Taziki''s favorites, by ordering online!',
+'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3087.567498329543!2d-84.31671404855123!3d39.29805797941025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884056f851e6a71b%3A0xe14667a5f65eee87!2sTazikis%20Mediterranean%20Cafe%20-%20Deerfield!5e0!3m2!1sen!2sus!4v1597258156372!5m2!1sen!2sus')
 
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message, map_url)
 VALUES (460, 'Kabuto Japanese Steakhouse & Sushi Bar serves a wide selection of traditional Japanese cuisine including sushi and sashimi, hibachi grilled
@@ -607,7 +607,7 @@ VALUES (560, 'Our founders had a vision of a fun and funky Tex-Mex restaurant th
 humble beginnings Chuys was born.', '513-779-2489', 'A big thank you to our amazing Chuys fans who have supported us during this challenging time. We are starting to open
 our dining rooms. The health and safety of our employees and customers remains our top priority. Whether you choose to eat at our restaurant or continue to order for pickup
 or delivery, we are here for you.',
-'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d98794.3309576707!2d-84.35252115281476!3d39.303604907889564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88405030d12d1da5%3A0xdd91918aefd2d77a!2sChuy&#39;s!5e0!3m2!1sen!2sus!4v1597259032524!5m2!1sen!2sus')
+'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d98794.3309576707!2d-84.35252115281476!3d39.303604907889564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88405030d12d1da5%3A0xdd91918aefd2d77a!2sChuys!5e0!3m2!1sen!2sus!4v1597259032524!5m2!1sen!2sus')
 
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message, map_url)
 VALUES (570, 'Modern Indian eatery dishing up classic tandoori dishes, biryani & curry, coupled with beer & wine.', '513-769-6266', 'As of Monday July 13th we will be starting
@@ -617,7 +617,7 @@ our buffet back up - due to safety guidelines we will be adhering to all regulat
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message, map_url)
 VALUES (580, 'Maggianos Little Italy is an American casual dining restaurant chain specializing in Italian-American cuisine.', '513-794-0670', 'In these hard times we would like
 to ask our customers to stay safe, healthy & full! Order online and pick up your Italian-American favorites today!',
-'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3091.7741835871907!2d-84.37930564855333!3d39.202579579424444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8840533f4dba6b3f%3A0xf4875895f7cb6433!2sMaggiano&#39;s%20Little%20Italy!5e0!3m2!1sen!2sus!4v1597259088104!5m2!1sen!2sus')
+'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3091.7741835871907!2d-84.37930564855333!3d39.202579579424444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8840533f4dba6b3f%3A0xf4875895f7cb6433!2sMaggianos%20Little%20Italy!5e0!3m2!1sen!2sus!4v1597259088104!5m2!1sen!2sus')
 
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message, map_url)
 VALUES (590, 'The story of Mazunte is a simple one. Initially conceived with a theme influenced by Mexican Street Food, the original conception has never wavered.', '513-785-0000',
@@ -638,12 +638,12 @@ addition😷 Thank you for letting us feed your families❤️🥡carry out and 
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message, map_url)
 VALUES (620, 'The idea for Nicholson’s was born from our founder’s passion for all things Great Britain.', '513-564-9111', 'Dear guests: Though we have not had any positive cases of
 Covid in our building, we will be temporarily closed until we can reopen to a more normal capacity.',
-'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3096.1376771142295!2d-84.51421294855558!3d39.10333557943911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841b150ab43eeb7%3A0x1fee564a6ab5e976!2sNicholson&#39;s%20Tavern%20%26%20Pub!5e0!3m2!1sen!2sus!4v1597259234219!5m2!1sen!2sus')
+'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3096.1376771142295!2d-84.51421294855558!3d39.10333557943911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841b150ab43eeb7%3A0x1fee564a6ab5e976!2sNicholsons%20Tavern%20%26%20Pub!5e0!3m2!1sen!2sus!4v1597259234219!5m2!1sen!2sus')
 
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message, map_url)
 VALUES (630, 'Classic Greek joint serving gyros, salads & other fast fare in no-frills digs since 1976.', '513-471-2100', 'We hope you are staying healthy and safe. We wanted to post a reminder
 that for the time being, Sebastians closes at 7:00 pm. Thank you for supporting our business during these times.',
-'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d197745.89605214837!2d-84.62846054324919!3d39.247873986776064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x45f95d6293626f80!2sSebastian&#39;s!5e0!3m2!1sen!2sus!4v1597259342086!5m2!1sen!2sus')
+'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d197745.89605214837!2d-84.62846054324919!3d39.247873986776064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x45f95d6293626f80!2sSebastians!5e0!3m2!1sen!2sus!4v1597259342086!5m2!1sen!2sus')
 
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message, map_url)
 VALUES (640, 'Authentic thai food, BYOB and friendly service.', '513-442-2010', 'OPEN Tuesdays thru Sundays for Carry-Out, since April 21st. Please Stay SAFE ALL!',
@@ -652,7 +652,7 @@ VALUES (640, 'Authentic thai food, BYOB and friendly service.', '513-442-2010', 
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message, map_url)
 VALUES (650, 'Neighborhood watering hole with American pub grub & beer on tap, plus a roomy brick-walled patio.', '513-751-6566', 'During COVID-19 we will be operating at our normal hours while enforcing
 social distancing, masks and proper sanitizing.',
-'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3094.3786325452934!2d-84.5218987485547!3d39.1433689794329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841b3871d0b35dd%3A0x6bd1ac614bbf52c2!2sArlin&#39;s%20Bar%20%26%20Restaurant!5e0!3m2!1sen!2sus!4v1597259432800!5m2!1sen!2sus')
+'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3094.3786325452934!2d-84.5218987485547!3d39.1433689794329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841b3871d0b35dd%3A0x6bd1ac614bbf52c2!2sArlins%20Bar%20%26%20Restaurant!5e0!3m2!1sen!2sus!4v1597259432800!5m2!1sen!2sus')
 
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message, map_url)
 VALUES (660, 'Montgomery Inn is a barbecue restaurant chain based in the Cincinnati suburb of Montgomery, Ohio, United States. It is best known for its specialty, loin back ribs, and the barbecue sauce
