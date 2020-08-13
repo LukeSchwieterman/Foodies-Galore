@@ -153,18 +153,8 @@ export default {
 </script>
 
 <style scoped>
-
-
-#form-container {
-   
-  
-  position: relative;
-  display: flex;
-  justify-content: center;  
-  
-}
-
 form {
+    
     padding: 1rem;    
     width: 40vh;
     background-color: rgba(59, 51, 51, 0.65);    
