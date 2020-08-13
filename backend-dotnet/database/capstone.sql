@@ -320,7 +320,7 @@ families during this time.',
 
 INSERT INTO restaurant_details (restaurant_id, restaurant_description, restaurant_phonenumber, covid_message, map_url)
 VALUES (50, 'Miyako distinguishes itself from other Japanese restaurants in numerous different ways, mst remarkably the sushi bar, which is the
-largest in town and one that makes impressively skilled and tasty sushi in fantastic and brillian combinations with fresh ingredients.', '513-777-3888',
+largest in town and one that makes impressively skilled and tasty sushi in fantastic and brilliant combinations with fresh ingredients.', '513-777-3888',
 'The new way of Miyako is here! Everyone is adapting to the new life after COVID-19, and so are we! We are continuously developing a way for all of
 our beloved customers to enjoy our food.',
 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3085.101722574831!2d-84.36620204854995!3d39.35393297940217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88405a063cdba4ef%3A0xf2d79d76a4685df4!2sMiyako%20Sushi%20%26%20Grill!5e0!3m2!1sen!2sus!4v1597248519950!5m2!1sen!2sus');
