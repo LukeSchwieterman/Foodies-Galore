@@ -66,7 +66,8 @@ namespace Capstone.DAO
                         "String_AGG(CONVERT(nvarchar(max),ISNULL(restaurant_type.type, 'N/A')), ', ') AS types FROM restaurants " +
                         "JOIN restaurants_and_their_types ON restaurants_and_their_types.restaurant_id = restaurants.restaurant_id " +
                         "JOIN restaurant_type ON restaurant_type.type_id = restaurants_and_their_types.type_id" +
-                        " JOIN user_favorited_types ON user_favorited_types.type_id = restaurant_type.type_id WHERE user_id = @userId" +
+                        " JOIN user_favorited_types ON user_favorited_types.type_id = restaurant_type.type_id WHERE user_id = @userId " +
+                        "AND restaurants.restaurant_id NOT IN (SELECT user_favorites.restaurant_id FROM user_favorites WHERE user_favorites.user_id = @userId)" +
                         " GROUP BY restaurants.restaurant_id, restaurant_name, location_zip, image_source", conn);
                     cmd.Parameters.AddWithValue("@userId", userId);
                     SqlDataReader reader = cmd.ExecuteReader();

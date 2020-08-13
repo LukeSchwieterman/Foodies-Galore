@@ -8,6 +8,10 @@ export default {
 
     getFavoriteRestaurants(){
         return axios.get(`/like`)
+    },
+
+    deleteFavoriteRestaurants(restaurantId){
+        return axios.get(`/like/${restaurantId}`)
     }
 
 }
