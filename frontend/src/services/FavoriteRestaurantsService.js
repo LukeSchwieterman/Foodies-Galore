@@ -11,7 +11,7 @@ export default {
     },
 
     deleteFavoriteRestaurants(restaurantId){
-        return axios.get(`/like/${restaurantId}`)
+        return axios.delete(`/like/${restaurantId}`)
     }
 
 }
