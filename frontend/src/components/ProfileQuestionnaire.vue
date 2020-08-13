@@ -108,7 +108,7 @@ export default {
         },
         feedbackBeforeSave(){
             this.isUpdating = true;
-            setTimeout(()=>this.saveProfile(), 1000);
+            setTimeout(()=>this.saveProfile(), 700);
         },
 
         saveProfile() {            

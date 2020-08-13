@@ -1,5 +1,6 @@
 <template>
   <div id="login" class="text-center">
+    <router-link id="nav" v-bind:to="{ name: 'about' }" >About</router-link>&nbsp;| &nbsp;
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
       <div
@@ -42,6 +43,7 @@
 
 <script>
 import authService from '../services/AuthService';
+
 
 export default {
   name: 'login',
@@ -86,9 +88,21 @@ export default {
 </script>
 
 <style scoped>
+#nav{
+  display: flex;
+  align-items: top;
+  justify-content: space-around;
+  padding: 0.3rem 1rem;
+  color:black; /* color of dividers */
+  background-color: rgba(238, 113, 11);
+  border: 1px solid rgba(238, 113, 11);
+  border-radius: 9px;
+  margin:auto;
+  width: 44%
+}
 
 #login {
-  padding: 1rem 0;
+  
   font-family: "Impact", Charcoal, sans-serif;
 }
 

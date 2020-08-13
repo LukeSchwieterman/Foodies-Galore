@@ -1,6 +1,6 @@
 <template>
     <div id="t">
-        <vavigation-bar />
+        <navigation-bar />
         <div id="main-container">
             <h2 id="greeting">Welcome, {{username}}!</h2>
             <h2>Let's Create Your Profile</h2>
@@ -44,8 +44,7 @@ export default {
 
     #greeting {
         text-align: center;
-        margin-top: 17vh;
-        
+        margin-top: 17vh;        
     }
 
 </style>
