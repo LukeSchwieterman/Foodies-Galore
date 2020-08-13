@@ -1,7 +1,11 @@
 <template>
-    <div>
-        <h2 id="greeting">Welcome, {{username}}! Let's Create Your Profile</h2>
-        <profile-questionnaire />
+    <div id="t">
+        <vavigation-bar />
+        <div id="main-container">
+            <h2 id="greeting">Welcome, {{username}}!</h2>
+            <h2>Let's Create Your Profile</h2>
+            <profile-questionnaire />
+        </div>
     </div>
 </template>
 
@@ -26,7 +30,22 @@ export default {
 </script>
 
 <style scoped>
+#t {
+    display: flex;
+    justify-content: center;
+}
+    #main-container {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color:blanchedalmond;
+    }
+
     #greeting {
         text-align: center;
+        margin-top: 17vh;
+        
     }
+
 </style>

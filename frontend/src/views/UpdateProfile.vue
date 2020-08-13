@@ -1,8 +1,10 @@
 <template>
-    <div>
+    <div >
         <navigation-bar />
-        <h2 id="greeting"> {{username}}'s Current Profile</h2>
-        <profile-questionnaire />
+        <div id="main-container">
+            <h2 id="greeting"> {{username}}'s Current Profile</h2>
+            <profile-questionnaire />
+        </div>
     </div>
 </template>
 
@@ -28,12 +30,19 @@ export default {
 </script>
 
 <style scoped>
+
+    #main-container {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    }
+
     #greeting {
     text-align: center;
-    /* position: absolute;
-    margin: -25px 0 0 -25px;
-    top: 30%;
-    left: 33%; */
+    margin-top: 17vh;
+    color:blanchedalmond;
     }
 
 

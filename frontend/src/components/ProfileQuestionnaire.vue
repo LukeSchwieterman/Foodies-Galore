@@ -1,36 +1,37 @@
 <template>
     <div id="form-container" >
-    <form id="form-view" v-on:submit.prevent>
         
-        <div id="zip" class="field">
-            <label for="zip">Zip Code</label>
-            <input type="text" name="zip" v-model="userProfile.zipCode" 
-            v-on:change="feedbackBeforeSave"
-            required autofocus /><b-spinner v-if="isUpdating" label="Spinning"></b-spinner>
-        </div>
-        <div class="field" v-on:click="updatePreferences($event.target.value)" >
+        <form id="form-view" v-on:submit.prevent>
             
-            <b-form-group  name="restaurant-preferences">    
+            <div id="zip" class="field">
+                    <label for="zip">Zip Code</label>
+                    <input type="text" name="zip" size="5" v-model="userProfile.zipCode" 
+                    v-on:change="feedbackBeforeSave"
+                    required autofocus /><b-spinner v-if="isUpdating" label="Spinning"></b-spinner>
+            </div>
+            <div class="field" v-on:click="updatePreferences($event.target.value)" >
+                
+                <b-form-group  name="restaurant-preferences">    
 
-                <b-form-checkbox-group id="box"  
-                 v-model="userProfile.likedTypesId"
-                 :options="availableOptions" 
-                 text-field="type"
-                 value-field="typeId"
-                 switches stacked size="lg"
-                 :disabled="this.$store.state.isNewUser">     
-                            
-                </b-form-checkbox-group>
-            </b-form-group>
-            
-        </div>
-            <div class="actions">            
-            <button type="submit" v-on:click="viewSuggestions"
-            :disabled="userProfile.likedTypesId.length === 0"
-            >See Your Matches!</button>
-        </div>
+                    <b-form-checkbox-group id="box"  
+                    v-model="userProfile.likedTypesId"
+                    :options="availableOptions" 
+                    text-field="type"
+                    value-field="typeId"
+                    switches stacked size="lg"
+                    :disabled="this.$store.state.isNewUser">     
+                                
+                    </b-form-checkbox-group>
+                </b-form-group>
+                
+            </div>
+                <div class="actions">            
+                <button type="submit" v-on:click="viewSuggestions"
+                :disabled="userProfile.likedTypesId.length === 0"
+                >See Your Matches!</button>
+            </div>
 
-    </form>
+        </form>
     </div>
 </template>
 
@@ -110,8 +111,7 @@ export default {
             setTimeout(()=>this.saveProfile(), 1000);
         },
 
-        saveProfile() {
-            
+        saveProfile() {            
             
             if(this.$store.state.isNewUser){
                 this.userProfile.userId = this.$store.state.user.userId;
@@ -141,8 +141,7 @@ export default {
                         alert("Could not update profile.");            
                     }
                 });
-            }
-            
+            }          
             
         }, 
         
@@ -154,27 +153,11 @@ export default {
 </script>
 
 <style scoped>
-
-
-#form-container {
-  background-color: transparent;
-  height: 500px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  margin-top: 120px;
-}
-
 form {
-    margin: 1rem 0;
-    padding: 1rem;
-    width: 25%;
-    background-color: rgb(59, 51, 51);
-    opacity: 0.65;
+    
+    padding: 1rem;    
+    width: 40vh;
+    background-color: rgba(59, 51, 51, 0.65);    
     border: 4px solid maroon;
     border-radius: 25px;
     display: flex;
@@ -182,13 +165,13 @@ form {
     justify-content: center;
     align-items: center;    
     text-align: left;
-   color: rgb(252, 248, 5);
+    color: blanchedalmond;
     
 }
 
 #zip {
     display: flex;
-    column-gap: 13px;    
+    column-gap: 1rem;        
 }
 
 #box {
