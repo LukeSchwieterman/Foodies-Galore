@@ -4,7 +4,8 @@
       <router-link v-bind:to="{ name: 'UpdateProfile' }" v-if="$store.state.token != ''">Questionnaire</router-link>&nbsp;| &nbsp;
       <router-link v-bind:to="{ name: 'favorites' }" v-if="$store.state.token != ''">Favorite Restaurants</router-link>&nbsp;| &nbsp;
       <router-link v-bind:to="{ name: 'swipe' }" v-if="$store.state.token != ''">Food Finder</router-link>&nbsp;| &nbsp;
-      <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
+      <router-link v-bind:to="{ name: 'about' }" v-if="$store.state.token != ''">About</router-link>&nbsp;| &nbsp;
+      <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>&nbsp;| &nbsp;
     </div>    
 </template>
 
@@ -26,7 +27,7 @@ export default {
   border: 1px solid rgba(238, 113, 11);
   border-radius: 9px;
   margin:auto;
-  width: 35%
+  width: 44%
 }
 
 a {

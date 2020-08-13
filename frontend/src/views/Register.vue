@@ -38,7 +38,6 @@
       </button>
       </div>
       <router-link :to="{ name: 'login' }" id="signin-link" >Already have an account?</router-link>
-      <div><img class="burgerpizzapile" src="../views/images/burgerpizzapile.jpg"/></div>
     </form>
   </div>
 </template>
@@ -98,18 +97,21 @@ export default {
 #register {
   padding: 1rem 0;
   font-family: "Impact", Charcoal, sans-serif;
-  color: maroon;
-  background-color: gold;
+  padding-top: 30vh;
 }
 
-.burgerpizzapile{
-  margin-top: 2rem;
-  border-style: solid;
-  border-color: maroon;
-  border-top-width: 10px;
-  border-left-width: 10px;
-  border-right-width: 10px;
-  border-bottom-width: 10px;
+form {
+    margin: 1rem 0;
+    padding: 1rem;
+    width: 25%;
+    background-color: rgba(59, 51, 51, 0.65);
+    border: 4px solid maroon;
+    border-radius: 25px;
+    position: absolute;
+  margin: -25px 0 0 -25px;
+  top: 30%;
+  left: 38%;
+   color: blanchedalmond;
 }
 
 .form-register {
@@ -126,11 +128,11 @@ export default {
 
 #create {
   background-color: maroon;
-  color: gold;
+  color: blanchedalmond;
 }
 
 #create:hover {
-  background-color: gold;
+  background-color: blanchedalmond;
   color: maroon;
 }
 

@@ -36,7 +36,6 @@
         <button type="submit" id="sign-in" class="btn-primary form-control">Sign in</button>
       </div>
       <router-link :to="{ name: 'register' }" id="register-link" >Need an account?</router-link>
-      <div><img class="burgerpizzapile" src="../views/images/burgerpizzapile.jpg"/></div>
     </form>
   </div>
 </template>
@@ -90,11 +89,21 @@ export default {
 
 #login {
   padding: 1rem 0;
-  margin-bottom: 10px;
   font-family: "Impact", Charcoal, sans-serif;
-  color: maroon;
-  background-color: gold;
-  
+}
+
+form {
+    margin: 1rem 0;
+    padding: 1rem;
+    width: 25%;
+    background-color: rgba(59, 51, 51, 0.65);
+    border: 4px solid maroon;
+    border-radius: 25px;
+    position: absolute;
+  margin: -25px 0 0 -25px;
+  top: 30%;
+  left: 38%;
+   color: blanchedalmond;
 }
 
 .burgerpizzapile{
@@ -111,7 +120,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  justify-content: center;
   
 }
 
@@ -123,11 +132,11 @@ export default {
 
 #sign-in {
   background-color: maroon;
-  color: gold;
+  color: blanchedalmond;
 }
 
 #sign-in:hover {
-  background-color: gold;
+  background-color: blanchedalmond;
   color: maroon;
 }
 

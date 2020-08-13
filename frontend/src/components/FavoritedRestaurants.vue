@@ -78,7 +78,7 @@ export default {
     height: 14vh;
     margin-top: 11vh;
     size: 10vh;
-    color: rgb(255, 255, 255);
+    color: blanchedalmond;
 }
 
 .btn {
@@ -107,18 +107,15 @@ export default {
   width: 50%;
 }
 
-/* Make the image responsive */
 
-
-/* Style the button and place it in the middle of the container/image */
 .container .btn {
   position: absolute;
   top: 25%;
   left: 105%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-color: #555;
-  color: white;
+  background-color: maroon;
+  color: blanchedalmond;
   font-size: 2vh;
   border: none;
 }

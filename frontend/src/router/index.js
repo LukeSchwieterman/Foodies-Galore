@@ -9,6 +9,7 @@ import swipe from '../views/swipe.vue'
 import CreateProfile from '@/views/CreateProfile.vue'
 import UpdateProfile from '@/views/UpdateProfile.vue'
 import FavoriteRestaurants from '../views/FavoriteRestaurants.vue'
+import AboutUs from '../views/AboutUs.vue'
 
 
 Vue.use(Router)
@@ -88,6 +89,14 @@ const router = new Router({
       component: FavoriteRestaurants,
       meta: {
         requiresAuth: true
+      }
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: AboutUs,
+      meta: {
+        requiresAuth: false
       }
     }
     
