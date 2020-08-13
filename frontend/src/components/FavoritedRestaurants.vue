@@ -7,7 +7,10 @@
       <b-modal v-bind:id="restaurant.restaurantId.toString()" hide-footer>
         <template v-slot:modal-title>
           <h3>{{restaurant.restaurantName}}</h3>
-          <p>Phone Number: ({{restaurant.restaurantPhonenumber}})</p>
+          <div class="d-inline">
+          <p class="d-inline p-2">Number: ({{restaurant.restaurantPhonenumber}})</p> 
+          <b-button class="d-inline p-2 bg-danger" @click="removeRestaurant(restaurant.restaurantId)">UNFAVORITE</b-button>
+          </div>
         </template>
         <div class="d-block">
           <li>{{restaurant.restaurantDescription}}</li>
@@ -46,11 +49,21 @@ export default {
     },
     methods: {
       showModal(event) {
+        console.log(event)
         this.$bvModal.show(event.currentTarget.id);
       },
       hideModal(event) {
         this.$bvModal.hide(event.currentTarget.id);
       },
+      removeRestaurant(id) {
+        console.log(event)
+        favoriteRestaurantsService.deleteFavoriteRestaurants(id).then(response => {
+          if(response.status == 204)
+          {
+            location.reload();
+          }
+        })
+      }
   }
 }
     
