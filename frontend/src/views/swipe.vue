@@ -1,6 +1,5 @@
 <template>
-
-  <section class="container">
+  <section>
       <div
       v-if="current"
       class="fixed fixed--center"
@@ -119,36 +118,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
-h1{
-  color: chartreuse;
-}
-.container {
-  background: black;
-  width: 100%;
-  height: 100vh;
-}
-.header {
-  width: 100%;
-  height: 60vh;
-  z-index: 0;
-  top: 0;
-  left: 0;
-  color: white;
-  text-align: center;
-  font-style: italic;
-  font-family: "Engagement", cursive;
-  display: flex;
-  justify-content: space-between;
-  span {
-    display: block;
-    color: chartreuse;
-    font-size: 20px;
-    padding-top: 2rem;
-    text-shadow: 1px 1px 1px red;
-  }
-}
 
 .footer {
   width: 77vw;

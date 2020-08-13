@@ -23,6 +23,10 @@ export default {
 <style scoped>
 h1{
   text-align: center;
+  position: absolute;
+  margin: -25px 0 0 -25px;
+  top: 30%;
+  left: 33%;
   font-weight: bold;
   font-size: 50px;
   color: rgb(177, 71, 0);
@@ -30,6 +34,10 @@ h1{
 h2{
   text-align: center;
   font-weight: bold;
+  position: absolute;
+  margin: -25px 0 0 -25px;
+  top: 35%;
+  left: 23%;
   font-size: 30px;
   margin-top: 50px;
   color: rgb(128, 0, 0);
@@ -37,9 +45,14 @@ h2{
 p{
   text-align: center;
   font-weight: bold;
+  position: absolute;
+  margin: -25px 0 0 -25px;
+  top: 45%;
+  left: 40%;
   font-size: 22px;
   margin-top: 25px;
   color: orangered;
 }
+
 
 </style>
