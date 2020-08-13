@@ -1,9 +1,11 @@
 <template>
   <div class="home">
     <navigation-bar />
-    <h1>Foodies Galore Welcomes {{username}}!</h1>
-    <h2 class="description">This application helps foodies looking for a good bite to eat decide where to go!</h2>
-    <p>Click <a href ="update-profile"> here</a> to take your Foodies questionnaire!</p>
+      <div id="content"> 
+        <h1>Foodies Galore Welcomes {{username}}!</h1>
+        <h2 class="description">This application helps foodies looking for a good bite to eat decide where to go!</h2>
+        <p>Click <a href ="update-profile"> here</a> to take your Foodies questionnaire!</p>
+    </div>
   </div>
 </template>
 
@@ -25,38 +27,19 @@ export default {
 
 
 <style scoped>
-h1{
-  text-align: center;
+
+
+#content {
   position: absolute;
-  margin: -25px 0 0 -25px;
-  top: 30%;
-  left: 33%;
-  font-weight: bold;
-  font-size: 50px;
-  color: rgb(177, 71, 0);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
 }
-h2{
-  text-align: center;
-  font-weight: bold;
-  position: absolute;
-  margin: -25px 0 0 -25px;
-  top: 35%;
-  left: 23%;
-  font-size: 30px;
-  margin-top: 50px;
-  color: rgb(128, 0, 0);
+
+h1, h2 {
+  padding-bottom: 3rem;
 }
-p{
-  text-align: center;
-  font-weight: bold;
-  position: absolute;
-  margin: -25px 0 0 -25px;
-  top: 45%;
-  left: 40%;
-  font-size: 22px;
-  margin-top: 25px;
-  color: orangered;
-}
+
 
 
 </style>
