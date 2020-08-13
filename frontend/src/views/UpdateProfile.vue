@@ -26,6 +26,12 @@ export default {
 
 <style scoped>
     #greeting {
-        text-align: center;
+    text-align: center;
+    /* position: absolute;
+    margin: -25px 0 0 -25px;
+    top: 30%;
+    left: 33%; */
     }
+
+
 </style>
